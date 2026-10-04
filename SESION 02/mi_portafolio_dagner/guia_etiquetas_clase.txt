@@ -1,0 +1,25 @@
+====================================================================
+GUIA RAPIDA DE ETIQUETAS SEMANTICAS (1 LINEA POR ETIQUETA PARA CLASE)
+Curso: Diseno Web - Centro de Informatica USS - Protech XP
+Docente: Ing. Dagner Chuman
+====================================================================
+
+<header>  -> Zona de identidad de la pagina (quien eres: tu nombre o logo) y donde vive la navegacion.
+<nav>     -> Contenedor exclusivo para los enlaces de navegacion del sitio web.
+<ul>/<li> -> Lista de items del menu (va en lista para que navegadores y lectores de pantalla sepan cuantos enlaces hay).
+<a>       -> Enlace que conecta a otra pagina o salta a una seccion interna usando su id (ej. href="#sobre-mi").
+<main>    -> Contiene el cuerpo central y unico de la pagina (regla: solo un <main> por documento).
+<section> -> Agrupa un bloque tematico con sentido propio (ej. "Sobre mi", "Proyectos", "Contacto").
+<article> -> Pieza de contenido independiente y autonoma que tendria sentido por si sola (ej. la tarjeta de un proyecto).
+<h1>      -> Titulo principal de toda la pagina (regla: solo un <h1> por documento, ubicado en el header).
+<h2>      -> Titulo de segundo nivel para nombrar cada seccion tematica (<section>).
+<h3>      -> Subtitulo dentro de un <article> o seccion secundaria (ej. el nombre de cada proyecto).
+<p>       -> Bloque de texto normal para parrafos descriptivos o informativos.
+<footer>  -> Pie de pagina con datos de cierre: derechos de autor (copyright) y enlaces de contacto.
+
+--------------------------------------------------------------------
+ANALOGIA RAPIDA PARA EXPLICAR EN 10 SEGUNDOS A LOS ESTUDIANTES:
+"El <body> es una casa nueva y las etiquetas semanticas son los letreros
+en cada puerta (cocina, sala, cuarto) para que el navegador y Google sepan
+que hay dentro sin tener que adivinar abriendo caja por caja."
+====================================================================

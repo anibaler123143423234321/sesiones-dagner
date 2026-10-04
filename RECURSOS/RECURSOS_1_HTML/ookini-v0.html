@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ookini - Café del barrio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --menta: #a7f3d0; /* Tailwind emerald-200 */
+            --menta-dark: #6ee7b7; /* Tailwind emerald-300 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfdfc;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-menta { background-color: var(--menta); }
+        .text-menta-dark { color: #065f46; }
+        .border-menta { border-color: var(--menta); }
+        
+        /* Custom transitions */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter text-menta-dark">OOKINI</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#metodos" class="hover:text-emerald-500 transition">Métodos</a>
+                <a href="#catas" class="hover:text-emerald-500 transition">Catas</a>
+                <a href="#historia" class="hover:text-emerald-500 transition">Historia</a>
+                <a href="#reservar" class="bg-menta px-4 py-2 rounded-full hover:bg-menta-dark transition">Reservar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/90 z-10"></div>
+        <!-- Simplified decorative background -->
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-menta/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-emerald-100/40 rounded-full blur-3xl"></div>
+        
+        <div class="relative z-20 text-center px-6 max-w-3xl fade-in">
+            <span class="text-sm tracking-[0.3em] uppercase mb-4 block text-emerald-800 font-semibold">Experiencia Ritual</span>
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 text-gray-900 leading-tight">Café con Alma.</h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-light">
+                En Ookini honramos el tiempo. Descubre el arte de la extracción lenta y el respeto por el grano de especialidad.
+            </p>
+            <a href="#reservar" class="inline-block bg-menta text-emerald-900 px-10 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                Reservar una Taza
+            </a>
+        </div>
+    </header>
+
+    <!-- Metodos Section -->
+    <section id="metodos" class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">El Menú de Extracción</h2>
+                <div class="h-1 w-20 bg-menta mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12 mb-20">
+                <!-- V60 -->
+                <div class="group p-8 rounded-2xl bg-gray-50 border border-transparent hover:border-menta transition-all duration-500">
+                    <div class="mb-6 text-4xl">☕</div>
+                    <h3 class="text-2xl font-bold mb-2">V60</h3>
+                    <p class="text-gray-500 mb-4 text-sm uppercase tracking-wider">Limpio y Brillante</p>
+                    <p class="text-gray-600 mb-6">Resalta la acidez cítrica y las notas florales más delicadas del grano.</p>
+                    <span class="text-2xl font-serif text-emerald-700">$5.00</span>
+                </div>
+                <!-- Kyoto Drip -->
+                <div class="group p-8 rounded-2xl bg-gray-50 border border-transparent hover:border-menta transition-all duration-500">
+                    <div class="mb-6 text-4xl">⏳</div>
+                    <h3 class="text-2xl font-bold mb-2">Kyoto Drip</h3>
+                    <p class="text-gray-500 mb-4 text-sm uppercase tracking-wider">Frío por Goteo Lento</p>
+                    <p class="text-gray-600 mb-6">Extracción de 12 horas gota a gota. Una textura sedosa casi licorosa.</p>
+                    <span class="text-2xl font-serif text-emerald-700">$7.00</span>
+                </div>
+                <!-- Siphon -->
+                <div class="group p-8 rounded-2xl bg-gray-50 border border-transparent hover:border-menta transition-all duration-500">
+                    <div class="mb-6 text-4xl">⚗️</div>
+                    <h3 class="text-2xl font-bold mb-2">Siphon</h3>
+                    <p class="text-gray-500 mb-4 text-sm uppercase tracking-wider">Espectáculo Químico</p>
+                    <p class="text-gray-600 mb-6">Cuerpo completo y temperatura perfecta. El método más teatral.</p>
+                    <span class="text-2xl font-serif text-emerald-700">$8.00</span>
+                </div>
+            </div>
+
+            <!-- Walk-in Section -->
+            <div class="bg-emerald-50 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between border border-emerald-100">
+                <div class="md:w-2/3 mb-6 md:mb-0">
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-2 block">Sin reserva previa</span>
+                    <h3 class="text-3xl font-bold mb-4">Prensa Francesa (Walk-in)</h3>
+                    <p class="text-gray-600 max-w-lg italic">"Para quienes disfrutan de un café honesto, con cuerpo y sin complicaciones en cualquier momento del día."</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-serif text-emerald-800 mb-2">$3.00</div>
+                    <p class="text-xs text-emerald-600 uppercase">Disponible todo el día</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catas Section -->
+    <section id="catas" class="py-24 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <div class="relative">
+                    <div class="aspect-square bg-menta rounded-2xl overflow-hidden flex items-center justify-center text-8xl">🥣</div>
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 shadow-xl rounded-xl">
+                        <p class="font-bold text-emerald-800">8 Cupos</p>
+                        <p class="text-xs uppercase text-gray-400 tracking-tighter">Por sesión semanal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-4xl font-bold mb-6 italic">Cata Semanal: <br>Un Viaje Sensorial</h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Aprende a diferenciar perfiles de tueste, notas de cata y orígenes. Incluye degustación guiada de 4 granos distintos y maridaje sugerido.
+                </p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-gray-700">
+                        <span class="w-6 h-6 bg-menta rounded-full flex items-center justify-center mr-3 text-xs">✓</span> 90 minutos de experiencia
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="w-6 h-6 bg-menta rounded-full flex items-center justify-center mr-3 text-xs">✓</span> Guía de cata impresa
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="w-6 h-6 bg-menta rounded-full flex items-center justify-center mr-3 text-xs">✓</span> Máximo 8 personas
+                    </li>
+                </ul>
+                <div class="text-3xl font-serif text-emerald-800 mb-6">$25.00 <span class="text-sm text-gray-400 font-sans">/ por persona</span></div>
+                <a href="#reservar" class="inline-block border-2 border-emerald-800 text-emerald-800 px-8 py-3 rounded-full hover:bg-emerald-800 hover:text-white transition">Inscribirme</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historia Section -->
+    <section id="historia" class="py-24 px-6 bg-white border-t border-gray-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">El Origen: OOKINI</h2>
+            <div class="italic text-2xl text-gray-500 mb-8 font-serif leading-relaxed">
+                "Una palabra, un sentimiento de Kioto."
+            </div>
+            <p class="text-lg text-gray-600 leading-loose">
+                En el dialecto de la antigua capital japonesa, Kioto, **Ookini** (おおきに) no es solo un "gracias". Es una expresión de gratitud profunda que nace de la amabilidad. Hemos elegido este nombre porque cada taza que servimos es un agradecimiento al productor, al tostador y, sobre todo, a ti por permitirnos compartir este ritual.
+            </p>
+        </div>
+    </section>
+
+    <!-- Reserva Form Section -->
+    <section id="reservar" class="py-24 px-6 bg-emerald-50">
+        <div class="max-w-2xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <div class="bg-emerald-800 p-8 text-white text-center">
+                <h2 class="text-3xl font-bold">Reserva tu Experiencia</h2>
+                <p class="opacity-80 mt-2">Límite diario: 50 tazas especiales</p>
+            </div>
+            
+            <form id="reservaForm" class="p-8 space-y-6">
+                <div>
+                    <label class="block text-sm font-semibold mb-2">Nombre Completo</label>
+                    <input type="text" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-menta">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Fecha</label>
+                        <input type="date" id="reservaFecha" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-menta">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Método Especial</label>
+                        <select id="metodoSeleccionado" required class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-menta">
+                            <option value="">Selecciona...</option>
+                            <option value="v60">V60 ($5)</option>
+                            <option value="kyoto">Kyoto Drip ($7)</option>
+                            <option value="siphon">Siphon ($8)</option>
+                            <option value="cata">Cata Semanal ($25)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="cantidadContainer">
+                    <label class="block text-sm font-semibold mb-2">Cantidad de Tazas (Máx. 2 por persona)</label>
+                    <input type="number" id="cantidadTazas" min="1" max="2" value="1" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-menta">
+                    <p class="text-xs text-gray-400 mt-2">Ayúdanos a cuidar nuestra cuota de 50 tazas diarias.</p>
+                </div>
+
+                <div id="messageContainer" class="hidden p-4 rounded-xl text-sm"></div>
+
+                <button type="submit" class="w-full bg-emerald-800 text-white py-4 rounded-xl font-bold text-lg hover:bg-emerald-900 transition-all shadow-lg hover:shadow-emerald-200">
+                    Confirmar Reserva
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-8 md:mb-0">
+                <span class="text-3xl font-bold tracking-tighter text-menta">OOKINI</span>
+                <p class="text-gray-400 mt-2">Artesanos del café filtrado.</p>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="text-gray-400 mb-2 italic">Abierto todos los días</p>
+                <p>8:00 AM — 7:00 PM</p>
+                <p class="mt-4 text-xs text-gray-500">© 2024 Ookini Café de Especialidad</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simulamos una base de datos local para los límites diarios
+        // En una app real esto vendría de un servidor
+        const mockCupos = {
+            '2024-12-25': 48, // Solo quedan 2 para llegar a 50
+            '2024-12-26': 10
+        };
+
+        const form = document.getElementById('reservaForm');
+        const fechaInput = document.getElementById('reservaFecha');
+        const metodoInput = document.getElementById('metodoSeleccionado');
+        const cantidadInput = document.getElementById('cantidadTazas');
+        const messageContainer = document.getElementById('messageContainer');
+        const cantidadContainer = document.getElementById('cantidadContainer');
+
+        // Lógica para ajustar UI según método
+        metodoInput.addEventListener('change', (e) => {
+            if (e.target.value === 'cata') {
+                cantidadInput.max = 8;
+                cantidadContainer.querySelector('label').innerText = "Cantidad de Cupos (Máx. 8)";
+                cantidadContainer.querySelector('p').innerText = "Las catas son sesiones grupales limitadas.";
+            } else {
+                cantidadInput.max = 2;
+                cantidadContainer.querySelector('label').innerText = "Cantidad de Tazas (Máx. 2 por persona)";
+                cantidadContainer.querySelector('p').innerText = "Ayúdanos a cuidar nuestra cuota de 50 tazas diarias.";
+            }
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const fecha = fechaInput.value;
+            const cantidad = parseInt(cantidadInput.value);
+            const metodo = metodoInput.value;
+            
+            // Lógica de límites para métodos especiales
+            if (metodo !== 'cata') {
+                const cuposActuales = mockCupos[fecha] || 0;
+                
+                if (cuposActuales + cantidad > 50) {
+                    showMessage(`Lo sentimos, solo quedan ${50 - cuposActuales} tazas disponibles para este día.`, 'error');
+                    return;
+                }
+                
+                if (cantidad > 2) {
+                    showMessage("El límite es de 2 tazas por persona para métodos especiales.", 'error');
+                    return;
+                }
+            } else {
+                // Lógica para cata (máximo 8 personas)
+                // Aquí podrías añadir lógica similar para cupos de cata
+            }
+
+            showMessage("¡Reserva solicitada con éxito! Revisa tu correo para la confirmación. Ookini.", 'success');
+            form.reset();
+        });
+
+        function showMessage(msg, type) {
+            messageContainer.innerText = msg;
+            messageContainer.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
+            
+            if (type === 'error') {
+                messageContainer.classList.add('bg-red-100', 'text-red-700');
+            } else {
+                messageContainer.classList.add('bg-green-100', 'text-green-700');
+            }
+        }
+
+        // Set min date to today
+        const today = new Date().toISOString().split('T')[0];
+        fechaInput.setAttribute('min', today);
+    </script>
+</body>
+</html>

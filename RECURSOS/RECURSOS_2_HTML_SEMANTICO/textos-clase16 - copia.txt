@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ookini - Café de especialidad</title>
+
+</head>
+
+<body>
+
+
+<!-- CABECERA -->
+<header>
+    <h1>Ookini</h1>
+    <p>Café de especialidad</p>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#metodos">Métodos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+
+<!-- CONTENIDO PRINCIPAL -->
+<main>
+
+    <!-- SECCIÓN INICIO -->
+    <section id="inicio">
+        <h2>Café de especialidad</h2>
+
+        <p>
+            Ookini significa gracias en Kansai, la región donde nació
+            el método Kyoto drip. Servimos café de especialidad
+            preparado con métodos lentos y con la atención que el
+            grano merece.
+        </p>
+
+        <img 
+            src="okini-barra.png" 
+            alt="Barra de café Ookini" 
+            width="250"
+        >
+    </section>
+
+
+    <!-- SECCIÓN MÉTODOS -->
+    <section id="metodos">
+        <h2>Métodos de preparación</h2>
+
+        <h3>V60</h3>
+        <p>
+            Filtrado por goteo con molienda media. El agua cae despacio
+            sobre el café durante tres minutos y arrastra notas limpias
+            y brillantes. Es el método más versátil de la barra y el
+            mejor para descubrir la personalidad de un grano nuevo.
+        </p>
+
+        <h3>Kyoto Drip</h3>
+        <p>
+            Extracción en frío gota a gota durante ocho horas. Molienda
+            media gruesa, agua a temperatura ambiente, paciencia
+            japonesa. El resultado es un café denso, dulce y con muy
+            poca acidez. Lo dejamos preparándose desde la noche anterior.
+        </p>
+
+        <h3>Sifón</h3>
+        <p>
+            Método de vacío con molienda media fina. El agua sube por
+            presión, se mezcla con el café durante un minuto, y baja
+            filtrada cuando se apaga la llama. Tarda cuatro minutos en
+            total y produce una taza limpia y aromática.
+        </p>
+
+        <h3>Prensa francesa</h3>
+        <p>
+            Inmersión total con molienda gruesa durante cuatro minutos.
+            Sin filtro de papel, los aceites del café pasan a la taza
+            y construyen un cuerpo redondo y robusto. Es nuestro único
+            método sin reserva, listo apenas lo pides.
+        </p>
+    </section>
+
+</main>
+
+
+<!-- PIE DE PÁGINA -->
+<footer id="contacto">
+
+    <h2>Contacto</h2>
+
+    <p>Visítanos en Ookini Café.</p>
+    <p>Horario: Lunes a sábado, de 8:00 a.m. a 8:00 p.m.</p>
+    <p>Correo: contacto@ookini.com</p>
+
+    <img
+        src="okini-barra.png"
+        alt="Barra del café Ookini"
+        width="250"
+    >
+
+    <p>&copy; 2026 Ookini - Café de especialidad</p>
+
+</footer>
+
+
+</body>
+
+</html>

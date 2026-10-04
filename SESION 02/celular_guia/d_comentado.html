@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- <html>: Elemento raíz del documento. lang="es" indica que el contenido está en español -->
+<html lang="es">
+
+<!-- <head>: Configuración técnica y metadatos (no se ven directamente en la página) -->
+<head>
+    <!-- <meta charset>: Permite que el navegador reconozca tildes, ñ y caracteres especiales -->
+    <meta charset="UTF-8">
+    <!-- <meta viewport>: Hace que la página sea responsiva y se adapte al ancho de celulares y computadoras -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>: Texto que aparece en la pestaña superior del navegador web -->
+    <title>Ookini - Café de especialidad</title>
+</head>
+
+<!-- <body>: Contiene todo el contenido visible que el usuario verá en la pantalla -->
+<body>
+
+<!-- <header>: Zona de identidad del sitio (quién es el negocio/marca) y menú de navegación -->
+<header>
+    <!-- <h1>: Título principal y más importante de la página (solo debe haber uno por documento) -->
+    <h1>Ookini</h1>
+    <!-- <p>: Párrafo o lema descriptivo que acompaña a la marca -->
+    <p>Café de especialidad</p>
+
+    <!-- <nav>: Contenedor semántico exclusivo para los enlaces de navegación del sitio -->
+    <nav>
+        <!-- <a href="#id">: Enlace interno que salta directamente a la sección con ese id -->
+        <a href="#inicio">Inicio</a>
+        <a href="#metodos">Métodos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<!-- <main>: Contiene el contenido central y único de la página (solo un <main> por documento) -->
+<main>
+
+    <!-- <section>: Agrupa un bloque temático con sentido propio (ej. sección 'inicio' / presentación) -->
+    <section id="inicio">
+        <!-- <h2>: Título de segundo nivel para nombrar la sección temática -->
+        <h2>Café de especialidad</h2>
+
+        <!-- <p>: Bloque de texto estándar para redactar párrafos informativos -->
+        <p>
+            Ookini significa gracias en Kansai, la región donde nació
+            el método Kyoto drip. Servimos café de especialidad
+            preparado con métodos lentos y con la atención que el
+            grano merece.
+        </p>
+
+        <!-- <img>: Inserta una imagen. src es la ruta del archivo y alt es el texto alternativo accesible -->
+        <img 
+            src="okini-barra.png" 
+            alt="Barra de café Ookini" 
+            width="250"
+        >
+    </section>
+
+    <!-- <section>: Bloque temático que agrupa los métodos de preparación -->
+    <section id="metodos">
+        <!-- <h2>: Encabezado de segundo nivel que titula toda la sección de métodos -->
+        <h2>Métodos de preparación</h2>
+
+        <!-- <h3>: Subtítulo de tercer nivel para el nombre específico de cada método -->
+        <h3>V60</h3>
+        <p>
+            Filtrado por goteo con molienda media. El agua cae despacio
+            sobre el café durante tres minutos y arrastra notas limpias
+            y brillantes. Es el método más versátil de la barra y el
+            mejor para descubrir la personalidad de un grano nuevo.
+        </p>
+
+        <!-- <h3>: Segundo método de preparación -->
+        <h3>Kyoto Drip</h3>
+        <p>
+            Extracción en frío gota a gota durante ocho horas. Molienda
+            media gruesa, agua a temperatura ambiente, paciencia
+            japonesa. El resultado es un café denso, dulce y con muy
+            poca acidez. Lo dejamos preparándose desde la noche anterior.
+        </p>
+
+        <!-- <h3>: Tercer método de preparación -->
+        <h3>Sifón</h3>
+        <p>
+            Método de vacío con molienda media fina. El agua sube por
+            presión, se mezcla con el café durante un minuto, y baja
+            filtrada cuando se apaga la llama. Tarda cuatro minutos en
+            total y produce una taza limpia y aromática.
+        </p>
+
+        <!-- <h3>: Cuarto método de preparación -->
+        <h3>Prensa francesa</h3>
+        <p>
+            Inmersión total con molienda gruesa durante cuatro minutos.
+            Sin filtro de papel, los aceites del café pasan a la taza
+            y construyen un cuerpo redondo y robusto. Es nuestro único
+            método sin reserva, listo apenas lo pides.
+        </p>
+    </section>
+
+</main>
+
+<!-- <footer>: Pie de página con datos de cierre: información de contacto, horarios y copyright -->
+<footer id="contacto">
+
+    <!-- <h2>: Título de la sección de contacto en el pie de página -->
+    <h2>Contacto</h2>
+
+    <p>Visítanos en Ookini Café.</p>
+    <p>Horario: Lunes a sábado, de 8:00 a.m. a 8:00 p.m.</p>
+    <p>Correo: contacto@ookini.com</p>
+
+    <!-- <img>: Imagen de la barra al pie del sitio -->
+    <img
+        src="okini-barra.png"
+        alt="Barra del café Ookini"
+        width="250"
+    >
+
+    <!-- <p>: Mensaje final de derechos de autor con el símbolo copyright (&copy;) -->
+    <p>&copy; 2026 Ookini - Café de especialidad</p>
+
+</footer>
+
+</body>
+</html>
