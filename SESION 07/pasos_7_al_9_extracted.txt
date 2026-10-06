@@ -1,0 +1,645 @@
+TOTAL PAGES: 18
+
+==================== PAGE 1 ====================
+Guía de Figma · Sesión 07: termina la
+presentación principal
+Curso Diseño Web · Centro de Informática USS · Protech XP · Pasos 7 al 9 del manual · Versión 4
+Retomas tu diseño donde lo dejaste: la columna de texto, los botones y la tarjeta de código del
+Hero.
+Dónde estás
+Cuándo Pasos del
+manual Qué construyes
+Sesiones 05 y 06 1 al 6 Marco principal, cabecera, menú y el marco hero-
+section
+Sesión 07 (hoy) 7 al 9 El Hero completo: columna de texto, botones y
+tarjeta de código
+Sesión 08 10 al 14 Sobre mí, Proyectos, Contacto, pie de página e
+imágenes
+Si ya tienes una capa creada: no la crees otra vez. Selecciónala, compara sus valores con el
+bloque de esa capa y corrige lo que no coincida.
+Cómo leer esta guía
+Cada bloque de valores tiene la misma forma. Arriba, en la franja de color, está la capa que debes
+seleccionar en el panel Capas. Debajo van las secciones del panel derecho, en el mismo orden
+en que aparecen en Figma, y en cada una el campo y el valor exacto que debes poner.
+Regla Qué significa
+Espacio no es Espaciado Espacio es la separación entre los elementos que están dentro del
+marco. Espaciado es el relleno interno: la distancia entre el borde del
+marco y su contenido
+Los dos campos de
+Espaciado
+El campo izquierdo es el horizontal (izquierda y derecha). El campo
+derecho es el vertical (arriba y abajo)
+Color y porcentaje En Relleno y en Trazo van dos datos: el color y, a su derecha, el
+porcentaje. El porcentaje es siempre 100 . Si el ojo de esa fila está
+tachado, el color existe pero está oculto
+Opacidad En Apariencia, la Opacidad de toda capa es 100%
+El signo % En Altura de la línea escribe el valor con el signo: 160% . Sin el signo,
+Figma lo toma como 160 píxeles por línea
+Diseño Web · Centro de Informática USS · Protech XP 1
+==================== PAGE 2 ====================
+Regla Qué significa
+W y H Son los campos del ancho y del alto. Están en la fila titulada
+Redimensionar; cuando las dos medidas son fijas, esa fila puede
+titularse Dimensiones. Al abrir el menú de cada campo: Ajustar al
+contenido, la capa mide lo que su contenido (el campo muestra
+«Ajustado»); Llenar el contenedor, se estira hasta ocupar su marco
+padre; un número, medida fija
+Los campos de
+Tipografía
+Tres campos no tienen título: la fuente es el primer menú; debajo, a la
+izquierda, está el grosor de letra Regular, Medium, SemiBold); a su
+derecha, el tamaño. En Alineación, el primer grupo de iconos alinea en
+horizontal
+Peso En Trazo, el grosor de la línea es el campo Peso
+Flujo La fila tiene cuatro iconos. Vertical es el segundo, con la flecha ↓.
+Horizontal es el tercero, con la flecha →. Al pasar el cursor aparece el
+nombre
+Trazo y medidas En un marco en Ajustar al contenido, el trazo puede sumar a la medida:
+1 por cada lado. Por eso un botón con trazo puede medir 54 de alto y
+otro igual sin trazo, 52. Las dos medidas son correctas
+Textos copiados Un texto copiado desde este PDF llega partido en varias líneas.
+Después de pegarlo, borra los saltos de línea
+La marca «sugerido» El manual no fija ese valor. Es una propuesta: puedes cambiarla
+Primero el contenido, después el marco
+En esta guía, casi todos los marcos se crean alrededor de algo que ya existe: escribes el texto o
+dibujas la figura y después presionas Shift + A . Así el marco nace del tamaño de su contenido y
+dentro del lugar correcto. Shift + A  hace una de estas tres cosas, según lo que tengas
+seleccionado:
+Si tienes seleccionado Shift  A hace esto
+Un texto, una figura o varias capas Crea un marco nuevo que las envuelve. En Capas aparece
+con un nombre como Frame 1  o Marco 1 : haz doble clic
+sobre el nombre y escribe el que indica la guía
+Un marco que ya tiene Disposición
+automática
+Crea otro marco nuevo que lo envuelve. Sirve para meter un
+botón dentro de su fila, o una tarjeta dentro de su lista
+Un marco recién dibujado con F No crea nada nuevo: le activa la Disposición automática a
+ese mismo marco. Se usa solo en marcos de medida fija o
+con Espaciado
+Diseño Web · Centro de Informática USS · Protech XP 2
+==================== PAGE 3 ====================
+Si Shift  A no crea un marco nuevo: mira el panel de capas. Si después de presionarlo no
+aparece un marco nuevo alrededor de lo que tenías seleccionado, deshaz con Ctrl + Z ,
+presiona Ctrl + Alt + G  para enmarcar la selección (en Mac, Cmd + Option + G ) y, con ese
+marco seleccionado, presiona Shift + A .
+Por qué no al revés: un marco vacío en Ajustar al contenido se encoge hasta casi
+desaparecer y ya no puedes hacer clic dentro. Y un marco pequeño dibujado «dentro» de
+otro suele caer fuera. El manual dibuja primero el marco; el resultado final es el mismo.
+Para seleccionar varias capas: en Capas, haz clic en la primera y, con Shift  pulsado, en la
+última.
+Atajos: F  crea un marco, T  un texto, O  un círculo, R  un rectángulo, Shift + A  activa la
+Disposición automática y Ctrl + D  duplica (en Mac, Cmd + D ).
+Antes de seguir · Revisa los Pasos 1 al 6
+Lo que construyas hoy se apoya en lo anterior. Selecciona cada capa y compara sus valores con
+estos bloques. Corrige lo que no coincida.
+Sobre los nombres: esta guía usa mi-portafolio  para el marco principal y Encabezado  para
+la cabecera. En el manual se llaman portafolio-dagner-chuman  y Header : son las mismas
+capas.
+Selecciona en Capasmi-portafolio
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición automática Flujo Vertical: el segundo icono, con la flecha ↓
+W (ancho) 1440
+H (alto) Altura fija 2816
+Espacio 0
+Espaciado › campo izquierdo 0
+Espaciado › campo derecho 0
+Apariencia Opacidad 100%
+Relleno Color F9FAFB
+Porcentaje 100
+e l m a rc o  p rin c ip a l
+Diseño Web · Centro de Informática USS · Protech XP 3
+==================== PAGE 4 ====================
+Selecciona en CapasEncabezado
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición automática Flujo Horizontal: el tercer icono, con la flecha →
+W (ancho) Abre el menú y elige Llenar el contenedor
+H (alto) Altura fija 80
+Espacio Escribe la palabra Auto
+Alineación La fila del medio: centra en vertical
+Espaciado › campo izquierdo 80  (horizontal)
+Espaciado › campo derecho 0  (vertical)
+Apariencia Opacidad 100%
+Relleno Color FFFFFF
+Porcentaje 100
+Trazo Color E5E7EB
+Porcentaje 100
+Peso 1
+Lados Pulsa el último icono de la fila de Peso (un
+cuadrado) y elige Inferior
+Comprueba: el ancho del Encabezado  es igual al de mi-portafolio : ocupa todo el ancho del
+marco.
+Selecciona en CapasDagner Chuman
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición Redimensionar (tres iconos) El primero: Ajuste automático de ancho
+Tipografía Fuente Outfit
+Grosor de letra Bold
+Tamaño 18
+Alineación Izquierda: el primer icono
+Relleno Color 0B0F19
+Porcentaje 100
+Apariencia Opacidad 100%
+la  c a b e c e ra
+e l te x to  d e l n o m b re ,  d e n tro  d e  E n c a b e z a d o
+Diseño Web · Centro de Informática USS · Protech XP 4
+==================== PAGE 5 ====================
+Selecciona en Capasnav-links
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición automática Flujo Horizontal: el tercer icono, con la flecha →
+W (ancho) Ajustar al contenido
+H (alto) Ajustar al contenido
+Alineación El punto del centro
+Espacio 32
+Espaciado › campo izquierdo 0
+Espaciado › campo derecho 0
+Apariencia Opacidad 100%
+Relleno Color Ninguno: si hay uno, quítalo con −
+Selecciona en CapasSobre mí · Proyectos · Contacto
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición Redimensionar (tres iconos) El primero: Ajuste automático de ancho
+Tipografía Fuente Geist
+Grosor de letra Medium
+Tamaño 14
+Alineación Izquierda: el primer icono
+Relleno Color 9CA3AF
+Porcentaje 100
+Apariencia Opacidad 100%
+e l m a rc o  d e l m e n ú ,  d e n tro  d e  E n c a b e z a d o
+lo s  tre s  te x to s  d e l m e n ú :  s e le c c ió n a lo s  ju n to s  c o n  S h i f t
+Diseño Web · Centro de Informática USS · Protech XP 5
+==================== PAGE 6 ====================
+Selecciona en Capashero-section
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición automática Flujo Horizontal: el tercer icono, con la flecha →
+W (ancho) Abre el menú y elige Llenar el contenedor
+H (alto) Ajustar al contenido
+Alineación El punto central de la columna izquierda
+Espacio 64
+Espaciado Pulsa el icono de lados independientes, a la
+derecha de los dos campos
+Espaciado › Superior 160
+Espaciado › Derecho 80
+Espaciado › Inferior 100
+Espaciado › Izquierdo 80
+Recortar contenido Casilla desmarcada
+Apariencia Opacidad 100%
+Relleno Color Ninguno: si hay uno, quítalo con −
+Comprueba: en Capas, hero-section  aparece con sangría, dentro de mi-portafolio . La
+cabecera mide 80 de alto, con el nombre a la izquierda y el menú a la derecha.
+Lo que vas a construir hoy
+mi-portafolio · 1440 de ancho
+Dagner Chuman Sobre mí     Proyectos     Contacto
+hero-section
+hero-left · Ancho fijo 696
+Título
+Outfit ExtraBold 64 · altura de línea 110 %
+Párrafo
+Geist Regular 18 · altura de línea 160 %
+Ver Proyectos Contáctame hero-actions · Espacio 16
+32
+32
+hero-right · 520  404
+dagner-chuman.ts
+const docente = {
+  nombre: "Dagner Chuman",
+  rol: "Docente & Ingeniero Web",
+  …
+};
+Radio 12 · Trazo #E5E7EB · Recortar contenido
+Espaciado superior 160
+Espaciado inferior 10080 80
+Espacio 64
+Esquema del Hero. Los números en color son los valores de Espacio y Espaciado que escribes en el panel derecho.
+d e n tro  d e  m i - p o r t a f o l i o ,  d e b a jo  d e  E n c a b e z a d o
+Diseño Web · Centro de Informática USS · Protech XP 6
+==================== PAGE 7 ====================
+Paso 7 · La columna izquierda (hero-left)
+Primero escribes los dos textos dentro de hero-section  y después los envuelves en el marco
+hero-left .
+7.1 · Escribe los dos textos
+ Presiona T  y haz clic en una zona vacía dentro de hero-section : es la franja que está justo
+debajo de la cabecera.
+ Escribe: Formando a la próxima generación de desarrolladores web.
+ Pulsa Esc  para salir del texto.
+ Presiona T  otra vez y haz clic en otra zona vacía de hero-section , lejos del primer texto.
+ Escribe, todo seguido y sin pulsar Enter: Docente e Ingeniero enfocado en el desarrollo web
+moderno, arquitectura de software y formación tecnológica integral en el Centro de
+Informática USS.
+ Pulsa Esc  para salir del texto.
+Comprueba: en Capas hay dos textos nuevos dentro de hero-section . No importa que todavía
+se vean pequeños o en una sola línea.
+7.2 · Envuélvelos en hero-left
+ En Capas, haz clic en el texto del título y, con Shift  pulsado, en el texto del párrafo: quedan
+los dos seleccionados.
+ Presiona Shift + A . Figma crea un marco nuevo que contiene los dos textos.
+ En Capas, haz doble clic sobre el nombre del marco nuevo y escribe hero-left .
+Selecciona en Capashero-left
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición automática Flujo Vertical: el segundo icono, con la flecha ↓
+W (ancho) Ancho fijo 696
+H (alto) Abre el menú y elige Ajustar al contenido
+Alineación El punto de arriba a la izquierda
+Espacio 32
+Espaciado › campo izquierdo 0
+Espaciado › campo derecho 0
+Recortar contenido Casilla desmarcada
+Apariencia Opacidad 100%
+Relleno Color Ninguno: si hay uno, quítalo con −
+Comprueba: en Capas, hero-left  tiene sangría bajo hero-section  y contiene los dos textos,
+con el título arriba. Si el párrafo quedó arriba, arrástralo debajo del título.
+e l m a rc o  n u e v o
+Diseño Web · Centro de Informática USS · Protech XP 7
+==================== PAGE 8 ====================
+Si ya tenías hero-left creado: revisa sobre todo el campo H y la casilla Recortar contenido.
+Con Altura fija y la casilla marcada, lo que añadas queda cortado y no se ve.
+7.3 · Los valores del título
+Selecciona en CapasFormando a la próxima…
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición W (ancho) Abre el menú del campo y elige Llenar el
+contenedor
+Tipografía Fuente Outfit
+Grosor de letra ExtraBold
+Tamaño 64
+Altura de la línea 110% , con el signo
+Alineación Izquierda: el primer icono
+Relleno Color 0B0F19
+Porcentaje 100
+Apariencia Opacidad 100%
+7.4 · Los valores del párrafo
+En Capas, comprueba que solo esté seleccionado el párrafo, no el título.
+Selecciona en CapasDocente e Ingeniero…
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición W (ancho) Abre el menú del campo y elige Llenar el
+contenedor
+Tipografía Fuente Geist
+Grosor de letra Regular
+Tamaño 18
+Altura de la línea 160% , con el signo
+Alineación Izquierda: el primer icono
+Relleno Color 374151
+Porcentaje 100
+Apariencia Opacidad 100%
+Comprueba: el título se parte solo en varias líneas sin salirse de los 696 de ancho, y entre el título
+y el párrafo hay 32 de separación.
+Paso 8 · Los botones de la presentación (hero-actions)
+Construyes los botones en la zona vacía de hero-section , a la derecha de hero-left , y al final
+los llevas a su lugar.
+e l te x to  d e l títu lo ,  d e n tro  d e  h e r o - l e f t
+e l te x to  d e l p á rra f o ,  d e n tro  d e  h e r o - l e f t
+Diseño Web · Centro de Informática USS · Protech XP 8
+==================== PAGE 9 ====================
+8.1 · El botón principal (btn-primary)
+ Presiona T  y haz clic en una zona vacía de hero-section , a la derecha de hero-left .
+ Escribe Ver Proyectos  y pulsa Esc . El texto queda seleccionado.
+ Presiona Shift + A . Figma crea un marco nuevo alrededor del texto.
+ En Capas, haz doble clic sobre el nombre del marco nuevo y escribe btn-primary .
+Selecciona en Capasbtn-primary
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición automática Flujo Horizontal: el tercer icono, con la flecha →
+W (ancho) Abre el menú y elige Ajustar al contenido
+H (alto) Ajustar al contenido
+Alineación El punto del centro
+Espacio 8
+Espaciado › campo izquierdo 24  (horizontal)
+Espaciado › campo derecho 14  (vertical)
+Recortar contenido Casilla desmarcada
+Apariencia Opacidad 100%
+Radio de esquina 8
+Relleno Color 06B6C4
+Porcentaje 100
+Trazo Color Ninguno: si hay uno, quítalo con −
+Si la sección Relleno está vacía: pulsa +  para añadir un relleno y luego escribe el color.
+Revisa que el ojo de esa fila no esté tachado.
+Selecciona en CapasVer Proyectos
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición Redimensionar (tres iconos) El primero: Ajuste automático de ancho
+Tipografía Fuente Geist
+Grosor de letra SemiBold
+Tamaño 15
+Altura de la línea 160% , con el signosugerido
+Alineación Centrado: el segundo icono
+Relleno Color FFFFFF
+Porcentaje 100
+Apariencia Opacidad 100%
+e l m a rc o  d e l b o tó n ,  n o  e l te x to
+e l te x to  q u e  e s tá  d e n tro  d e  b t n - p r i m a r y
+Diseño Web · Centro de Informática USS · Protech XP 9
+==================== PAGE 10 ====================
+Comprueba: selecciona otra vez btn-primary . Sus campos W y H muestran «Ajustado» y el
+botón mide cerca de 149  52. El alto sale de 14  24  14.
+8.2 · La fila de botones (hero-actions)
+ En Capas, haz clic en btn-primary .
+ Presiona Shift + A . Como el botón ya tiene Disposición automática, Figma crea otro marco
+nuevo que lo envuelve.
+ En Capas, haz doble clic sobre el nombre de ese marco y escribe hero-actions .
+Selecciona en Capashero-actions
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición automática Flujo Horizontal: el tercer icono, con la flecha →
+W (ancho) Ajustar al contenido
+H (alto) Ajustar al contenido
+Alineación El punto central de la columna izquierda
+Espacio 16
+Espaciado › campo izquierdo 0
+Espaciado › campo derecho 0
+Recortar contenido Casilla desmarcada
+Apariencia Opacidad 100%
+Relleno Color Ninguno: si hay uno, quítalo con −
+Comprueba: en Capas, btn-primary  tiene sangría bajo hero-actions .
+8.3 · El botón secundario (btn-secundary)
+ En Capas, haz clic en btn-primary .
+ Duplícalo con Ctrl + D  (en Mac, Cmd + D ). La copia aparece a su derecha, dentro de hero-
+actions .
+ En Capas, haz doble clic sobre el nombre de la copia y escribe btn-secundary .
+e l m a rc o  q u e  e n v u e lv e  a l b o tó n
+Diseño Web · Centro de Informática USS · Protech XP 10
+==================== PAGE 11 ====================
+La copia debería conservar los valores del primero, pero compruébalos uno por uno. Lo que
+cambia es el Relleno y el Trazo:
+Selecciona en Capasbtn-secundary
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición automática Flujo Horizontal: el tercer icono, con la flecha →
+W (ancho) Abre el menú y elige Ajustar al contenido
+H (alto) Ajustar al contenido
+Alineación El punto del centro
+Espacio 8
+Espaciado › campo izquierdo 24  (horizontal)
+Espaciado › campo derecho 14  (vertical)
+Recortar contenido Casilla desmarcada
+Apariencia Opacidad 100%
+Radio de esquina 8
+Relleno Color Ninguno: quita el azul con −
+Trazo Color 374151
+Porcentaje 100
+Peso 1
+ Haz doble clic sobre el texto de btn-secundary , borra Ver Proyectos  y escribe Contáctame .
+Pulsa Esc .
+Selecciona en CapasContáctame
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición Redimensionar (tres iconos) El primero: Ajuste automático de ancho
+Tipografía Fuente Geist
+Grosor de letra SemiBold
+Tamaño 15
+Altura de la línea 160% , con el signosugerido
+Alineación Centrado: el segundo icono
+Relleno Color 0B0F19
+Porcentaje 100
+Apariencia Opacidad 100%
+Comprueba: btn-secundary  mide 54 de alto: los 52 del primero más 1 del trazo arriba y 1 abajo.
+Si mide 52, tu archivo no suma el trazo a la medida y también está bien. De ancho mide entre 130
+y 140. Los dos botones quedan uno junto al otro, separados por 16.
+e l m a rc o  d e l s e g u n d o  b o tó n ,  n o  e l te x to
+e l te x to  q u e  e s tá  d e n tro  d e  b t n - s e c u n d a r y
+Diseño Web · Centro de Informática USS · Protech XP 11
+==================== PAGE 12 ====================
+8.4 · Lleva los botones a su lugar
+ En Capas, abre la flecha de hero-left  para ver sus dos textos.
+ Haz clic sostenido sobre hero-actions  y arrástralo hasta dejarlo justo debajo del texto del
+párrafo, con la misma sangría que los dos textos.
+Comprueba: en Capas, hero-actions  tiene sangría bajo hero-left  y es su tercer hijo, después
+del párrafo. En el diseño, los botones quedan debajo del párrafo, a 32 de distancia.
+Si tu Hero tiene una imagen de fondo: los colores del manual están pensados para un fondo
+claro y liso. Sobre una imagen, cambia el Relleno del título y del párrafo a FFFFFF  al 100 . En
+btn-secundary , pon Relleno FFFFFF  al 100 , quita el Trazo y deja el texto en 0B0F19 : un
+botón blanco se ve en cualquier parte de la imagen.
+Diseño Web · Centro de Informática USS · Protech XP 12
+==================== PAGE 13 ====================
+Paso 9 · El bloque visual derecho (hero-right)
+Es la tarjeta que simula una ventana de código. Se construye solo con marcos y texto: no lleva
+ninguna imagen. Como tiene medida fija, aquí sí dibujas primero el marco.
+ En Capas, haz clic en hero-section .
+ Presiona F  y dibuja un marco en la zona vacía de hero-section , a la derecha de hero-left .
+ En Capas, haz doble clic sobre su nombre y escribe hero-right .
+ Comprueba en Capas que hero-right  tenga sangría bajo hero-section  y esté debajo de
+hero-left . Si quedó fuera, arrástralo ahí.
+ Con hero-right  seleccionado, presiona Shift + A .
+Selecciona en Capashero-right
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición automática Flujo Vertical: el segundo icono, con la flecha ↓
+W (ancho) Ancho fijo 520
+H (alto) Altura fija 404
+Alineación El punto de arriba a la izquierda
+Espacio 0
+Espaciado › campo izquierdo 0
+Espaciado › campo derecho 0
+Recortar contenido Casilla marcada
+Apariencia Opacidad 100%
+Radio de esquina 12
+Relleno Color FFFFFF
+Porcentaje 100
+Trazo Color E5E7EB
+Porcentaje 100
+Peso 1
+9.1 · Los tres círculos (window-controls)
+ Presiona O  y dibuja un círculo pequeño dentro de hero-right .
+Selecciona en CapasEllipse 1
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición W (ancho) 10
+H (alto) 10
+Relleno Color EF4444 sugerido
+Porcentaje 100
+Apariencia Opacidad 100%
+la  ta rje ta
+e l c írc u lo ;  e n  C a p a s  p u e d e  lla m a rs e  E l i p s e  1
+Diseño Web · Centro de Informática USS · Protech XP 13
+==================== PAGE 14 ====================
+ Con el círculo seleccionado, duplícalo dos veces con Ctrl + D : necesitas tres círculos.
+ Selecciona el segundo círculo y cambia su Relleno a F59E0B  al 100 .
+ Selecciona el tercero y cambia su Relleno a 10B981  al 100 .
+ En Capas, haz clic en el primer círculo y, con Shift  pulsado, en el tercero: quedan los tres
+seleccionados.
+ Presiona Shift + A . Figma crea un marco nuevo que contiene los tres círculos.
+ En Capas, haz doble clic sobre el nombre de ese marco y escribe window-controls .
+Selecciona en Capaswindow-controls
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición automática Flujo Horizontal: el tercer icono, con la flecha →
+W (ancho) Ajustar al contenido
+H (alto) Ajustar al contenido
+Alineación El punto central de la columna izquierda
+Espacio 8
+Espaciado › campo izquierdo 0
+Espaciado › campo derecho 0
+Apariencia Opacidad 100%
+Relleno Color Ninguno: si hay uno, quítalo con −
+9.2 · El nombre del archivo
+ Presiona T  y haz clic en una zona vacía dentro de hero-right .
+ Escribe dagner-chuman.ts  y pulsa Esc .
+Selecciona en Capasdagner-chuman.ts
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición Redimensionar (tres iconos) El primero: Ajuste automático de ancho
+Tipografía Fuente Geist Mono
+Grosor de letra Regular
+Tamaño 14
+Alineación Izquierda: el primer icono
+Relleno Color 374151
+Porcentaje 100
+Apariencia Opacidad 100%
+e l m a rc o  q u e  a g ru p a  lo s  tre s  c írc u lo s
+e l te x to ,  d e n tro  d e  h e r o - r i g h t
+Diseño Web · Centro de Informática USS · Protech XP 14
+==================== PAGE 15 ====================
+9.3 · La cabecera de la ventana (code-header)
+ En Capas, haz clic en window-controls  y, con Shift  pulsado, en el texto dagner-chuman.ts :
+quedan los dos seleccionados.
+ Presiona Shift + A . Figma crea un marco nuevo que contiene a los dos.
+ En Capas, haz doble clic sobre el nombre de ese marco y escribe code-header .
+Selecciona en Capascode-header
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición automática Flujo Horizontal: el tercer icono, con la flecha →
+W (ancho) Abre el menú y elige Llenar el contenedor
+H (alto) Ajustar al contenido
+Espacio Escribe la palabra Auto
+Alineación La fila del medio: centra en vertical
+Espaciado › campo izquierdo 16  (horizontal)
+Espaciado › campo derecho 12  (vertical)
+Apariencia Opacidad 100%
+Relleno Color F3F4F6 sugerido
+Porcentaje 100
+Trazo Color E5E7EB sugerido
+Porcentaje 100
+Peso 1
+Lados Pulsa el último icono de la fila de Peso (un
+cuadrado) y elige Inferior
+Comprueba: code-header  ocupa todo el ancho de la tarjeta, con los círculos a la izquierda y el
+nombre del archivo a la derecha. En Capas, window-controls  está arriba del texto.
+Por qué se agrupan los círculos: code-header  tiene el Espacio en Auto , que separa a sus
+hijos hacia los extremos. Con cuatro hijos sueltos, los círculos se repartirían a lo ancho. Con
+dos hijos (el grupo de círculos y el texto), el grupo queda a la izquierda y el nombre del
+archivo a la derecha.
+9.4 · El cuerpo del código (code-body)
+ Presiona T  y haz clic en una zona vacía dentro de hero-right , debajo de la cabecera.
+ Escribe estas líneas, con Enter al final de cada una, y al terminar pulsa Esc :
+d e n tro  d e  h e r o - r i g h t
+Diseño Web · Centro de Informática USS · Protech XP 15
+==================== PAGE 16 ====================
+const docente = {
+  nombre: "Dagner Chuman",
+  rol: "Docente & Ingeniero Web",
+  institucion: "Centro de Informática USS",
+  skills: ["HTML5", "CSS3", "JavaScript"],
+  mision: "Transformar ideas en código"
+};
+ Con el texto seleccionado, presiona Shift + A . Figma crea un marco nuevo alrededor del
+texto.
+ En Capas, haz doble clic sobre el nombre de ese marco y escribe code-body .
+Selecciona en Capascode-body
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición automática Flujo Vertical: el segundo icono, con la flecha ↓
+W (ancho) Abre el menú y elige Llenar el contenedor
+H (alto) Ajustar al contenido
+Alineación El punto de arriba a la izquierda
+Espacio 12
+Espaciado › campo izquierdo 24  (horizontal)
+Espaciado › campo derecho 24  (vertical)
+Apariencia Opacidad 100%
+Relleno Color Ninguno: si hay uno, quítalo con −
+Selecciona en Capasconst docente = {…
+SECCIÓN DEL PANEL CAMPO VALOR
+Disposición W (ancho) Abre el menú del campo y elige Llenar el
+contenedor
+Tipografía Fuente Geist Mono
+Grosor de letra Regular
+Tamaño 14
+Altura de la línea 160% , con el signo
+Alineación Izquierda: el primer icono
+Relleno Color 374151 sugerido
+Porcentaje 100
+Apariencia Opacidad 100%
+Aquí los saltos de línea sí van: es el único texto de la guía que se escribe en varias líneas. Va
+en una sola capa de texto; la altura de línea de 160 % ya separa los renglones.
+Comprueba: la tarjeta mide 520  404, tiene las esquinas redondeadas y nada sobresale de su
+borde. Queda a la derecha de hero-left , centrada en vertical.
+d e n tro  d e  h e r o - r i g h t ,  d e b a jo  d e  c o d e - h e a d e r
+e l te x to  d e l c ó d ig o ,  d e n tro  d e  c o d e - b o d y
+Diseño Web · Centro de Informática USS · Protech XP 16
+==================== PAGE 17 ====================
+Así deben quedar tus capas
+Abre todas las flechas del panel de capas y compara. El orden de arriba abajo es el mismo que
+ves en el diseño, y la sangría indica qué marco contiene a cuál:
+mi-portafolio
+├── Encabezado
+│   ├── Dagner Chuman
+│   └── nav-links
+│       ├── Sobre mí
+│       ├── Proyectos
+│       └── Contacto
+└── hero-section
+    ├── hero-left                        ← Paso 7
+    │   ├── Formando a la próxima…
+    │   ├── Docente e Ingeniero…
+    │   └── hero-actions                 ← Paso 8
+    │       ├── btn-primary
+    │       │   └── Ver Proyectos
+    │       └── btn-secundary
+    │           └── Contáctame
+    └── hero-right                       ← Paso 9
+        ├── code-header
+        │   ├── window-controls
+        │   └── dagner-chuman.ts
+        └── code-body
+            └── const docente = {…
+Los nombres btn-primary , btn-secundary , code-header , window-controls  y code-body  no
+están en el manual. En el CSS de la sesión 08 usarás clases con esos mismos nombres; la de btn-
+secundary  se escribe btn-secondary .
+Lista de comprobación
+El Encabezado  ocupa todo el ancho de mi-portafolio  y mide 80 de alto.
+hero-section  está dentro de mi-portafolio  y su Espaciado es 160 · 80 · 100 · 80 .
+hero-left  mide 696 de ancho, tiene H en Ajustar al contenido y la casilla Recortar contenido
+desmarcada.
+El título usa Outfit ExtraBold de 64 con altura de línea 110% ; el párrafo, Geist Regular de 18 con
+160% .
+hero-actions  está dentro de hero-left , debajo del párrafo.
+Los dos botones tienen W y H en Ajustar al contenido, Espaciado 24  y 14  y Radio de esquina
+8 . btn-primary  mide 52 de alto; btn-secundary , 54 o 52.
+Todos los rellenos y trazos están al 100  y ninguna capa tiene la Opacidad por debajo de
+100% .
+hero-right  mide 520  404, con Radio de esquina 12 , Trazo E5E7EB  y la casilla Recortar
+contenido marcada.
+Ningún marco quedó suelto fuera de mi-portafolio .
+Diseño Web · Centro de Informática USS · Protech XP 17
+==================== PAGE 18 ====================
+Errores frecuentes en Figma
+Síntoma Causa y solución
+Un botón o un marco no se ve En Relleno, el porcentaje está en 0  o el ojo está tachado. O
+su marco padre tiene Altura fija y Recortar contenido
+marcado, y lo está cortando
+Un botón tiene medidas raras Su W o su H es fija: ponlas en Ajustar al contenido. O los dos
+campos de Espaciado están al revés: el izquierdo es el
+horizontal y el derecho, el vertical. O la altura de línea del texto
+quedó sin el signo %
+Un texto ocupa una altura
+enorme
+La altura de línea quedó en píxeles. Escribe el valor con el
+signo: 110%  o 160%
+Un texto no se parte en líneas y
+se sale de su marco
+Está en Ajuste automático de ancho, o se pegó con saltos de
+línea. En el campo W elige Llenar el contenedor y borra los
+saltos
+El marco nuevo aparece sin
+sangría en Capas
+Quedó fuera de su marco padre. Arrástralo en el panel de
+capas y suéltalo dentro
+Aparece un recuadro blanco
+donde no debe
+Los marcos dibujados con F  nacen con relleno blanco. En
+Relleno, quítalo con −
+Los botones quedan a la derecha
+del texto, no debajo
+hero-actions  está fuera de hero-left . En Capas, arrástralo
+encima de hero-left  y suéltalo debajo del párrafo
+El texto de un botón no se ve Su Relleno tiene el mismo color que el fondo, o un color que se
+pierde sobre la imagen. Usa FFFFFF  sobre el botón azul y
+0B0F19  sobre un botón claro
+hero-right  cambia de tamaño al
+añadirle contenido
+Sus dimensiones están en Ajustar al contenido. Ponlas en
+Ancho fijo 520  y Altura fija 404
+Los tres círculos quedan
+repartidos a lo ancho
+Están sueltos dentro de code-header . Agrúpalos en window-
+controls
+La página se alargó o se acortó mi-portafolio  pasó a Ajustar al contenido. Vuelve a Altura
+fija 2816
+Lo que sigue: en la sesión 08 construyes las secciones Sobre mí, Proyectos y Contacto, el pie
+de página y las imágenes Pasos 10 al 14. Y empiezas a escribir en CSS las medidas que hoy
+dejaste en Figma.
+Diseño Web · Centro de Informática USS · Protech XP 18

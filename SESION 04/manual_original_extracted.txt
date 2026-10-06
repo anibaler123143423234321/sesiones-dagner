@@ -1,0 +1,303 @@
+TOTAL PAGES: 6
+
+==================== PAGE 1 ====================
+Manual Completo de Construcción en Figma: Portafolio
+ Web (Pasos 1 al 14)
+Glosario Rápido de la Interfaz en Español (Figma UI3)
+ **Disposición automática:** Se activa con `Shift + A`.
+ 
+ **Flujo:** Dirección de los elementos: flecha abajo (`↓` Vertical) o flecha derecha (`→` Horizontal).
+ 
+ **Dimensiones (W y H):**
+ 
+ **Ancho fijo / Altura fija:** Medida exacta en píxeles.
+ 
+ **Ajustar al contenido (Hug):** Se encoge al tamaño del contenido.
+ 
+ **Llenar el contenedor (Fill):** Se estira para ocupar todo el espacio del marco padre.
+ 
+ **Espacio (`]-[`):** Separación entre elementos hijos (escribir `Auto` para separar a los extremos).
+ 
+ **Espaciado (`[]`):** Relleno interno o padding.
+ 
+ **Ajuste automático de ancho (`|->`):** En *Texto > Disposición*, ajusta la caja de texto al ancho exacto de las
+ palabras.
+Paso 1: Crear el Marco Principal de la Página
+1. Presiona la tecla **F**, haz clic en el lienzo y arrastra[cite: 2, 8].
+2. En el panel izquierdo (Capas), haz doble clic sobre el nombre y escribe: `portafolio-dagner-chuman`.
+3. En el panel derecho (**Posición / Dimensiones**):
+ **W (Ancho):** Escribe `1440` y presiona Enter[cite: 2, 8].
+ 
+ **H (Alto):** Escribe `2816` y presiona Enter[cite: 2, 8].
+ 
+4. Con el marco seleccionado, presiona **Shift + A** para activar **Disposición automática**[cite: 2, 8].
+5. En la sección **Disposición automática**:
+ **Flujo:** Marca el segundo icono: flecha hacia abajo (`↓` Vertical)[cite: 2, 8].
+ 
+ **Espacio (`]-[`):** Escribe `0`[cite: 2, 8].
+ 
+ **Espaciado (`[]`):** Escribe `0` en vertical y horizontal[cite: 2, 8].
+ 
+ **Dimensiones (H):** Si cambió automáticamente a *Ajustar al contenido*, cámbialo a **Altura fija** y vuelve a
+ escribir `2816`[cite: 2, 8].
+6. En la sección **Relleno**, haz clic en el recuadro de color y escribe `#F9FAFB`[cite: 2, 8].
+Paso 2: Crear la Cabecera de Navegación (`Header`)
+1. Presiona **F** y dibuja un marco dentro de `portafolio-dagner-chuman`[cite: 2, 8]. Nómbralo `Header`.
+2. En el panel de capas, comprueba que `Header` quede adentro del marco principal (con sangría hacia la derecha).
+3. Con `Header` seleccionado, presiona **Shift + A**[cite: 2, 8].
+4. Configura en el panel derecho:
+ **Flujo:** Primer icono: flecha a la derecha (`→` Horizontal)[cite: 2, 8].
+ 
+ **W (Ancho):** Despliega el menú y selecciona **Llenar el contenedor**[cite: 2, 8].
+ 
+==================== PAGE 2 ====================
+ **H (Alto):** Selecciona **Altura fija** y escribe `80`[cite: 2, 8].
+ 
+ **Alineación:** Haz clic en el punto central izquierdo (Centro vertical)[cite: 2, 8].
+ 
+ **Espacio (`]-[`):** Escribe la palabra `Auto` y presiona Enter[cite: 2, 8].
+ 
+ **Espaciado (`[]`):** Haz clic en el icono de lados independientes: Arriba `0`, Derecha `80`, Abajo `0`, Izquierda
+ `80`[cite: 2, 8].
+ **Relleno:** Color `#FFFFFF`[cite: 2, 8].
+ 
+ **Trazo:** Haz clic en `+`. Color: `#E5E7EB`, Grosor: `1`. En el selector de lados, elige únicamente el borde
+ **Inferior**[cite: 2, 8].
+Paso 3: Añadir el Nombre / Logotipo
+1. Presiona la tecla **T** (Texto) y haz un clic dentro de `Header`[cite: 2, 8].
+2. Escribe: `Dagner Chuman`[cite: 2, 8].
+3. Verifica en el panel izquierdo que la capa `T Dagner Chuman` esté adentro de `Header`.
+4. En el panel derecho:
+ En **Tipografía**: Fuente **Outfit**, Grosor **Bold**, Tamaño **18** px, Relleno **#0B0F19**[cite: 2, 8].
+ 
+ En **Disposición > Redimensionar**: Primer icono: **Ajuste automático de ancho** (`|->`).
+ 
+Paso 4: Crear el Menú de Enlaces (`nav-links`)
+1. Presiona **F**, dibuja un marco pequeño en el lienzo y nómbralo `nav-links` (o `nav`)[cite: 2, 8].
+2. Presiona **Shift + A**[cite: 2, 8].
+3. Configuración en el panel derecho:
+ **Flujo:** Flecha horizontal (`→`)[cite: 2, 8].
+ 
+ **W (Ancho):** **Ajustar al contenido**.
+ 
+ **H (Alto):** **Ajustar al contenido**.
+ 
+ **Espacio (`]-[`):** Escribe `32`[cite: 2, 8].
+ 
+ **Espaciado (`[]`):** `0` vertical y `0` horizontal.
+ 
+ **Alineación:** Punto del centro[cite: 2, 8].
+ 
+ **Relleno:** Haz clic en el icono `-` para quitar el fondo y dejarlo transparente.
+ 
+4. Con la tecla **T**, crea 3 textos individuales adentro[cite: 2, 8]:
+ Texto 1: `Sobre mí`[cite: 2, 8]
+ 
+ Texto 2: `Proyectos`[cite: 2, 8]
+ 
+ Texto 3: `Contacto`[cite: 2, 8]
+ 
+5. Selecciona los 3 textos juntos y aplica:
+ Fuente **Geist** (o Inter), Peso **Medium**, Tamaño **14** px, Color **#9CA3AF**[cite: 2, 8].
+ 
+ En **Disposición > Redimensionar**: Clic en **Ajuste automático de ancho** (`|->`).
+ 
+6. Arrastra `nav-links` adentro de `Header` (en capas debe quedar entre el nombre y el botón)[cite: 2, 8].
+Paso 5: Crear el Botón de Contacto de la Cabecera (`btn-header`)
+
+==================== PAGE 3 ====================
+1. Presiona **F**, dibuja un marco y presiona **Shift + A**[cite: 2, 8]. Nómbralo `btn-header`.
+2. Configuración en el panel derecho:
+ **Flujo:** Horizontal (`→`)[cite: 2, 8].
+ 
+ **Espaciado (`[]`):** Vertical `14`, Horizontal `24`[cite: 2, 8].
+ 
+ **Espacio (`]-[`):** `8`[cite: 2, 8].
+ 
+ **Alineación:** Centro[cite: 2, 8].
+ 
+ **Radio de esquina:** `8`[cite: 2, 8].
+ 
+ **Relleno:** Elimínalo con `-` (transparente)[cite: 2, 8].
+ 
+ **Trazo:** Haz clic en `+`, color `#374151`, grosor `1`[cite: 2, 8].
+ 
+3. Con la tecla **T**, escribe adentro: `Contacto`[cite: 2, 8].
+ Fuente: **Geist**, Peso: **Medium**, Tamaño: **15** px, Color: **#0B0F19**[cite: 2, 8].
+ 
+4. Arrastra `btn-header` adentro de `Header` al final de la lista[cite: 2, 8].
+*(Como Header tiene Espacio en Auto, repartirá: Nombre a la izquierda, Menú al centro y Botón a la derecha)*[cite:
+2, 8].
+Paso 6: Crear la Presentación Principal (`hero-section`)
+1. Selecciona el frame principal `portafolio-dagner-chuman`.
+2. Presiona **F**, dibuja un marco debajo de `Header` y nómbralo `hero-section`[cite: 2, 8].
+3. Con `hero-section` seleccionado, presiona **Shift + A**[cite: 2, 8]:
+ **Flujo:** Horizontal (`→`)[cite: 2, 8].
+ 
+ **W (Ancho):** **Llenar el contenedor**[cite: 2, 8].
+ 
+ **H (Alto):** **Ajustar al contenido**.
+ 
+ **Espacio (`]-[`):** `64`[cite: 2, 8].
+ 
+ **Alineación:** Centro vertical[cite: 2, 8].
+ 
+ **Espaciado (`[]`):** Superior `160`, Derecho `80`, Inferior `100`, Izquierdo `80`[cite: 2, 8].
+ 
+ **Relleno:** Sin relleno o `#F9FAFB`.
+ 
+Paso 7: Crear la Columna Izquierda (`hero-left`)
+1. Dentro de `hero-section`, inserta un marco con **Shift + A** y nómbralo `hero-left`[cite: 2, 8].
+2. Configuración en el panel derecho:
+ **Flujo:** Vertical (`↓`)[cite: 2, 8].
+ 
+ **W (Ancho):** **Ancho fijo** `696` (o Llenar el contenedor)[cite: 2, 8].
+ 
+ **H (Alto):** **Ajustar al contenido**.
+ 
+ **Espacio (`]-[`):** `32`[cite: 2, 8].
+ 
+ **Espaciado (`[]`):** `0`.
+ 
+3. Crea 2 textos dentro de `hero-left`[cite: 2, 8]:
+ **Título:** Escribe `Formando a la próxima generación de desarrolladores web.`[cite: 2, 8]
+ 
+==================== PAGE 4 ====================
+ Fuente: **Outfit**, Peso: **ExtraBold**, Tamaño: **64** px, Altura de línea: **110%**, Color: **#0B0F19**[cite: 2,
+ 8].
+ Redimensionar ancho: **Llenar el contenedor**.
+ 
+ **Párrafo:** Párrafo descriptivo profesional[cite: 2, 8].
+ 
+ Fuente: **Geist**, Peso: **Regular**, Tamaño: **18** px, Altura de línea: **160%**, Color: **#374151**[cite: 2, 8].
+ 
+ Redimensionar ancho: **Llenar el contenedor**.
+ 
+Paso 8: Crear los Botones Principales de la Presentación
+1. Dentro de `hero-left`, crea un contenedor horizontal con **Shift + A** llamado `hero-actions` (Espacio: `16`).
+2. **Botón Principal (Azul):**
+ Marco con **Shift + A** horizontal[cite: 2, 8].
+ 
+ Espaciado: Vertical `14`, Horizontal `24`. Espacio: `8`. Radio: `8`[cite: 2, 8].
+ 
+ Relleno: `#06B6C4`[cite: 2, 8].
+ 
+ Texto: `Ver Proyectos` (Geist SemiBold, `15` px, color `#FFFFFF`)[cite: 2, 8].
+ 
+3. **Botón Secundario:**
+ Duplica el botón azul con **Ctrl + D**[cite: 2, 8].
+ 
+ Quita el relleno azul con `-`[cite: 2, 8].
+ 
+ En Trazo: Clic en `+`, color `#374151`, grosor `1`[cite: 2, 8].
+ 
+ Cambia el texto a: `Contáctame` (color `#0B0F19`)[cite: 2, 8].
+ 
+Paso 9: Crear el Bloque Visual Derecho (`hero-right` - Tarjeta de Código)
+1. Dentro de `hero-section` (a la derecha de `hero-left`), crea un marco llamado `hero-right`[cite: 2, 8].
+2. Presiona **Shift + A**[cite: 2, 8]:
+ **Flujo:** Vertical (`↓`)[cite: 2, 8].
+ 
+ **W (Ancho):** **Ancho fijo** `520`[cite: 2, 8].
+ 
+ **H (Alto):** **Altura fija** `404`[cite: 2, 8].
+ 
+ **Radio de esquina:** `12`[cite: 2, 8].
+ 
+ **Relleno:** `#FFFFFF`[cite: 2, 8].
+ 
+ **Trazo:** Color `#E5E7EB`, grosor `1`[cite: 2, 8].
+ 
+ Marca la casilla: `■ Recortar contenido`[cite: 2, 8].
+ 
+3. **Cabecera de la ventana de código:**
+ Marco horizontal adentro (`Shift + A`), W = **Llenar el contenedor**, Espaciado: V `12`, H `16`, Espacio: `Auto`,
+ Alineación: Centro[cite: 2, 8].
+ Dibuja 3 círculos con la herramienta **O** de `10x10` px y agrega el texto `dagner-chuman.ts` (Geist Mono, `14`
+ px, `#374151`)[cite: 2, 8].
+4. **Cuerpo del código:**
+ Marco vertical debajo (`Shift + A`), Espaciado: `24`, Espacio: `12`, W = **Llenar el contenedor**[cite: 2, 8].
+ 
+ Escribe textos simulando líneas de código usando la fuente **Geist Mono**, tamaño `14` px, interlineado
+ `160%`[cite: 2, 8].
+
+==================== PAGE 5 ====================
+Paso 10: Crear la Sección "Sobre mí" (`about-section`)
+1. Dentro del marco principal, debajo de `hero-section`, crea un marco llamado `about-section`[cite: 2, 8].
+2. Presiona **Shift + A**[cite: 2, 8]:
+ **Flujo:** Vertical (`↓`)[cite: 2, 8].
+ 
+ **W (Ancho):** **Llenar el contenedor**[cite: 2, 8].
+ 
+ **H (Alto):** **Ajustar al contenido**.
+ 
+ **Espacio (`]-[`):** `48`[cite: 2, 8].
+ 
+ **Espaciado (`[]`):** Superior `100`, Inferior `100`, Izquierdo `80`, Derecho `80`[cite: 2, 8].
+ 
+ **Relleno:** `#FFFFFF`[cite: 2, 8].
+ 
+3. Inserta un título: texto `Sobre mí` (Outfit ExtraBold, `36` px, `#0B0F19`)[cite: 2, 8].
+4. Inserta un marco horizontal debajo (Espacio `64`, Alineación Centro vertical, W = Llenar el contenedor)[cite: 2, 8]:
+ **Columna izquierda:** Textos biográficos (título secundario `22` px interlineado `160%` color `#0B0F19` y
+ párrafos en Geist Regular `16` px color `#374151`)[cite: 2, 8].
+ **Columna derecha (Gráfico HTML):** Marco de `480x264` px, Auto layout vertical, Espaciado `24`, Espacio `16`,
+ Relleno `#FFFFFF`, Trazo `#E5E7EB`, Radio `12`[cite: 2, 8]. Diseña bloques internos con texto simulando
+etiquetas semánticas (`<header>`, `<main>`, `<section>`, `<footer>`)[cite: 2, 8].
+Paso 11: Crear la Sección "Proyectos" (`projects-section`)
+1. Dentro del marco principal, crea `projects-section` debajo de "Sobre mí"[cite: 2, 8].
+2. Presiona **Shift + A**: Flujo `↓`, W = **Llenar el contenedor**, H = **Ajustar al contenido**, Espaciado Sup/Inf
+`100`, Izq/Der `80`, Espacio `48`, Relleno `#FFFFFF`[cite: 2, 8].
+3. Título: `Proyectos` (Outfit ExtraBold, `36` px, `#0B0F19`).
+4. Cuadrícula: Inserta un marco horizontal llamado `projects-grid`, W = **Llenar el contenedor**, Espacio `24`[cite: 2,
+8].
+5. Crea **2 tarjetas de proyectos** dentro de `projects-grid`[cite: 2, 8]:
+ Cada tarjeta: Marco vertical con **Shift + A**, W: **Llenar el contenedor** (o Ancho fijo `628`), H: **Altura fija**
+ `475`, Espacio `0`, Relleno `#FFFFFF`, Trazo `#E5E7EB`, Radio `12`, casilla `■ Recortar contenido`[cite: 2, 8].
+ **Área de imagen:** Presiona **R** y dibuja un rectángulo de `628x220` px[cite: 2, 8]. En **Relleno**, cambia de
+ *Sólido* a *Imagen*, haz clic en *Elegir imagen* y sube la captura de tu proyecto[cite: 2, 8].
+ **Área de texto:** Marco vertical debajo con Espaciado `24`[cite: 2, 8]. Título: Outfit Bold `24` px (`#0B0F19`),
+ Descripción: Geist Regular `16` px (`#374151`)[cite: 2, 8].
+Paso 12: Crear la Sección "Contacto" (`contact-section`)
+1. Crea `contact-section` debajo de Proyectos con **Shift + A**[cite: 2, 8].
+2. Configuración: Flujo `↓`, W = **Llenar el contenedor**, Espaciado Sup/Inf `100`, Izq/Der `80`, Espacio `48`,
+Relleno `#FFFFFF`[cite: 2, 8].
+3. Crea un marco horizontal contenedor con Espacio `64`, W = **Llenar el contenedor**[cite: 2, 8]:
+ **Lado izquierdo:** Título y texto de contacto[cite: 2, 8].
+ 
+ **Lado derecho:** Marco vertical con Ancho fijo `520` px y Espacio `16`[cite: 2, 8].
+ 
+4. Dentro del lado derecho, crea **3 tarjetas de contacto** (Correo, LinkedIn, GitHub)[cite: 2, 8]:
+
+==================== PAGE 6 ====================
+ Cada fila: Marco horizontal, W: `520`, H: `84`, Espaciado `20`, Espacio `16`, Alineación Centro, Relleno
+ `#FFFFFF`, Trazo `#E5E7EB`, Radio `8`[cite: 2, 8].
+ Inserta un icono a la izquierda y el texto del contacto[cite: 2, 8].
+ 
+Paso 13: Crear el Pie de Página (`footer-wrapper`)
+1. Al final del marco principal, inserta `footer-wrapper`[cite: 2, 8].
+2. Presiona **Shift + A**[cite: 2, 8]:
+ **Flujo:** Vertical (`↓`)[cite: 2, 8].
+ 
+ **W (Ancho):** **Llenar el contenedor**[cite: 2, 8].
+ 
+ **H (Alto):** **Altura fija** `182` px[cite: 2, 8].
+ 
+ **Espacio (`]-[`):** `24`[cite: 2, 8].
+ 
+ **Espaciado (`[]`):** Vertical `48`, Horizontal `80`[cite: 2, 8].
+ 
+ **Relleno:** `#FFFFFF`[cite: 2, 8].
+ 
+3. **Trazo:** Haz clic en `+`, color `#E5E7EB`, grosor `1`, seleccionando exclusivamente el borde **Superior**[cite: 2,
+8].
+4. Texto central: `© 2026 Dagner Chuman | Centro de Informática USS Protech XP.` (Geist Regular, `13` px, color
+`#374151`)[cite: 2, 8].
+Paso 14: Manejo de Imágenes y Recursos Utilizados
+1. Solamente se utilizan **2 imágenes rasterizadas** en todo el diseño (las dos tarjetas de proyectos del Paso
+11)[cite: 2, 8].
+2. No se utiliza foto de perfil ni imágenes de fondo complejas: la tarjeta de código y las etiquetas semánticas se
+construyen con marcos y texto[cite: 2, 8].
+3. Para reemplazar una imagen: selecciona el rectángulo de la imagen > ve a la sección **Relleno** en el panel
+derecho > haz clic en la miniatura de la imagen > pulsa **Elegir imagen** > selecciona tu archivo y utiliza el modo
+**Llenar (Fill)** o **Recortar (Crop)** para ajustarla[cite: 2, 8].

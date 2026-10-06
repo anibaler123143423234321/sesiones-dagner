@@ -1,0 +1,54 @@
+TOTAL PAGES: 2
+
+==================== PAGE 1 ====================
+Correcciones en Figma: Pasos 2 al 6
+Paso 2: Corregir la altura de Header
+El fallo: La cabecera mide 160 px de alto, ocupando el doble del espacio requerido.
+Corrección:
+1. Selecciona la capa Header en el panel izquierdo.
+2. En el panel derecho, en Dimensiones > H, borra el 160, escribe 80 y presiona Enter.
+3. En Espacio (]-[): comprueba que esté escrita la palabra Auto.
+Paso 3: Corregir la tipografía de Dagner Chuman
+El fallo: El texto tiene la fuente Imprima Regular en tamaño 20 px.
+Corrección:
+1. Selecciona la capa de texto Dagner Chuman.
+2. En el panel derecho, sección Tipografía:
+ Cambia la fuente a Outfit.
+ 
+ Cambia el peso a Bold.
+ 
+ Cambia el tamaño a 18 px.
+ 
+ En Relleno, coloca el color #0B0F19.
+ 
+Paso 4: Corregir el contenedor nav y sus textos
+El fallo: Las cajas de texto de Sobre mi, Contactame y Mis Proyectos tienen un ancho fijo excesivo, lo que obliga
+al contenedor nav a ensancharse a 1369 px y tapar toda la barra. Además, nav tiene un relleno blanco y padding de
+10 px que no corresponden.
+Corrección en los 3 textos:
+1. En el panel de capas, selecciona juntos los 3 textos: Sobre mi, Contactame y Mis Proyectos.
+2. En Disposición > Redimensionar, haz clic en el primer icono: Ajuste automático de ancho (|->). Esto reduce el
+ancho de nav de 1369 px a solo aproximadamente 300 px.
+Corrección en el marco nav:
+1. Selecciona el marco nav en el panel de capas.
+2. En Relleno: haz clic en - para borrar el #FFFFFF (debe ser transparente).
+3. En Espaciado ([]): cambia los valores 10 y 10 a 0.
+4. En Espacio (]-[): cambia 30 a 32.
+Paso 5: Crear el botón derecho (btn-header)
+El fallo: El botón de la derecha aún no existe. Sin este botón, el espacio en Auto de la cabecera no puede
+equilibrarse y no centrará el menú.
+Corrección:
+1. Presiona F, dibuja un marco pequeño y presiona Shift + A. Nómbralo btn-header.
+2. Panel derecho: Flujo horizontal (→); Espaciado: vertical 14 y horizontal 24; Radio de esquina: 8; Relleno:
+ninguno/transparente; Trazo: #374151, grosor 1.
+3. Presiona T, haz clic adentro y escribe Contacto (fuente Geist o Inter, Medium, 15 px, color #0B0F19).
+4. En el panel de capas, arrastra btn-header dentro de Header, colocándolo al final.
+
+==================== PAGE 2 ====================
+Paso 6: Meter hero-section dentro de la página
+El fallo: El marco hero-section (el rectángulo blanco grande) está colocado flotando en el fondo negro por fuera de
+la estructura.
+Corrección:
+1. En el panel izquierdo (Capas), haz clic sostenido sobre hero-section.
+2. Arrástralo hacia abajo y suéltalo dentro de mi-portafolio, ubicado justo debajo de Header.
+3. En Dimensiones > W, cámbialo a Llenar el contenedor.
