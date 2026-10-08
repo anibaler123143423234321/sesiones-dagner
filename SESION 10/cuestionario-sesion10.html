@@ -1,0 +1,1423 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cuestionario de la sesión 10 · Diseño Web USS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ==========================================================
+       VARIABLES Y TEMA VISUAL (Optimizado para proyector de aula)
+       ========================================================== */
+    :root {
+      --fuente-titulos: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --fuente-texto: "Plus Jakarta Sans", Calibri, "Segoe UI", Arial, sans-serif;
+      --fuente-mono: "JetBrains Mono", Consolas, "Courier New", monospace;
+
+      /* Paleta institucional y de alto contraste para proyección */
+      --fondo-body: #f8fafc;
+      --fondo-tarjeta: #ffffff;
+      --borde: #cbd5e1;
+      --borde-suave: #e2e8f0;
+      --texto-titulos: #0f172a;
+      --texto-cuerpo: #334155;
+      --texto-mutado: #64748b;
+
+      /* Acento USS / Protech XP */
+      --primario: #0284c7;
+      --primario-oscuro: #0369a1;
+      --primario-fondo: #e0f2fe;
+
+      /* Feedback visual de respuestas */
+      --correcto: #15803d;
+      --correcto-fondo: #dcfce7;
+      --correcto-borde: #22c55e;
+      --incorrecto: #b91c1c;
+      --incorrecto-fondo: #fee2e2;
+      --incorrecto-borde: #ef4444;
+
+      --sombra-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --sombra-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --sombra-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --radio: 12px;
+    }
+
+    /* Modo oscuro para aulas con poca iluminación */
+    body.dark-mode {
+      --fondo-body: #0b0f17;
+      --fondo-tarjeta: #151d2a;
+      --borde: #2d3b4e;
+      --borde-suave: #1e293b;
+      --texto-titulos: #f8fafc;
+      --texto-cuerpo: #cbd5e1;
+      --texto-mutado: #94a3b8;
+      --primario: #38bdf8;
+      --primario-oscuro: #0284c7;
+      --primario-fondo: rgba(56, 189, 248, 0.15);
+      --correcto: #4ade80;
+      --correcto-fondo: rgba(34, 197, 94, 0.18);
+      --correcto-borde: #22c55e;
+      --incorrecto: #f87171;
+      --incorrecto-fondo: rgba(239, 68, 68, 0.18);
+      --incorrecto-borde: #ef4444;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; min-height: 100vh; }
+    body {
+      background-color: var(--fondo-body);
+      color: var(--texto-cuerpo);
+      font-family: var(--fuente-texto);
+      font-size: 20px;
+      line-height: 1.45;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    button { font: inherit; color: inherit; }
+    code {
+      font-family: var(--fuente-mono);
+      font-size: 0.9em;
+      background-color: rgba(148, 163, 184, 0.15);
+      padding: 2px 7px;
+      border-radius: 5px;
+      color: var(--primario-oscuro);
+      font-weight: 600;
+    }
+    body.dark-mode code { color: #7dd3fc; }
+    kbd {
+      display: inline-block;
+      padding: 3px 8px;
+      font-family: var(--fuente-mono);
+      font-size: 0.8em;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--texto-titulos);
+      background-color: var(--fondo-tarjeta);
+      border: 1px solid var(--borde);
+      border-bottom-width: 2px;
+      border-radius: 6px;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+    }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 3px solid var(--primario); outline-offset: 3px; }
+
+    /* ==========================================================
+       BARRA DE NAVEGACIÓN SUPERIOR
+       ========================================================== */
+    .barra-header {
+      background-color: var(--fondo-tarjeta);
+      border-bottom: 2px solid var(--borde-suave);
+      padding: 14px 28px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: var(--sombra-sm);
+    }
+    .barra-contenido {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .info-curso {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .titulo-inst {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--primario);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .titulo-inst span {
+      background: var(--primario-fondo);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .subtitulo-curso {
+      font-family: var(--fuente-titulos);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--texto-titulos);
+      margin: 0;
+    }
+    .subtitulo-curso small {
+      font-family: var(--fuente-texto);
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--texto-mutado);
+      margin-left: 6px;
+    }
+    .header-acciones {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-header {
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: 600;
+      border: 1px solid var(--borde);
+      border-radius: 8px;
+      background: var(--fondo-tarjeta);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .btn-header:hover {
+      background: var(--primario-fondo);
+      border-color: var(--primario);
+      color: var(--primario-oscuro);
+    }
+
+    /* ==========================================================
+       CONTENEDOR PRINCIPAL
+       ========================================================== */
+    main {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 28px 24px 60px;
+    }
+
+    /* ==========================================================
+       PANTALLA DE INICIO (PORTADA Y SELECTOR DE TEST)
+       ========================================================== */
+    .portada-hero {
+      text-align: center;
+      max-width: 900px;
+      margin: 20px auto 40px;
+    }
+    .badge-sesion {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: var(--primario-fondo);
+      color: var(--primario-oscuro);
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(2, 132, 199, 0.2);
+    }
+    .portada-hero h1 {
+      font-family: var(--fuente-titulos);
+      font-size: clamp(34px, 4.2vw, 56px);
+      font-weight: 800;
+      color: var(--texto-titulos);
+      margin: 0 0 14px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .portada-hero p {
+      font-size: clamp(19px, 1.8vw, 24px);
+      color: var(--texto-mutado);
+      margin: 0 auto 12px;
+      max-width: 760px;
+    }
+    .portada-docente {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--texto-cuerpo);
+      background: var(--fondo-tarjeta);
+      padding: 6px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--borde-suave);
+    }
+
+    .selector-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      max-width: 1040px;
+      margin: 0 auto 40px;
+    }
+    @media (min-width: 768px) {
+      .selector-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .card-test {
+      background: var(--fondo-tarjeta);
+      border: 2px solid var(--borde);
+      border-radius: 18px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--sombra-md);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-test:hover {
+      transform: translateY(-4px);
+      border-color: var(--primario);
+      box-shadow: var(--sombra-lg);
+    }
+    .card-test::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+    }
+    .card-pretest::before { background: linear-gradient(90deg, #0284c7, #38bdf8); }
+    .card-postest::before { background: linear-gradient(90deg, #10b981, #34d399); }
+
+    .card-encabezado {
+      margin-bottom: 20px;
+    }
+    .card-etiqueta {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .card-pretest .card-etiqueta { background: #e0f2fe; color: #0369a1; }
+    .card-postest .card-etiqueta { background: #dcfce7; color: #15803d; }
+    body.dark-mode .card-pretest .card-etiqueta { background: rgba(56, 189, 248, 0.2); color: #7dd3fc; }
+    body.dark-mode .card-postest .card-etiqueta { background: rgba(34, 197, 94, 0.2); color: #86efac; }
+
+    .card-test h2 {
+      font-family: var(--fuente-titulos);
+      font-size: clamp(28px, 2.5vw, 36px);
+      font-weight: 700;
+      color: var(--texto-titulos);
+      margin: 0 0 10px;
+    }
+    .card-test p {
+      font-size: 18px;
+      color: var(--texto-mutado);
+      margin: 0 0 20px;
+      line-height: 1.5;
+    }
+    .card-lista {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 26px;
+      font-size: 16px;
+    }
+    .card-lista li {
+      padding: 6px 0;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      color: var(--texto-cuerpo);
+      border-bottom: 1px dashed var(--borde-suave);
+    }
+    .card-lista li:last-child { border-bottom: none; }
+    .card-lista li strong { color: var(--texto-titulos); }
+
+    .btn-card {
+      width: 100%;
+      padding: 16px 24px;
+      font-family: var(--fuente-titulos);
+      font-size: 20px;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+      color: #ffffff;
+    }
+    .card-pretest .btn-card {
+      background: #0284c7;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    }
+    .card-pretest .btn-card:hover { background: #0369a1; }
+    .card-postest .btn-card {
+      background: #059669;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+    }
+    .card-postest .btn-card:hover { background: #047857; }
+
+    .portada-atajos {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--fondo-tarjeta);
+      border: 1px solid var(--borde);
+      border-radius: 14px;
+      padding: 18px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 18px 26px;
+      font-size: 15px;
+      color: var(--texto-mutado);
+    }
+    .atajo-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ==========================================================
+       PANTALLA DE JUEGO / CUESTIONARIO (MODO PROYECCIÓN)
+       ========================================================== */
+    .cuestionario-layout {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    /* Barra de estado del test activo */
+    .test-estado-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--borde-suave);
+    }
+    .test-badge-activo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pill-tipo {
+      font-family: var(--fuente-titulos);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 6px;
+      color: #ffffff;
+    }
+    .pill-tipo.pretest { background-color: #0284c7; }
+    .pill-tipo.postest { background-color: #059669; }
+    .test-descripcion-corta {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--texto-mutado);
+    }
+
+    .avance-contenedor {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .avance-texto {
+      font-family: var(--fuente-titulos);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--texto-titulos);
+      font-variant-numeric: tabular-nums;
+    }
+    .progreso-track {
+      width: 140px;
+      height: 10px;
+      background: var(--borde-suave);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .progreso-barra {
+      height: 100%;
+      background: var(--primario);
+      border-radius: 99px;
+      transition: width 0.3s ease;
+    }
+
+    /* Tarjeta de la pregunta activa */
+    .pregunta-card {
+      background: var(--fondo-tarjeta);
+      border: 2px solid var(--borde);
+      border-radius: 20px;
+      padding: 32px 36px;
+      box-shadow: var(--sombra-md);
+      margin-bottom: 24px;
+    }
+    .pregunta-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .pregunta-tema {
+      font-family: var(--fuente-titulos);
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primario);
+    }
+    .pregunta-texto {
+      font-family: var(--fuente-titulos);
+      font-size: clamp(26px, 2.7vw, 42px);
+      font-weight: 700;
+      color: var(--texto-titulos);
+      line-height: 1.25;
+      margin: 0 0 26px;
+      max-width: 36em;
+    }
+
+    /* Grilla de opciones */
+    .opciones-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+    }
+    @media (min-width: 860px) {
+      .opciones-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .btn-opcion {
+      width: 100%;
+      height: 100%;
+      min-height: 80px;
+      padding: 14px 20px;
+      background: var(--fondo-tarjeta);
+      border: 2.5px solid var(--borde);
+      border-radius: 14px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+      font-size: clamp(19px, 1.7vw, 26px);
+      line-height: 1.28;
+      color: var(--texto-titulos);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      box-shadow: var(--sombra-sm);
+    }
+    .btn-opcion:hover:not(:disabled) {
+      border-color: var(--primario);
+      background-color: var(--primario-fondo);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-md);
+    }
+    .letra-circulo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--borde-suave);
+      color: var(--texto-titulos);
+      font-family: var(--fuente-titulos);
+      font-size: 20px;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+    .btn-opcion:hover:not(:disabled) .letra-circulo {
+      background: var(--primario);
+      color: #ffffff;
+    }
+    .marca-estado {
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    /* Estados de la opción tras responder */
+    .btn-opcion:disabled { cursor: default; }
+    .btn-opcion.apagada {
+      opacity: 0.45;
+      border-color: var(--borde-suave);
+    }
+    .btn-opcion.correcta {
+      border-color: var(--correcto-borde) !important;
+      background-color: var(--correcto-fondo) !important;
+      color: var(--correcto) !important;
+      font-weight: 600;
+    }
+    .btn-opcion.correcta .letra-circulo {
+      background-color: var(--correcto) !important;
+      color: #ffffff !important;
+    }
+    .btn-opcion.correcta .marca-estado {
+      color: var(--correcto);
+    }
+    .btn-opcion.incorrecta {
+      border-color: var(--incorrecto-borde) !important;
+      background-color: var(--incorrecto-fondo) !important;
+      color: var(--incorrecto) !important;
+    }
+    .btn-opcion.incorrecta .letra-circulo {
+      background-color: var(--incorrecto) !important;
+      color: #ffffff !important;
+    }
+    .btn-opcion.incorrecta .marca-estado {
+      color: var(--incorrecto);
+    }
+
+    /* Bloque de explicación pedagógica */
+    .explicacion-caja {
+      background: var(--fondo-body);
+      border-left: 6px solid var(--borde);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 24px;
+      margin-top: 10px;
+      animation: fadeIn 0.25s ease;
+    }
+    .explicacion-caja.correcta {
+      border-left-color: var(--correcto);
+      background: var(--correcto-fondo);
+    }
+    .explicacion-caja.incorrecta {
+      border-left-color: var(--incorrecto);
+      background: var(--incorrecto-fondo);
+    }
+    .veredicto-titulo {
+      font-family: var(--fuente-titulos);
+      font-size: clamp(20px, 1.8vw, 26px);
+      font-weight: 800;
+      margin: 0 0 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .veredicto-titulo.bien { color: var(--correcto); }
+    .veredicto-titulo.mal { color: var(--incorrecto); }
+    .explicacion-texto {
+      font-size: clamp(18px, 1.6vw, 23px);
+      line-height: 1.45;
+      margin: 0;
+      color: var(--texto-cuerpo);
+    }
+
+    /* Barra inferior de navegación */
+    .cuestionario-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .nav-atajos-hint {
+      font-size: 15px;
+      color: var(--texto-mutado);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-botones {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-nav {
+      padding: 14px 28px;
+      font-family: var(--fuente-titulos);
+      font-size: 19px;
+      font-weight: 700;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+    }
+    .btn-nav-anterior {
+      background: var(--fondo-tarjeta);
+      border-color: var(--borde);
+      color: var(--texto-titulos);
+    }
+    .btn-nav-anterior:hover:not(:disabled) {
+      background: var(--borde-suave);
+    }
+    .btn-nav-anterior:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .btn-nav-siguiente {
+      background: var(--primario);
+      color: #ffffff;
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+    }
+    .btn-nav-siguiente:hover:not(:disabled) {
+      background: var(--primario-oscuro);
+    }
+
+    /* ==========================================================
+       PANTALLA FINAL (RESULTADOS Y REPASO COMPLETO)
+       ========================================================== */
+    .final-card {
+      background: var(--fondo-tarjeta);
+      border: 2px solid var(--borde);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: var(--sombra-lg);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .final-encabezado {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .final-badge {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 99px;
+      margin-bottom: 12px;
+    }
+    .final-badge.pretest { background: #e0f2fe; color: #0369a1; }
+    .final-badge.postest { background: #dcfce7; color: #15803d; }
+    .final-titulo {
+      font-family: var(--fuente-titulos);
+      font-size: clamp(32px, 3.5vw, 46px);
+      font-weight: 800;
+      color: var(--texto-titulos);
+      margin: 0 0 10px;
+    }
+    .puntaje-display {
+      margin: 20px 0;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--fondo-body);
+      border: 2px solid var(--borde-suave);
+      padding: 18px 40px;
+      border-radius: 18px;
+    }
+    .puntaje-numero {
+      font-family: var(--fuente-titulos);
+      font-size: clamp(48px, 6vw, 76px);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--primario);
+    }
+    .puntaje-porcentaje {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--texto-mutado);
+      margin-top: 6px;
+    }
+    .final-mensaje {
+      font-size: 20px;
+      color: var(--texto-cuerpo);
+      max-width: 650px;
+      margin: 10px auto 0;
+    }
+
+    .final-acciones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin: 28px 0 36px;
+      padding-bottom: 28px;
+      border-bottom: 2px solid var(--borde-suave);
+    }
+    .btn-final-accion {
+      padding: 14px 26px;
+      font-family: var(--fuente-titulos);
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 2px solid transparent;
+      transition: all 0.15s ease;
+    }
+    .btn-final-repetir {
+      background: var(--fondo-tarjeta);
+      border-color: var(--borde);
+      color: var(--texto-titulos);
+    }
+    .btn-final-repetir:hover { background: var(--borde-suave); }
+    .btn-final-cambiar {
+      background: var(--primario);
+      color: #ffffff;
+    }
+    .btn-final-cambiar:hover { background: var(--primario-oscuro); }
+    .btn-final-menu {
+      background: var(--fondo-body);
+      border-color: var(--borde-suave);
+      color: var(--texto-cuerpo);
+    }
+    .btn-final-menu:hover { background: var(--borde); }
+
+    /* Lista de repaso de respuestas */
+    .repaso-seccion h3 {
+      font-family: var(--fuente-titulos);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--texto-titulos);
+      margin: 0 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .repaso-lista {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .repaso-item {
+      border: 1px solid var(--borde);
+      background: var(--fondo-body);
+      border-radius: 14px;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .repaso-item.acertada { border-left: 6px solid var(--correcto); }
+    .repaso-item.fallada { border-left: 6px solid var(--incorrecto); }
+    .repaso-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--texto-mutado);
+    }
+    .repaso-pregunta {
+      font-family: var(--fuente-titulos);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--texto-titulos);
+      margin: 0;
+    }
+    .repaso-respuesta {
+      font-size: 18px;
+      color: var(--texto-cuerpo);
+    }
+    .repaso-respuesta strong {
+      color: var(--correcto);
+      font-weight: 700;
+    }
+    .repaso-explicacion {
+      font-size: 16px;
+      color: var(--texto-mutado);
+      border-top: 1px dashed var(--borde-suave);
+      padding-top: 8px;
+      margin: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Optimización específica para pantallas de proyector */
+    @media (max-height: 760px) and (min-width: 900px) {
+      .barra-header { padding: 8px 24px; }
+      main { padding-top: 14px; }
+      .pregunta-card { padding: 22px 28px; margin-bottom: 16px; }
+      .pregunta-texto { font-size: 28px; margin-bottom: 16px; }
+      .opciones-grid { gap: 10px; margin-bottom: 16px; }
+      .btn-opcion { min-height: 66px; padding: 10px 16px; font-size: 20px; }
+      .letra-circulo { width: 38px; height: 38px; font-size: 18px; }
+      .explicacion-caja { padding: 12px 18px; }
+      .explicacion-texto { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================
+       BARRA DE CABECERA SUPERIOR
+       ========================================================== -->
+  <header class="barra-header">
+    <div class="barra-contenido">
+      <div class="info-curso">
+        <div class="titulo-inst">
+          <span>USS · Protech XP</span> Centro de Informática
+        </div>
+        <h1 class="subtitulo-curso">
+          Diseño Web <span>Sesión 10</span>
+          <small>· Docente: Ing. Dagner Anibal Chuman Lluen</small>
+        </h1>
+      </div>
+      <div class="header-acciones">
+        <button type="button" class="btn-header" id="btn-tema-oscuro" title="Cambiar tema">
+          <span id="icono-tema">🌙</span> Modo oscuro
+        </button>
+        <button type="button" class="btn-header" id="btn-pantalla-completa" title="Pantalla completa para proyector (F)">
+          ⛶ Pantalla completa
+        </button>
+        <button type="button" class="btn-header" id="btn-ir-menu" title="Volver al menú inicial (Esc)">
+          🏠 Menú
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================
+         SECCIÓN 1: PANTALLA INICIAL (SELECTOR PRETEST / POSTEST)
+         ========================================================== -->
+    <section id="pantalla-inicio" aria-labelledby="titulo-principal">
+      <div class="portada-hero">
+        <div class="badge-sesion">
+          📅 Sesión 10 · Modelo de caja, Flexbox y Grid
+        </div>
+        <h1 id="titulo-principal">Cuestionario de la sesión 10</h1>
+        <p>
+          Herramienta interactiva para la proyección en clase con retroalimentación inmediata y explicaciones pedagógicas.
+        </p>
+        <div class="portada-docente">
+          👨‍🏫 Docente: Ing. Dagner Anibal Chuman Lluen · Portafolio Web
+        </div>
+      </div>
+
+      <div class="selector-grid">
+        <!-- Tarjeta Pretest -->
+        <article class="card-test card-pretest">
+          <div>
+            <div class="card-encabezado">
+              <span class="card-etiqueta">Saberes Previos</span>
+              <h2>Pretest</h2>
+              <p>Mide lo que recuerdan de la sesión 09 (CSS3) antes de empezar a maquetar.</p>
+            </div>
+            <ul class="card-lista">
+              <li>🔗 <strong>Enlazar:</strong> el orden de las hojas de estilo</li>
+              <li>⚖️ <strong>Cascada:</strong> especificidad y herencia</li>
+              <li>📏 <strong>Unidades:</strong> rem y em</li>
+              <li>🎨 <strong>Color:</strong> hexadecimal y rgba</li>
+              <li>🔲 <strong>Bordes:</strong> border, border-radius y outline</li>
+              <li>🧩 <strong>Figma:</strong> Relleno de un texto</li>
+            </ul>
+          </div>
+          <div>
+            <button type="button" class="btn-card" id="btn-iniciar-pretest">
+              Iniciar Pretest (10 preguntas) →
+            </button>
+          </div>
+        </article>
+
+        <!-- Tarjeta Postest -->
+        <article class="card-test card-postest">
+          <div>
+            <div class="card-encabezado">
+              <span class="card-etiqueta">Evaluación de Salida</span>
+              <h2>Postest</h2>
+              <p>Mide lo que aprendieron hoy: modelo de caja, Flexbox, Grid y su relación con Figma.</p>
+            </div>
+            <ul class="card-lista">
+              <li>📦 <strong>Modelo de caja (3 preguntas):</strong> padding, box-sizing y display</li>
+              <li>↔️ <strong>Flexbox (3 preguntas):</strong> contenedor, ejes y flex: 1</li>
+              <li>▦ <strong>Grid (1 pregunta):</strong> columnas con fr</li>
+              <li>🧩 <strong>Figma a CSS (3 preguntas):</strong> Espacio Auto, Recortar contenido y modo Llenar</li>
+            </ul>
+          </div>
+          <div>
+            <button type="button" class="btn-card" id="btn-iniciar-postest">
+              Iniciar Postest (10 preguntas) →
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <div class="portada-atajos">
+        <span class="atajo-item">⌨️ <strong>Atajos para proyector:</strong></span>
+        <span class="atajo-item"><kbd>A</kbd> <kbd>B</kbd> <kbd>C</kbd> <kbd>D</kbd> Marcar respuesta</span>
+        <span class="atajo-item"><kbd>→</kbd> o <kbd>Enter</kbd> Siguiente</span>
+        <span class="atajo-item"><kbd>←</kbd> Anterior</span>
+        <span class="atajo-item"><kbd>Esc</kbd> Menú</span>
+        <span class="atajo-item"><kbd>F</kbd> Pantalla completa</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SECCIÓN 2: PANTALLA DE PREGUNTAS (UNA PREGUNTA A LA VEZ)
+         ========================================================== -->
+    <section id="pantalla-cuestionario" class="cuestionario-layout" aria-labelledby="pregunta-activa" hidden>
+      <!-- Barra de estado del test -->
+      <div class="test-estado-bar">
+        <div class="test-badge-activo">
+          <span class="pill-tipo" id="badge-tipo-test">PRETEST</span>
+          <span class="test-descripcion-corta" id="desc-tipo-test">Saberes previos (Sesión 09: CSS3)</span>
+        </div>
+        <div class="avance-contenedor">
+          <span class="avance-texto" id="contador-avance">Pregunta 1 de 10</span>
+          <div class="progreso-track" aria-hidden="true">
+            <div class="progreso-barra" id="progreso-barra" style="width: 10%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta principal de la pregunta -->
+      <article class="pregunta-card">
+        <div class="pregunta-meta">
+          <span class="pregunta-tema" id="tema-pregunta">TEMA</span>
+        </div>
+        <h2 class="pregunta-texto" id="pregunta-activa" tabindex="-1"></h2>
+
+        <ol class="opciones-grid" id="lista-opciones"></ol>
+
+        <!-- Explicación pedagógica desplegada al responder -->
+        <div class="explicacion-caja" id="caja-explicacion" aria-live="polite" hidden>
+          <p class="veredicto-titulo" id="veredicto-titulo"></p>
+          <p class="explicacion-texto" id="explicacion-texto"></p>
+        </div>
+      </article>
+
+      <!-- Barra de navegación inferior -->
+      <nav class="cuestionario-nav" aria-label="Navegación de preguntas">
+        <div class="nav-atajos-hint">
+          <span>Pulsa <kbd>A</kbd> <kbd>B</kbd> <kbd>C</kbd> <kbd>D</kbd> para responder · <kbd>→</kbd> para avanzar</span>
+        </div>
+        <div class="nav-botones">
+          <button type="button" class="btn-nav btn-nav-anterior" id="btn-pregunta-anterior">
+            ← Anterior
+          </button>
+          <button type="button" class="btn-nav btn-nav-siguiente" id="btn-pregunta-siguiente">
+            Siguiente →
+          </button>
+        </div>
+      </nav>
+    </section>
+
+    <!-- ==========================================================
+         SECCIÓN 3: PANTALLA FINAL (RESULTADOS Y REPASO COMPLETO)
+         ========================================================== -->
+    <section id="pantalla-final" class="final-card" aria-labelledby="titulo-final" hidden>
+      <div class="final-encabezado">
+        <span class="final-badge" id="final-badge-tipo">RESULTADOS</span>
+        <h2 class="final-titulo" id="titulo-final" tabindex="-1">¡Cuestionario completado!</h2>
+        
+        <div class="puntaje-display">
+          <span class="puntaje-numero" id="puntaje-numero">0 / 10</span>
+          <span class="puntaje-porcentaje" id="puntaje-porcentaje">0% de aciertos</span>
+        </div>
+
+        <p class="final-mensaje" id="final-mensaje"></p>
+      </div>
+
+      <div class="final-acciones">
+        <button type="button" class="btn-final-accion btn-final-repetir" id="btn-repetir-test">
+          🔄 Volver a intentar este test
+        </button>
+        <button type="button" class="btn-final-accion btn-final-cambiar" id="btn-cambiar-al-otro">
+          ➡️ Ir al Postest
+        </button>
+        <button type="button" class="btn-final-accion btn-final-menu" id="btn-volver-inicio">
+          🏠 Ir al menú principal
+        </button>
+      </div>
+
+      <div class="repaso-seccion">
+        <h3>📋 Repaso de las 10 preguntas y respuestas correctas</h3>
+        <ol class="repaso-lista" id="lista-repaso"></ol>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================
+       DATOS Y LÓGICA DE LA APLICACIÓN
+       ========================================================== -->
+  <script>
+    /* ==========================================================
+       BANCO DE PREGUNTAS: PRETEST (SESIÓN 09) - 10 PREGUNTAS
+       ========================================================== */
+    const BANCO_PRETEST = [
+      {"sesion": "Sesión 09", "tema": "Enlazar hojas de estilo", "p": "¿En qué orden se enlazan las hojas de estilo en las páginas interiores?", "o": ["`contenido.css`, `header.css`, `global.css`", "`global.css`, `header.css`, `contenido.css`", "`header.css`, `global.css`, `contenido.css`", "El orden no importa"], "c": 1, "e": "De lo general a lo particular: `global.css` define las variables que usan las demás, y lo particular va al final para poder ajustar lo anterior."},
+      {"sesion": "Sesión 09", "tema": "Especificidad", "p": "¿Cuál de estos selectores tiene más especificidad?", "o": ["`img`", "`main img`", "`main section img`", "`.foto-perfil`"], "c": 3, "e": "Una clase (0-1-0) gana a cualquier cantidad de etiquetas: `main section img` es 0-0-3."},
+      {"sesion": "Sesión 09", "tema": "Herencia", "p": "¿Por qué escribimos `font: inherit` en los botones y en los campos del formulario?", "o": ["Porque no heredan la letra de la página: el navegador les pone la suya", "Para que el texto sea más grande", "Para que pasen el validador", "Porque `font-family` no existe en CSS"], "c": 0, "e": "Botones y campos traen estilos propios del navegador y una regla directa gana a lo heredado. `font: inherit` les pide la letra del resto del sitio."},
+      {"sesion": "Sesión 09", "tema": "Unidades", "p": "Con la raíz de 16 px, ¿cuántos píxeles son `1.5rem`?", "o": ["15 px", "1.5 px", "24 px", "32 px"], "c": 2, "e": "1.5 × 16 = 24. Es el Espaciado 24 de las tarjetas de Figma, escrito como `padding: 1.5rem;`."},
+      {"sesion": "Sesión 09", "tema": "Color", "p": "¿Qué significa `rgba(6, 182, 196, 0.35)`?", "o": ["El azul de la marca con 35 % de opacidad", "Un color al azar", "El azul con 35 % más de brillo", "Un degradado de tres colores"], "c": 0, "e": "Son los mismos números del `#06B6C4` en rojo, verde y azul, más la opacidad: 0.35. Lo usa la sombra del botón azul."},
+      {"sesion": "Sesión 09", "tema": "Bordes", "p": "¿Qué valor de `border-radius` convierte una imagen cuadrada en un círculo?", "o": ["`100px`", "`50%`", "`circle`", "`1rem`"], "c": 1, "e": "`50%` redondea cada esquina la mitad del lado. Si la imagen no es cuadrada, el resultado es un óvalo."},
+      {"sesion": "Sesión 09", "tema": "Bordes", "p": "La cabecera solo tiene línea abajo, como el Trazo inferior de Figma. ¿Qué propiedad usas?", "o": ["`border: bottom;`", "`outline-bottom`", "`underline`", "`border-bottom`"], "c": 3, "e": "`border-bottom: 1px solid var(--color-border);` dibuja solo el borde inferior. El pie usa `border-top`."},
+      {"sesion": "Sesión 09", "tema": "Pseudo-clases", "p": "¿A qué filas se aplica `tbody tr:nth-child(even)`?", "o": ["A la primera fila", "A las filas pares", "A las filas impares", "A la última fila"], "c": 1, "e": "`even` son las pares y `odd`, las impares. Así se pintan filas alternas en la tabla de herramientas."},
+      {"sesion": "Sesión 09", "tema": "Contorno", "p": "¿En qué se diferencia `outline` de `border`?", "o": ["No hay diferencia", "`outline` solo funciona en enlaces", "`outline` se dibuja por fuera y no cambia el tamaño de la caja", "`outline` siempre es azul"], "c": 2, "e": "El contorno no ocupa espacio en el modelo de caja. Por eso lo usamos en `:focus-visible` para mostrar el foco del teclado."},
+      {"sesion": "Figma", "tema": "Relleno de un texto", "p": "En Figma, un texto tiene Relleno `374151`. ¿Qué propiedad de CSS es?", "o": ["`color`", "`background-color`", "`fill`", "`font-color`"], "c": 0, "e": "En un texto, el Relleno es el color de las letras: `color`. En un marco, el Relleno es su fondo: `background-color`."}
+    ];
+
+    /* ==========================================================
+       BANCO DE PREGUNTAS: POSTEST (SESIÓN 10 Y FIGMA) - 10 PREGUNTAS
+       ========================================================== */
+    const BANCO_POSTEST = [
+      {"sesion": "Sesión 10", "tema": "Modelo de caja", "p": "¿Qué capa del modelo de caja está entre el contenido y el borde?", "o": ["margin", "padding", "outline", "gap"], "c": 1, "e": "De adentro hacia afuera: contenido, padding, borde y margen. El padding es el Espaciado de Figma y toma el fondo de la caja."},
+      {"sesion": "Sesión 10", "tema": "box-sizing", "p": "Con `box-sizing: border-box`, una caja con `width: 300px`, `padding: 24px` y `border: 1px` mide en total…", "o": ["350 px", "324 px", "348 px", "300 px"], "c": 3, "e": "Con `border-box` el ancho incluye el padding y el borde. Con `content-box`, el valor por defecto, mediría 300 + 48 + 2 = 350."},
+      {"sesion": "Sesión 10", "tema": "display", "p": "Un `<span class=\"dot\">` no toma su `width: 10px` ni su `height: 10px`. ¿Por qué?", "o": ["Porque un elemento inline ignora width y height", "Porque falta `border`", "Porque los span no aceptan clases", "Porque falta `position`"], "c": 0, "e": "Un `span` es `inline`. Con `display: inline-block` sigue en la línea pero acepta ancho y alto."},
+      {"sesion": "Sesión 10", "tema": "Flexbox", "p": "Quieres el logotipo, el menú y el botón de la cabecera en una fila. ¿Dónde escribes `display: flex`?", "o": ["En cada uno de los tres hijos", "En el `body`", "En el `header`, el padre de los tres", "En el `nav`"], "c": 2, "e": "Flexbox se escribe en el contenedor. Sus hijos directos son los que se ordenan."},
+      {"sesion": "Sesión 10", "tema": "Los dos ejes", "p": "Un contenedor tiene `flex-direction: column`. ¿Qué propiedad centra a sus hijos en horizontal?", "o": ["`justify-content: center`", "`text-align: center`", "`align-items: center`", "`margin: auto`"], "c": 2, "e": "Con `column`, el eje principal es vertical. `justify-content` trabaja en el principal y `align-items` en el cruzado, que ahora es el horizontal."},
+      {"sesion": "Sesión 10", "tema": "flex: 1", "p": "¿Qué hace `flex: 1` en `.hero-left`?", "o": ["La columna toma el espacio que sobra en la fila", "La columna mide 1 px", "La columna se oculta", "La columna pasa a la primera posición"], "c": 0, "e": "`flex: 1` es el **Llenar el contenedor** de Figma: el ítem crece para ocupar el espacio libre."},
+      {"sesion": "Sesión 10", "tema": "Grid", "p": "¿Qué resultado da `grid-template-columns: repeat(2, 1fr);`?", "o": ["Dos filas iguales", "Dos columnas iguales", "Una columna de 2 px", "Dos columnas de 1 px"], "c": 1, "e": "`fr` es una fracción del espacio libre: dos de `1fr` miden lo mismo. Así se reparten las tarjetas de proyectos."},
+      {"sesion": "Figma a CSS", "tema": "Espacio Auto", "p": "En Figma, la cabecera tiene **Espacio: Auto**. ¿Qué propiedad de CSS es?", "o": ["`gap: auto;`", "`margin: auto;`", "`align-items: stretch;`", "`justify-content: space-between;`"], "c": 3, "e": "Espacio Auto separa a los hijos hacia los extremos: eso hace `justify-content: space-between` en el eje principal."},
+      {"sesion": "Figma a CSS", "tema": "Recortar contenido", "p": "La casilla **Recortar contenido** de una tarjeta de Figma, ¿qué propiedad es en CSS?", "o": ["`overflow: hidden;`", "`display: none;`", "`clip: auto;`", "`visibility: hidden;`"], "c": 0, "e": "`overflow: hidden` recorta lo que se sale de la caja. Así la imagen de proyecto respeta las esquinas redondeadas."},
+      {"sesion": "Figma a CSS", "tema": "Imágenes", "p": "En Figma, la imagen del proyecto está en modo **Llenar**. ¿Qué propiedad hace lo mismo con una `<img>`?", "o": ["`background-size: 100%;`", "`object-fit: cover;`", "`width: auto;`", "`image-fill: cover;`"], "c": 1, "e": "`object-fit: cover` llena la caja sin deformar la imagen y recorta lo que sobra."}
+    ];
+
+    /* ==========================================================
+       ESTADO GLOBAL DE LA APLICACIÓN
+       ========================================================== */
+    const LETRAS = ["A", "B", "C", "D"];
+    const $ = (id) => document.getElementById(id);
+
+    let tipoTestActual = "pretest"; // "pretest" | "postest"
+    let preguntasActuales = BANCO_PRETEST;
+    let indicePregunta = 0;
+    let respuestasElegidas = []; // array de índices o null
+
+    // Inicializa las respuestas en blanco
+    function resetRespuestas(tipo) {
+      tipoTestActual = tipo;
+      preguntasActuales = tipo === "pretest" ? BANCO_PRETEST : BANCO_POSTEST;
+      indicePregunta = 0;
+      respuestasElegidas = preguntasActuales.map(() => null);
+    }
+
+    // Limpia y convierte comillas inversas en <code>
+    function formatearTexto(texto) {
+      if (!texto) return "";
+      const seguro = texto
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+      return seguro.replace(/`([^`]+)`/g, (match, codigo) => {
+        return "<code>" + codigo.replace(/([\/\\])(?=[^\/\\])/g, "$1<wbr>") + "</code>";
+      });
+    }
+
+    /* ==========================================================
+       GESTIÓN DE PANTALLAS
+       ========================================================== */
+    function mostrarPantalla(pantallaId) {
+      $("pantalla-inicio").hidden = pantallaId !== "inicio";
+      $("pantalla-cuestionario").hidden = pantallaId !== "cuestionario";
+      $("pantalla-final").hidden = pantallaId !== "final";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function iniciarTest(tipo) {
+      resetRespuestas(tipo);
+      actualizarCabeceraTest();
+      mostrarPantalla("cuestionario");
+      cargarPregunta();
+    }
+
+    function actualizarCabeceraTest() {
+      const esPre = tipoTestActual === "pretest";
+      const badge = $("badge-tipo-test");
+      const desc = $("desc-tipo-test");
+
+      badge.textContent = esPre ? "PRETEST" : "POSTEST";
+      badge.className = "pill-tipo " + (esPre ? "pretest" : "postest");
+      desc.textContent = esPre 
+        ? "Saberes previos (Sesión 09: CSS3)" 
+        : "Evaluación de salida (Sesión 10 y Figma)";
+    }
+
+    /* ==========================================================
+       CARGA Y PINTADO DE PREGUNTA
+       ========================================================== */
+    function cargarPregunta() {
+      const preg = preguntasActuales[indicePregunta];
+      const total = preguntasActuales.length;
+
+      // Avance
+      $("contador-avance").textContent = `Pregunta ${indicePregunta + 1} de ${total}`;
+      const porcentaje = ((indicePregunta + 1) / total) * 100;
+      $("progreso-barra").style.width = `${porcentaje}%`;
+
+      // Meta y texto
+      $("tema-pregunta").innerHTML = `${preg.sesion} · ${formatearTexto(preg.tema)}`;
+      $("pregunta-activa").innerHTML = formatearTexto(preg.p);
+
+      // Botones de navegación
+      $("btn-pregunta-anterior").disabled = indicePregunta === 0;
+      const esUltima = indicePregunta === total - 1;
+      $("btn-pregunta-siguiente").textContent = esUltima ? "Ver resultados →" : "Siguiente →";
+
+      // Generar opciones
+      const listaOpciones = $("lista-opciones");
+      listaOpciones.innerHTML = "";
+
+      preg.o.forEach((opcTexto, i) => {
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "btn-opcion";
+        btn.dataset.indice = i;
+        btn.setAttribute("aria-label", `Opción ${LETRAS[i]}: ${opcTexto}`);
+
+        btn.innerHTML = `
+          <span class="letra-circulo">${LETRAS[i]}</span>
+          <span class="texto-opcion">${formatearTexto(opcTexto)}</span>
+          <span class="marca-estado"></span>
+        `;
+
+        li.appendChild(btn);
+        listaOpciones.appendChild(li);
+      });
+
+      // Reflejar estado si ya fue respondida anteriormente
+      actualizarEstadoRespuesta();
+
+      // Foco accesible al título de la pregunta
+      $("pregunta-activa").focus();
+    }
+
+    function actualizarEstadoRespuesta() {
+      const preg = preguntasActuales[indicePregunta];
+      const elegida = respuestasElegidas[indicePregunta];
+      const caja = $("caja-explicacion");
+
+      if (elegida === null) {
+        caja.hidden = true;
+        caja.className = "explicacion-caja";
+        document.querySelectorAll(".btn-opcion").forEach(btn => {
+          btn.disabled = false;
+          btn.className = "btn-opcion";
+          btn.querySelector(".marca-estado").textContent = "";
+        });
+        return;
+      }
+
+      // Ya fue respondida: bloquear y pintar
+      caja.hidden = false;
+      const esCorrecta = elegida === preg.c;
+      caja.className = `explicacion-caja ${esCorrecta ? "correcta" : "incorrecta"}`;
+
+      document.querySelectorAll(".btn-opcion").forEach((btn, i) => {
+        btn.disabled = true;
+        btn.classList.remove("correcta", "incorrecta", "apagada");
+        const marca = btn.querySelector(".marca-estado");
+
+        if (i === preg.c) {
+          btn.classList.add("correcta");
+          marca.textContent = "✓ Correcta";
+        } else if (i === elegida) {
+          btn.classList.add("incorrecta");
+          marca.textContent = "✗ Incorrecta";
+        } else {
+          btn.classList.add("apagada");
+          marca.textContent = "";
+        }
+      });
+
+      const tituloVeredicto = $("veredicto-titulo");
+      const textoExplicacion = $("explicacion-texto");
+
+      if (esCorrecta) {
+        tituloVeredicto.className = "veredicto-titulo bien";
+        tituloVeredicto.innerHTML = "✅ ¡Correcto!";
+      } else {
+        tituloVeredicto.className = "veredicto-titulo mal";
+        tituloVeredicto.innerHTML = `❌ Incorrecto · La respuesta es la <strong>${LETRAS[preg.c]}</strong>`;
+      }
+      textoExplicacion.innerHTML = formatearTexto(preg.e);
+    }
+
+    function responder(indiceOpcion) {
+      if (respuestasElegidas[indicePregunta] !== null) return;
+      respuestasElegidas[indicePregunta] = indiceOpcion;
+      actualizarEstadoRespuesta();
+      $("btn-pregunta-siguiente").focus();
+    }
+
+    function avanzarPregunta() {
+      if (indicePregunta === preguntasActuales.length - 1) {
+        mostrarPantallaFinal();
+      } else {
+        indicePregunta++;
+        cargarPregunta();
+      }
+    }
+
+    function retrocederPregunta() {
+      if (indicePregunta > 0) {
+        indicePregunta--;
+        cargarPregunta();
+      }
+    }
+
+    /* ==========================================================
+       PANTALLA FINAL: RESULTADOS Y REPASO
+       ========================================================== */
+    function mostrarPantallaFinal() {
+      mostrarPantalla("final");
+
+      const esPre = tipoTestActual === "pretest";
+      const total = preguntasActuales.length;
+      let aciertos = 0;
+
+      preguntasActuales.forEach((preg, i) => {
+        if (respuestasElegidas[i] === preg.c) aciertos++;
+      });
+
+      const porcentaje = Math.round((aciertos / total) * 100);
+
+      // Badge y títulos
+      const badge = $("final-badge-tipo");
+      badge.textContent = esPre ? "RESULTADOS PRETEST (SESIÓN 09)" : "RESULTADOS POSTEST (SESIÓN 10 Y FIGMA)";
+      badge.className = "final-badge " + (esPre ? "pretest" : "postest");
+
+      $("puntaje-numero").textContent = `${aciertos} / ${total}`;
+      $("puntaje-porcentaje").textContent = `${porcentaje}% de respuestas correctas`;
+
+      // Mensaje pedagógico
+      let mensaje = "";
+      if (porcentaje === 100) {
+        mensaje = "¡Extraordinario! Dominas con precisión todos los conceptos evaluados.";
+      } else if (porcentaje >= 80) {
+        mensaje = "¡Muy buen trabajo! Tienes bases muy sólidas para continuar avanzando en tu portafolio web.";
+      } else if (porcentaje >= 60) {
+        mensaje = "¡Buen esfuerzo! Revisa los puntos clave a continuación para reforzar los temas de la sesión.";
+      } else {
+        mensaje = "Ánimo. Aprovechemos este repaso para afianzar cada concepto antes de continuar el desarrollo.";
+      }
+      $("final-mensaje").textContent = mensaje;
+
+      // Configurar botón para cambiar al otro test
+      const btnCambiar = $("btn-cambiar-al-otro");
+      if (esPre) {
+        btnCambiar.textContent = "➡️ Ir al Postest (Sesión 10)";
+        btnCambiar.onclick = () => iniciarTest("postest");
+      } else {
+        btnCambiar.textContent = "⬅️ Ir al Pretest (Sesión 09)";
+        btnCambiar.onclick = () => iniciarTest("pretest");
+      }
+
+      // Repaso detallado
+      const listaRepaso = $("lista-repaso");
+      listaRepaso.innerHTML = "";
+
+      preguntasActuales.forEach((preg, i) => {
+        const elegida = respuestasElegidas[i];
+        const acertada = elegida === preg.c;
+
+        const li = document.createElement("li");
+        li.className = `repaso-item ${acertada ? "acertada" : "fallada"}`;
+
+        const estadoIcono = acertada ? "✅ Acertada" : `❌ Tu respuesta: ${elegida !== null ? LETRAS[elegida] : "Sin responder"}`;
+
+        li.innerHTML = `
+          <div class="repaso-meta">
+            <span>${preg.sesion} · ${formatearTexto(preg.tema)}</span>
+            <span>${estadoIcono}</span>
+          </div>
+          <p class="repaso-pregunta"><strong>${i + 1}.</strong> ${formatearTexto(preg.p)}</p>
+          <div class="repaso-respuesta">
+            Respuesta correcta: <strong>${LETRAS[preg.c]}. ${formatearTexto(preg.o[preg.c])}</strong>
+          </div>
+          <p class="repaso-explicacion">💡 ${formatearTexto(preg.e)}</p>
+        `;
+        listaRepaso.appendChild(li);
+      });
+
+      $("titulo-final").focus();
+    }
+
+    /* ==========================================================
+       PANTALLA COMPLETA Y TEMA OSCURO
+       ========================================================== */
+    function alternarPantallaCompleta() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.log("No se pudo entrar a pantalla completa:", err);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    function alternarTemaOscuro() {
+      document.body.classList.toggle("dark-mode");
+      const esOscuro = document.body.classList.contains("dark-mode");
+      $("icono-tema").textContent = esOscuro ? "☀️" : "🌙";
+      $("btn-tema-oscuro").innerHTML = `<span id="icono-tema">${esOscuro ? "☀️" : "🌙"}</span> ${esOscuro ? "Modo claro" : "Modo oscuro"}`;
+    }
+
+    /* ==========================================================
+       LISTENERS Y EVENTOS DE INTERFAZ
+       ========================================================== */
+    $("btn-iniciar-pretest").addEventListener("click", () => iniciarTest("pretest"));
+    $("btn-iniciar-postest").addEventListener("click", () => iniciarTest("postest"));
+    $("btn-ir-menu").addEventListener("click", () => mostrarPantalla("inicio"));
+    $("btn-volver-inicio").addEventListener("click", () => mostrarPantalla("inicio"));
+    $("btn-repetir-test").addEventListener("click", () => iniciarTest(tipoTestActual));
+
+    $("btn-pregunta-siguiente").addEventListener("click", avanzarPregunta);
+    $("btn-pregunta-anterior").addEventListener("click", retrocederPregunta);
+
+    $("btn-pantalla-completa").addEventListener("click", alternarPantallaCompleta);
+    $("btn-tema-oscuro").addEventListener("click", alternarTemaOscuro);
+
+    // Clic en opciones delegadas
+    $("lista-opciones").addEventListener("click", (e) => {
+      const btn = e.target.closest(".btn-opcion");
+      if (btn && !btn.disabled) {
+        responder(Number(btn.dataset.indice));
+      }
+    });
+
+    // Atajos de teclado para proyección
+    document.addEventListener("keydown", (e) => {
+      // Ignorar si se presiona dentro de un input o textarea
+      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+      const tecla = e.key.toLowerCase();
+
+      // Atajo F para pantalla completa
+      if (tecla === "f") {
+        e.preventDefault();
+        alternarPantallaCompleta();
+        return;
+      }
+
+      // Atajo Escape para volver al menú
+      if (tecla === "escape") {
+        mostrarPantalla("inicio");
+        return;
+      }
+
+      // Solo procesar teclas de juego si estamos en el cuestionario
+      if (!$("pantalla-cuestionario").hidden) {
+        const letraIndice = ["a", "b", "c", "d"].indexOf(tecla);
+        if (letraIndice >= 0) {
+          e.preventDefault();
+          responder(letraIndice);
+        } else if (tecla === "arrowright" || (tecla === "enter" && !e.target.closest("button"))) {
+          e.preventDefault();
+          avanzarPregunta();
+        } else if (tecla === "arrowleft") {
+          e.preventDefault();
+          retrocederPregunta();
+        }
+      }
+    });
+
+    // Iniciar en pantalla principal
+    mostrarPantalla("inicio");
+  </script>
+</body>
+</html>

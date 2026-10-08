@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>body{width:760px;display:flex;flex-direction:column;gap:14px}
+.it{justify-content:flex-start;font-family:'Geist Mono';font-size:13px}</style></head><body>
+<div><div class="lbl">sin flex: cada ítem mide lo que su contenido (Ajustar al contenido)</div><div class="cont"><div class="it">hero-left</div><div class="it" style="background:#0B0F19">hero-right</div></div></div>
+<div><div class="lbl">flex: 1 en el primero — toma todo el espacio que sobra (Llenar el contenedor)</div><div class="cont"><div class="it" style="flex:1">flex: 1</div><div class="it" style="background:#0B0F19">hero-right</div></div></div>
+<div><div class="lbl">flex: 1 + flex: 0 0 240px — una columna flexible y otra fija (Ancho fijo)</div><div class="cont"><div class="it" style="flex:1">about-text · flex: 1</div><div class="it" style="background:#0B0F19;flex:0 0 240px">aside · flex: 0 0 240px</div></div></div>
+<div><div class="lbl">flex-direction: column + gap — Flujo ↓ con Espacio</div><div class="cont" style="flex-direction:column;gap:8px;width:300px"><div class="it">título</div><div class="it">párrafo</div><div class="it">botones</div></div></div>
+</body></html>

@@ -1,0 +1,9 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+body{width:760px;display:flex;flex-direction:column;gap:14px}
+.p{border:1px dashed #9CA3AF;border-radius:8px;padding:10px;font-size:15px;line-height:2.1;color:#374151;background:#F9FAFB}
+.k{background:#06B6C4;color:#fff;padding:6px 12px;border-radius:5px;font-weight:600}
+</style></head><body>
+<div><div class="lbl">display: block — ocupa todo el ancho y empieza en una línea nueva</div><div class="p">Texto antes <div class="k" style="display:block">bloque</div> texto después</div></div>
+<div><div class="lbl">display: inline — va en la línea; ignora width, height y el padding vertical al medir la línea</div><div class="p">Texto antes <span class="k" style="display:inline;width:200px">en línea</span> texto después</div></div>
+<div><div class="lbl">display: inline-block — va en la línea, pero acepta width y height</div><div class="p">Texto antes <span class="k" style="display:inline-block;width:200px;text-align:center">200px de ancho</span> texto después</div></div>
+</body></html>

@@ -1,0 +1,9 @@
+# Archivos que se generan al ejecutar los scripts
+node_modules/
+package-lock.json
+fontcache/
+out/
+diapositivas/img/
+diapositivas/media/
+diapositivas/demos/poster-presentacion.jpg
+imagenes-proyectos/*.jpg

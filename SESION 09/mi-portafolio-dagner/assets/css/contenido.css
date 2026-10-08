@@ -1,0 +1,251 @@
+/* ==========================================================
+   contenido.css · Base de las páginas interiores
+   (Sobre mí, Proyectos y Contacto)
+   Se enlaza TERCERO en esas tres páginas.
+   Figma: about-section, projects-section y contact-section
+   ========================================================== */
+
+/* 1. Caja central de lectura */
+main {
+  max-width: 800px;         /* px: medida fija */
+  margin: 0 auto;           /* auto: reparte el espacio sobrante y centra la caja */
+  padding: 6.25rem 1.5rem;  /* 100px y 24px. En Figma: Espaciado superior e inferior 100 */
+}
+
+/* 2. Separación entre secciones (selector descendiente) */
+main section {
+  margin-bottom: 3rem;      /* 48px. En Figma: Espacio 48 */
+}
+
+/* 3. Títulos y párrafos */
+main h2 {
+  font-size: 2.25rem;       /* 36px ÷ 16. En Figma: Outfit ExtraBold 36 */
+  font-weight: 800;
+  letter-spacing: -0.01em;  /* em: 1 % del tamaño de su propia letra */
+  margin-bottom: 1.5rem;
+}
+
+main h3 {
+  font-size: 1.5rem;        /* 24px ÷ 16. En Figma: Outfit Bold 24 */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+main p {
+  margin-bottom: 1rem;      /* 16px */
+}
+
+/* 4. Enlaces del contenido: recuperan el subrayado que quitó global.css */
+main a {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 3px;
+}
+
+main a:hover {
+  color: var(--color-primary);
+}
+
+/* 5. Tarjetas: un mismo bloque para tres etiquetas (selector agrupado) */
+aside,
+article,
+fieldset {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;          /* 24px. En Figma: Espaciado 24 */
+  margin-bottom: 1.5rem;
+}
+
+/* Misma especificidad que «main h2» (dos etiquetas): gana por estar más abajo */
+aside h2 {
+  font-size: 1.375rem;      /* 22px ÷ 16. En Figma: título secundario 22 */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* 6. Listas de datos y de contacto */
+main dt {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+main dd,
+main li {
+  margin-bottom: 0.5rem;
+}
+
+/* 7. Multimedia: nunca más ancha que su contenedor */
+figure {
+  margin-bottom: 1.5rem;
+}
+
+figcaption {
+  font-size: 0.875rem;      /* 14px ÷ 16 */
+  font-style: italic;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;          /* %: relativo al ancho del contenedor */
+  border: 0;
+  border-radius: var(--radius-md);
+}
+
+img,
+video {
+  height: auto;             /* conserva la proporción al encogerse */
+}
+
+/* La foto de perfil: un círculo con borde de color.
+   border-radius: 50% redondea una caja cuadrada hasta volverla círculo */
+.foto-perfil {
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+}
+
+/* 8. Botones: no heredan la letra de la página, hay que pedírselo */
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.875rem 1.5rem; /* 14px y 24px, como los botones de Figma */
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-text-primary);
+  color: #FFFFFF;
+}
+
+/* Selector de atributo: solo el botón que envía el formulario */
+button[type="submit"] {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+button[type="submit"]:hover {
+  box-shadow: 0 4px 14px rgba(6, 182, 196, 0.35); /* el azul de Figma al 35 % */
+}
+
+/* 9. Formulario de contacto */
+legend {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  padding: 0 0.5rem;
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+input,
+select,
+textarea {
+  font: inherit;            /* los campos tampoco heredan la letra */
+  width: 100%;
+  padding: 0.75rem 1rem;    /* 12px y 16px */
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+}
+
+/* Selector de atributo: estos dos campos no ocupan todo el ancho */
+input[type="checkbox"],
+input[type="range"] {
+  width: auto;
+  padding: 0;
+  accent-color: var(--color-primary); /* pinta la casilla y la barra con el azul de Figma */
+}
+
+/* 10. Controles del video (selector de id + combinador de hijo) */
+#controles-video {
+  margin: 0.75rem 0;
+}
+
+#controles-video > * {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* 11. Transcripción desplegable del audio */
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* 12. Tabla de datos (Sesión 05): bordes, fondos y tipografía */
+table {
+  width: 100%;
+  border-collapse: collapse;  /* une los bordes de celdas vecinas en una sola línea */
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: 0.9375rem;       /* 15px ÷ 16 */
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  padding-bottom: 0.75rem;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;      /* 12px y 16px */
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+thead th {
+  background-color: #F3F4F6;  /* el gris de la barra de la tarjeta de código */
+  color: var(--color-text-primary);
+  font-size: 0.75rem;         /* 12px */
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+tbody th {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* Pseudo-clase: una fila sí y otra no, con el fondo de la página */
+tbody tr:nth-child(even) {
+  background-color: var(--color-bg);
+}
+
+tbody tr:hover {
+  background-color: rgba(6, 182, 196, 0.08); /* el azul de Figma al 8 % */
+}
+
+tfoot td {
+  font-size: 0.875rem;
+  font-style: italic;
+  text-align: center;
+  border-bottom: 0;
+}
+
+code {
+  font-size: 0.875em;         /* em: un poco más pequeña que el texto que la rodea */
+  color: var(--color-text-primary);
+  overflow-wrap: anywhere;    /* una ruta larga puede partirse para no desbordar en el celular */
+}

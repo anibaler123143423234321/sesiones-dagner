@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio - Dagner Chuman</title>
+    <meta name="description" content="Portafolio personal de Dagner Chuman, 
+    docente e ingeniero en desarrollo web y formación tecnológica." />
+
+    <!-- 1. Tokens y Reset Global -->
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <!-- 2. Componentes comunes (Header / Footer) -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <!-- 3. Estilos específicos de esta página (Hero) -->
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
+  <body>
+    <!-- CABECERA: Identidad del sitio y menú de navegación -->
+    <header>
+      <h1><a href="index.html">Dagner Chuman</a></h1>
+      <nav aria-label="Navegacion principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="mis-proyectos.html">Proyectos</a></li>
+          <li><a href="contactame.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="contactame.html">Contacto</a>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <!-- PRESENTACIÓN · Figma: hero-section -->
+      <section class="hero-section">
+        <!-- Columna Izquierda · Figma: hero-left -->
+        <div class="hero-left">
+          <h2 class="hero-title">
+            Formando a la próxima generación de desarrolladores web.
+          </h2>
+          <p class="hero-description">
+            Docente e Ingeniero enfocado en el desarrollo web moderno,
+            arquitectura de software y formación tecnológica integral en el
+            Centro de Informática USS.
+          </p>
+          <!-- Botones de Acción · Figma: hero-actions -->
+          <div class="hero-actions">
+            <a href="mis-proyectos.html" class="btn btn-primary">Ver Proyectos</a>
+            <a href="contactame.html" class="btn btn-secondary">Contáctame</a>
+          </div>
+        </div>
+
+        <!-- Columna Derecha · Figma: hero-right (Tarjeta de código) -->
+        <div class="hero-right">
+          <div class="code-card">
+            <div class="code-header">
+              <div class="window-controls">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="code-filename">dagner-chuman.ts</span>
+            </div>
+            <pre class="code-body"><code>const docente = {
+  nombre: "Dagner Chuman",
+  rol: "Docente &amp; Ingeniero Web",
+  institucion: "Centro de Informática USS",
+  skills: ["HTML5", "CSS3", "JavaScript"],
+  mision: "Transformar ideas en código"
+};</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+
+      <nav aria-label="Enlaces rapidos">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="mis-proyectos.html">Proyectos</a></li>
+          <li><a href="contactame.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <p>&copy; 2026 Dagner Chuman · Centro de Informática USS · Protech XP</p>
+    </footer>
+
+  </body>
+</html>
