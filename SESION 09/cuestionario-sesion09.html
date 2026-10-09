@@ -1102,7 +1102,7 @@
         .replace(/>/g, "&gt;");
       return seguro.replace(/`([^`]+)`/g, (match, codigo) => {
         return "<code>" + codigo.replace(/([\/\\])(?=[^\/\\])/g, "$1<wbr>") + "</code>";
-      });
+      }).replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
     }
 
     /* ==========================================================

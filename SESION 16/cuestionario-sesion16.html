@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cuestionario de la sesión 10 · Diseño Web USS</title>
+  <title>Cuestionario de la sesión 16 · Diseño Web USS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -858,7 +858,7 @@
           <span>USS · Protech XP</span> Centro de Informática
         </div>
         <h1 class="subtitulo-curso">
-          Diseño Web <span>Sesión 10</span>
+          Diseño Web <span>Sesión 16</span>
           <small>· Docente: Ing. Dagner Anibal Chuman Lluen</small>
         </h1>
       </div>
@@ -883,9 +883,9 @@
     <section id="pantalla-inicio" aria-labelledby="titulo-principal">
       <div class="portada-hero">
         <div class="badge-sesion">
-          📅 Sesión 10 · Modelo de caja, Flexbox y Grid
+          📅 Sesión 16 · Simulacro del examen final (sesiones 1 a 16)
         </div>
-        <h1 id="titulo-principal">Cuestionario de la sesión 10</h1>
+        <h1 id="titulo-principal">Cuestionario de la sesión 16</h1>
         <p>
           Herramienta interactiva para la proyección en clase con retroalimentación inmediata y explicaciones pedagógicas.
         </p>
@@ -899,22 +899,19 @@
         <article class="card-test card-pretest">
           <div>
             <div class="card-encabezado">
-              <span class="card-etiqueta">Saberes Previos</span>
-              <h2>Pretest</h2>
-              <p>Mide lo que recuerdan de la sesión 09 (CSS3) antes de empezar a maquetar.</p>
+              <span class="card-etiqueta">Simulacro</span>
+              <h2>Parte 1</h2>
+              <p>Parte 1 del simulacro: HTML5, de la sesión 01 a la 07. Repasa antes del examen final.</p>
             </div>
             <ul class="card-lista">
-              <li>🔗 <strong>Enlazar:</strong> el orden de las hojas de estilo</li>
-              <li>⚖️ <strong>Cascada:</strong> especificidad y herencia</li>
-              <li>📏 <strong>Unidades:</strong> rem y em</li>
-              <li>🎨 <strong>Color:</strong> hexadecimal y rgba</li>
-              <li>🔲 <strong>Bordes:</strong> border, border-radius y outline</li>
-              <li>🧩 <strong>Figma:</strong> Relleno de un texto</li>
+              <li>🏗️ <strong>Estructura (4 preguntas):</strong> doctype, main, nav y los títulos</li>
+              <li>🔗 <strong>Enlaces, imágenes y tablas (3 preguntas):</strong> target, alt y caption</li>
+              <li>📝 <strong>Formularios y multimedia (3 preguntas):</strong> label, email y video</li>
             </ul>
           </div>
           <div>
             <button type="button" class="btn-card" id="btn-iniciar-pretest">
-              Iniciar Pretest (10 preguntas) →
+              Iniciar la parte 1 (10 preguntas) →
             </button>
           </div>
         </article>
@@ -923,20 +920,19 @@
         <article class="card-test card-postest">
           <div>
             <div class="card-encabezado">
-              <span class="card-etiqueta">Evaluación de Salida</span>
-              <h2>Postest</h2>
-              <p>Mide lo que aprendieron hoy: modelo de caja, Flexbox, Grid y su relación con Figma.</p>
+              <span class="card-etiqueta">Simulacro</span>
+              <h2>Parte 2</h2>
+              <p>Parte 2 del simulacro: CSS3, Bootstrap y la publicación, de la sesión 09 a la 15.</p>
             </div>
             <ul class="card-lista">
-              <li>📦 <strong>Modelo de caja (3 preguntas):</strong> padding, box-sizing y display</li>
-              <li>↔️ <strong>Flexbox (3 preguntas):</strong> contenedor, ejes y flex: 1</li>
-              <li>▦ <strong>Grid (1 pregunta):</strong> columnas con fr</li>
-              <li>🧩 <strong>Figma a CSS (3 preguntas):</strong> Espacio Auto, Recortar contenido y modo Llenar</li>
+              <li>🎨 <strong>CSS3 (6 preguntas):</strong> especificidad, variables, caja, flex, grid y transiciones</li>
+              <li>📱 <strong>Responsive y Bootstrap (3 preguntas):</strong> media queries, grilla y modal</li>
+              <li>🚀 <strong>Publicación (1 pregunta):</strong> Netlify Forms</li>
             </ul>
           </div>
           <div>
             <button type="button" class="btn-card" id="btn-iniciar-postest">
-              Iniciar Postest (10 preguntas) →
+              Iniciar la parte 2 (10 preguntas) →
             </button>
           </div>
         </article>
@@ -959,8 +955,8 @@
       <!-- Barra de estado del test -->
       <div class="test-estado-bar">
         <div class="test-badge-activo">
-          <span class="pill-tipo" id="badge-tipo-test">PRETEST</span>
-          <span class="test-descripcion-corta" id="desc-tipo-test">Saberes previos (Sesión 09: CSS3)</span>
+          <span class="pill-tipo" id="badge-tipo-test">PARTE 1</span>
+          <span class="test-descripcion-corta" id="desc-tipo-test">Simulacro · Parte 1 (HTML5)</span>
         </div>
         <div class="avance-contenedor">
           <span class="avance-texto" id="contador-avance">Pregunta 1 de 10</span>
@@ -1023,7 +1019,7 @@
           🔄 Volver a intentar este test
         </button>
         <button type="button" class="btn-final-accion btn-final-cambiar" id="btn-cambiar-al-otro">
-          ➡️ Ir al Postest
+          ➡️ Ir a la parte 2
         </button>
         <button type="button" class="btn-final-accion btn-final-menu" id="btn-volver-inicio">
           🏠 Ir al menú principal
@@ -1042,35 +1038,35 @@
        ========================================================== -->
   <script>
     /* ==========================================================
-       BANCO DE PREGUNTAS: PRETEST (SESIÓN 09) - 10 PREGUNTAS
+       BANCO DE PREGUNTAS: PRETEST (PARTE 1) - 10 PREGUNTAS
        ========================================================== */
     const BANCO_PRETEST = [
-      {"sesion": "Sesión 09", "tema": "Enlazar hojas de estilo", "p": "¿En qué orden se enlazan las hojas de estilo en las páginas interiores?", "o": ["`contenido.css`, `header.css`, `global.css`", "`global.css`, `header.css`, `contenido.css`", "`header.css`, `global.css`, `contenido.css`", "El orden no importa"], "c": 1, "e": "De lo general a lo particular: `global.css` define las variables que usan las demás, y lo particular va al final para poder ajustar lo anterior."},
-      {"sesion": "Sesión 09", "tema": "Especificidad", "p": "¿Cuál de estos selectores tiene más especificidad?", "o": ["`img`", "`main img`", "`main section img`", "`.foto-perfil`"], "c": 3, "e": "Una clase (0-1-0) gana a cualquier cantidad de etiquetas: `main section img` es 0-0-3."},
-      {"sesion": "Sesión 09", "tema": "Herencia", "p": "¿Por qué escribimos `font: inherit` en los botones y en los campos del formulario?", "o": ["Porque no heredan la letra de la página: el navegador les pone la suya", "Para que el texto sea más grande", "Para que pasen el validador", "Porque `font-family` no existe en CSS"], "c": 0, "e": "Botones y campos traen estilos propios del navegador y una regla directa gana a lo heredado. `font: inherit` les pide la letra del resto del sitio."},
-      {"sesion": "Sesión 09", "tema": "Unidades", "p": "Con la raíz de 16 px, ¿cuántos píxeles son `1.5rem`?", "o": ["15 px", "1.5 px", "24 px", "32 px"], "c": 2, "e": "1.5 × 16 = 24. Es el Espaciado 24 de las tarjetas de Figma, escrito como `padding: 1.5rem;`."},
-      {"sesion": "Sesión 09", "tema": "Color", "p": "¿Qué significa `rgba(6, 182, 196, 0.35)`?", "o": ["El azul de la marca con 35 % de opacidad", "Un color al azar", "El azul con 35 % más de brillo", "Un degradado de tres colores"], "c": 0, "e": "Son los mismos números del `#06B6C4` en rojo, verde y azul, más la opacidad: 0.35. Lo usa la sombra del botón azul."},
-      {"sesion": "Sesión 09", "tema": "Bordes", "p": "¿Qué valor de `border-radius` convierte una imagen cuadrada en un círculo?", "o": ["`100px`", "`50%`", "`circle`", "`1rem`"], "c": 1, "e": "`50%` redondea cada esquina la mitad del lado. Si la imagen no es cuadrada, el resultado es un óvalo."},
-      {"sesion": "Sesión 09", "tema": "Bordes", "p": "La cabecera solo tiene línea abajo, como el Trazo inferior de Figma. ¿Qué propiedad usas?", "o": ["`border: bottom;`", "`outline-bottom`", "`underline`", "`border-bottom`"], "c": 3, "e": "`border-bottom: 1px solid var(--color-border);` dibuja solo el borde inferior. El pie usa `border-top`."},
-      {"sesion": "Sesión 09", "tema": "Pseudo-clases", "p": "¿A qué filas se aplica `tbody tr:nth-child(even)`?", "o": ["A la primera fila", "A las filas pares", "A las filas impares", "A la última fila"], "c": 1, "e": "`even` son las pares y `odd`, las impares. Así se pintan filas alternas en la tabla de herramientas."},
-      {"sesion": "Sesión 09", "tema": "Contorno", "p": "¿En qué se diferencia `outline` de `border`?", "o": ["No hay diferencia", "`outline` solo funciona en enlaces", "`outline` se dibuja por fuera y no cambia el tamaño de la caja", "`outline` siempre es azul"], "c": 2, "e": "El contorno no ocupa espacio en el modelo de caja. Por eso lo usamos en `:focus-visible` para mostrar el foco del teclado."},
-      {"sesion": "Figma", "tema": "Relleno de un texto", "p": "En Figma, un texto tiene Relleno `374151`. ¿Qué propiedad de CSS es?", "o": ["`color`", "`background-color`", "`fill`", "`font-color`"], "c": 0, "e": "En un texto, el Relleno es el color de las letras: `color`. En un marco, el Relleno es su fondo: `background-color`."}
+      {"sesion": "Sesión 01", "tema": "Documento", "p": "¿Para qué sirve `<!doctype html>` en la primera línea?", "o": ["Le dice al navegador que el documento es HTML5 y que lo muestre en modo estándar", "Enlaza la hoja de estilos", "Pone el título de la pestaña", "Hace que la página funcione sin internet"], "c": 0, "e": "Sin él, el navegador entra en un modo antiguo y algunos estilos se ven distinto."},
+      {"sesion": "Sesión 02", "tema": "Semántica", "p": "¿Qué etiqueta envuelve el contenido principal y único de cada página?", "o": ["`<section>`", "`<main>`", "`<article>`", "`<div>`"], "c": 1, "e": "Hay un solo `<main>` por página. En la sesión 15 recibe `id=\"contenido\"`."},
+      {"sesion": "Sesión 03", "tema": "Semántica", "p": "¿Para qué se usa `<nav>`?", "o": ["Para cualquier lista", "Para el pie de página", "Para agrupar los enlaces de navegación del sitio", "Para los botones de un formulario"], "c": 2, "e": "Con `aria-label` se distingue el menú principal del menú del pie."},
+      {"sesion": "Sesión 02", "tema": "Títulos", "p": "¿Cuántos `<h1>` conviene tener en una página?", "o": ["Uno por sección", "Ninguno", "Tantos como títulos grandes haya", "Uno: el título principal; los demás bajan en orden, h2, h3…"], "c": 3, "e": "Los títulos forman el índice de la página para el lector de pantalla y para Google."},
+      {"sesion": "Sesión 04", "tema": "Enlaces", "p": "¿Cómo abres un enlace externo en una pestaña nueva de forma segura?", "o": ["`target=\"_blank\" rel=\"noopener\"`", "`href=\"_blank\"`", "`target=\"new\"`", "`rel=\"external\"` solamente"], "c": 0, "e": "`noopener` evita que la página nueva controle la tuya."},
+      {"sesion": "Sesión 04", "tema": "Imágenes", "p": "¿Para qué sirve el atributo `alt` de una imagen?", "o": ["Para darle un borde", "Para describirla al lector de pantalla y mostrar un texto si no carga", "Para cambiar su tamaño", "Para que cargue más rápido"], "c": 1, "e": "Si la imagen es solo decorativa, se escribe `alt=\"\"`."},
+      {"sesion": "Sesión 05", "tema": "Tablas", "p": "¿Qué etiqueta le da un título a una tabla?", "o": ["`<th>`", "`<thead>`", "`<caption>`", "`<title>`"], "c": 2, "e": "`<th>` es una celda de encabezado; con `scope=\"col\"` dice que encabeza una columna."},
+      {"sesion": "Sesión 06", "tema": "Formularios", "p": "¿Qué une `<label for=\"correo\">` con `<input id=\"correo\">`?", "o": ["Que el campo sea obligatorio", "Que el texto se vea en negrita", "Que el formulario se envíe solo", "El `for` coincide con el `id`: al hacer clic en la etiqueta se enfoca el campo y el lector de pantalla la lee"], "c": 3, "e": "Es una de las primeras cosas que revisa el validador."},
+      {"sesion": "Sesión 06", "tema": "Formularios", "p": "¿Qué hace `<input type=\"email\" required>`?", "o": ["El navegador revisa que tenga forma de correo y no deja enviar el formulario vacío", "Envía un correo automáticamente", "Oculta lo que se escribe", "Muestra un calendario"], "c": 0, "e": "En el celular, además, aparece un teclado con la @."},
+      {"sesion": "Sesión 07", "tema": "Video", "p": "¿Qué atributo necesita `<video autoplay>` para que el navegador lo reproduzca solo?", "o": ["`loop`", "`muted`", "`poster`", "`preload`"], "c": 1, "e": "Los navegadores solo reproducen solos los videos sin sonido. `controls` muestra los botones."}
     ];
 
     /* ==========================================================
-       BANCO DE PREGUNTAS: POSTEST (SESIÓN 10 Y FIGMA) - 10 PREGUNTAS
+       BANCO DE PREGUNTAS: POSTEST (SESIÓN 16 Y FIGMA) - 10 PREGUNTAS
        ========================================================== */
     const BANCO_POSTEST = [
-      {"sesion": "Sesión 10", "tema": "Modelo de caja", "p": "¿Qué capa del modelo de caja está entre el contenido y el borde?", "o": ["margin", "padding", "outline", "gap"], "c": 1, "e": "De adentro hacia afuera: contenido, padding, borde y margen. El padding es el Espaciado de Figma y toma el fondo de la caja."},
-      {"sesion": "Sesión 10", "tema": "box-sizing", "p": "Con `box-sizing: border-box`, una caja con `width: 300px`, `padding: 24px` y `border: 1px` mide en total…", "o": ["350 px", "324 px", "348 px", "300 px"], "c": 3, "e": "Con `border-box` el ancho incluye el padding y el borde. Con `content-box`, el valor por defecto, mediría 300 + 48 + 2 = 350."},
-      {"sesion": "Sesión 10", "tema": "display", "p": "Un `<span class=\"dot\">` no toma su `width: 10px` ni su `height: 10px`. ¿Por qué?", "o": ["Porque un elemento inline ignora width y height", "Porque falta `border`", "Porque los span no aceptan clases", "Porque falta `position`"], "c": 0, "e": "Un `span` es `inline`. Con `display: inline-block` sigue en la línea pero acepta ancho y alto."},
-      {"sesion": "Sesión 10", "tema": "Flexbox", "p": "Quieres el logotipo, el menú y el botón de la cabecera en una fila. ¿Dónde escribes `display: flex`?", "o": ["En cada uno de los tres hijos", "En el `body`", "En el `header`, el padre de los tres", "En el `nav`"], "c": 2, "e": "Flexbox se escribe en el contenedor. Sus hijos directos son los que se ordenan."},
-      {"sesion": "Sesión 10", "tema": "Los dos ejes", "p": "Un contenedor tiene `flex-direction: column`. ¿Qué propiedad centra a sus hijos en horizontal?", "o": ["`justify-content: center`", "`text-align: center`", "`align-items: center`", "`margin: auto`"], "c": 2, "e": "Con `column`, el eje principal es vertical. `justify-content` trabaja en el principal y `align-items` en el cruzado, que ahora es el horizontal."},
-      {"sesion": "Sesión 10", "tema": "flex: 1", "p": "¿Qué hace `flex: 1` en `.hero-left`?", "o": ["La columna toma el espacio que sobra en la fila", "La columna mide 1 px", "La columna se oculta", "La columna pasa a la primera posición"], "c": 0, "e": "`flex: 1` es el **Llenar el contenedor** de Figma: el ítem crece para ocupar el espacio libre."},
-      {"sesion": "Sesión 10", "tema": "Grid", "p": "¿Qué resultado da `grid-template-columns: repeat(2, 1fr);`?", "o": ["Dos filas iguales", "Dos columnas iguales", "Una columna de 2 px", "Dos columnas de 1 px"], "c": 1, "e": "`fr` es una fracción del espacio libre: dos de `1fr` miden lo mismo. Así se reparten las tarjetas de proyectos."},
-      {"sesion": "Figma a CSS", "tema": "Espacio Auto", "p": "En Figma, la cabecera tiene **Espacio: Auto**. ¿Qué propiedad de CSS es?", "o": ["`gap: auto;`", "`margin: auto;`", "`align-items: stretch;`", "`justify-content: space-between;`"], "c": 3, "e": "Espacio Auto separa a los hijos hacia los extremos: eso hace `justify-content: space-between` en el eje principal."},
-      {"sesion": "Figma a CSS", "tema": "Recortar contenido", "p": "La casilla **Recortar contenido** de una tarjeta de Figma, ¿qué propiedad es en CSS?", "o": ["`overflow: hidden;`", "`display: none;`", "`clip: auto;`", "`visibility: hidden;`"], "c": 0, "e": "`overflow: hidden` recorta lo que se sale de la caja. Así la imagen de proyecto respeta las esquinas redondeadas."},
-      {"sesion": "Figma a CSS", "tema": "Imágenes", "p": "En Figma, la imagen del proyecto está en modo **Llenar**. ¿Qué propiedad hace lo mismo con una `<img>`?", "o": ["`background-size: 100%;`", "`object-fit: cover;`", "`width: auto;`", "`image-fill: cover;`"], "c": 1, "e": "`object-fit: cover` llena la caja sin deformar la imagen y recorta lo que sobra."}
+      {"sesion": "Sesión 09", "tema": "Especificidad", "p": "Dos reglas dan color al mismo enlace: `#menu a` y `.nav a`. ¿Cuál gana?", "o": ["La que está escrita al final", "La que tiene el color más oscuro", "`#menu a`, porque un id pesa más que una clase", "`.nav a`, porque las clases ganan siempre"], "c": 2, "e": "Solo cuando la especificidad es igual gana la que está escrita después."},
+      {"sesion": "Sesión 09", "tema": "Variables", "p": "¿Qué hace `color: var(--color-primary);`?", "o": ["Crea una variable nueva", "Elige un color al azar", "Pone el texto en negrita", "Usa el valor de la variable `--color-primary` definida en `:root`"], "c": 3, "e": "Si cambias la variable, cambian todos los lugares que la usan."},
+      {"sesion": "Sesión 10", "tema": "Caja", "p": "¿Qué cambia `box-sizing: border-box`?", "o": ["El `width` incluye el relleno y el borde", "Quita los bordes", "Centra la caja", "Suma el margen al ancho"], "c": 0, "e": "Por eso va en el reset de `global.css`: así las medidas coinciden con las de Figma."},
+      {"sesion": "Sesión 10", "tema": "Flexbox", "p": "En una fila flex, ¿qué hace `justify-content: space-between`?", "o": ["Junta todo al centro", "Pone el primer elemento al inicio, el último al final y reparte el espacio entre ellos", "Apila los elementos", "Agranda los elementos"], "c": 1, "e": "Es el Espacio Auto de la Disposición automática de Figma."},
+      {"sesion": "Sesión 10", "tema": "Grid", "p": "¿Qué hace `grid-template-columns: repeat(3, 1fr)`?", "o": ["Tres filas de 1px", "Una columna de 3fr", "Tres columnas del mismo ancho", "Tres columnas de 1px"], "c": 2, "e": "`fr` es una fracción del espacio libre."},
+      {"sesion": "Sesión 11", "tema": "Transiciones", "p": "¿Qué hace `transition: background-color 0.2s ease;` en un botón?", "o": ["Cambia el color cada 0.2 segundos", "Retrasa la carga de la página", "Hace girar el botón", "Anima el cambio de color de fondo en 0.2 segundos, por ejemplo en el hover"], "c": 3, "e": "La transición necesita un cambio de estado, como `:hover`."},
+      {"sesion": "Sesión 12", "tema": "Responsive", "p": "¿Cuándo se aplica `@media (max-width: 600px) { … }`?", "o": ["Cuando la ventana mide 600 px o menos", "Cuando mide más de 600 px", "Solo al imprimir", "Siempre"], "c": 0, "e": "`max-width` es «hasta ese ancho»; `min-width`, «desde ese ancho»."},
+      {"sesion": "Sesión 13", "tema": "Grilla", "p": "Una tarjeta tiene `col-12 col-md-6 col-lg-4`. ¿Cuántas caben por fila en el escritorio?", "o": ["Una", "Tres: cada una ocupa 4 de las 12 columnas", "Dos", "Doce"], "c": 1, "e": "Una por fila en el celular, dos desde 768 px y tres desde 992 px."},
+      {"sesion": "Sesión 14", "tema": "Componentes", "p": "El botón de la tarjeta no abre la ventana de inscripción. ¿Qué revisas primero?", "o": ["El tamaño del botón", "El color del tema", "Que el JavaScript de Bootstrap esté enlazado y que `data-bs-target` coincida con el `id`, con `#`", "Que la tarjeta tenga `h-100`"], "c": 2, "e": "Los componentes interactivos necesitan `bootstrap.bundle.min.js`."},
+      {"sesion": "Sesión 15", "tema": "Netlify Forms", "p": "¿Qué atributo del `<form>` hace que Netlify detecte el formulario al publicar?", "o": ["`required`", "`action=\"mail\"`", "`method=\"get\"`", "`data-netlify=\"true\"`"], "c": 3, "e": "Además, `name` en el formulario y en cada campo, y `method=\"post\"`."}
     ];
 
     /* ==========================================================
@@ -1126,11 +1122,11 @@
       const badge = $("badge-tipo-test");
       const desc = $("desc-tipo-test");
 
-      badge.textContent = esPre ? "PRETEST" : "POSTEST";
+      badge.textContent = esPre ? "PARTE 1" : "PARTE 2";
       badge.className = "pill-tipo " + (esPre ? "pretest" : "postest");
       desc.textContent = esPre 
-        ? "Saberes previos (Sesión 09: CSS3)" 
-        : "Evaluación de salida (Sesión 10 y Figma)";
+        ? "Simulacro · Parte 1 (HTML5)" 
+        : "Simulacro · Parte 2 (CSS3, Bootstrap y despliegue)";
     }
 
     /* ==========================================================
@@ -1275,7 +1271,7 @@
 
       // Badge y títulos
       const badge = $("final-badge-tipo");
-      badge.textContent = esPre ? "RESULTADOS PRETEST (SESIÓN 09)" : "RESULTADOS POSTEST (SESIÓN 10 Y FIGMA)";
+      badge.textContent = esPre ? "SIMULACRO · PARTE 1 (HTML5)" : "SIMULACRO · PARTE 2 (CSS3 Y BOOTSTRAP)";
       badge.className = "final-badge " + (esPre ? "pretest" : "postest");
 
       $("puntaje-numero").textContent = `${aciertos} / ${total}`;
@@ -1297,10 +1293,10 @@
       // Configurar botón para cambiar al otro test
       const btnCambiar = $("btn-cambiar-al-otro");
       if (esPre) {
-        btnCambiar.textContent = "➡️ Ir al Postest (Sesión 10)";
+        btnCambiar.textContent = "➡️ Ir a la parte 2";
         btnCambiar.onclick = () => iniciarTest("postest");
       } else {
-        btnCambiar.textContent = "⬅️ Ir al Pretest (Sesión 09)";
+        btnCambiar.textContent = "⬅️ Ir a la parte 1";
         btnCambiar.onclick = () => iniciarTest("pretest");
       }
 
