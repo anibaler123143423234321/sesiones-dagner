@@ -12,16 +12,18 @@ def donde_estas(d, hoy):
         ['Sesión 10', '12 al 14', 'Contacto, pie de página e imágenes'],
     ]
     # Las sesiones 11 y 12 van más allá del manual: solo aparecen en sus propias guías
-    if hoy in ('Sesión 11', 'Sesión 12', 'Sesión 13', 'Sesión 14'):
+    if hoy in ('Sesión 11', 'Sesión 12', 'Sesión 13', 'Sesión 14', 'Sesión 15'):
         filas += [
             ['Sesión 11', 'Ampliación', 'El botón como componente, su variante Hover y el prototipo'],
             ['Sesión 12', 'Ampliación', 'La versión móvil de la página, en un marco de 390'],
         ]
-    if hoy in ('Sesión 13', 'Sesión 14'):
+    if hoy in ('Sesión 13', 'Sesión 14', 'Sesión 15'):
         filas += [
             ['Sesión 13', 'Ampliación', 'La cuadrícula de 12 columnas y la página Cursos'],
             ['Sesión 14', 'Ampliación', 'Las variables de color y medida, y el componente de curso'],
         ]
+    if hoy == 'Sesión 15':
+        filas.append(['Sesión 15', 'Cierre', 'La revisión final, el icono, la vista previa al compartir y la entrega'])
     for f in filas:
         if f[0] == hoy:
             f[0] = f'**{hoy} (hoy)**'

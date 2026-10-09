@@ -43,7 +43,12 @@ def generar(cfg, salida):
         ('"RESULTADOS PRETEST (SESIONES 01 A 06)" : "RESULTADOS POSTEST (SESIÓN 07 Y FIGMA)"', f'"{cfg["pre_badge"]}" : "{cfg["post_badge"]}"'),
         ('"➡️ Ir al Postest (Sesión 07)"', f'"➡️ Ir al Postest (Sesión {cfg["n"]})"'),
         ('"⬅️ Ir al Pretest (Sesiones 01-06)"', f'"⬅️ Ir al Pretest ({cfg["pre_corto"]})"'),
+        # **texto** se muestra en negrita, igual que `código` se muestra como código
+        ('        return "<code>" + codigo.replace(/([\\/\\\\])(?=[^\\/\\\\])/g, "$1<wbr>") + "</code>";\n      });',
+         '        return "<code>" + codigo.replace(/([\\/\\\\])(?=[^\\/\\\\])/g, "$1<wbr>") + "</code>";\n      }).replace(/\\*\\*([^*]+)\\*\\*/g, "<strong>$1</strong>");'),
     ]
+    # cambios propios de un cuestionario (el simulacro de la sesión 16 no es pretest ni postest)
+    rep += cfg.get('extra', [])
     for a, b in rep:
         assert a in s, a
         s = s.replace(a, b)

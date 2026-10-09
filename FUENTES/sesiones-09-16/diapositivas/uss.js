@@ -278,18 +278,18 @@ class Deck {
     });
   }
 
-  breakSlide(texto) {
+  breakSlide(texto, titulo = 'DESCANSO · 15 MINUTOS') {
     this.add('CONCEPTUAL_LIBRE', (s) => {
       this.card(s, 3.42, 2.9, 6.5, 1.05, { fill: C.teal, line: C.teal, r: 0.52 });
-      this.text(s, 'DESCANSO · 15 MINUTOS', { x: 3.42, y: 2.9, w: 6.5, h: 1.05, size: 20, bold: true, color: C.white, align: 'center' });
+      this.text(s, titulo, { x: 3.42, y: 2.9, w: 6.5, h: 1.05, size: 20, bold: true, color: C.white, align: 'center' });
       s.addImage({ path: M('espera.png'), x: 6.07, y: 4.35, w: 1.2, h: 1.2, altText: 'Indicador de espera' });
       this.text(s, texto, { x: 1.5, y: 5.82, w: 10.33, h: 0.34, size: 12, color: C.sub, align: 'center' });
     });
   }
 
-  agenda(items) {
+  agenda(items, titulo = 'Cómo se reparten las 4 horas') {
     this.add('CONCEPTUAL', (s) => {
-      this.header(s, 'Agenda', 'Cómo se reparten las 4 horas');
+      this.header(s, 'Agenda', titulo);
       const h = 0.46; const step = 0.515;
       items.forEach(([num, t, d, min], i) => {
         const y = 2.82 + i * step; const pausa = num === '—';
