@@ -297,6 +297,9 @@ d.add('INSTRUMENTAL', (s) => {
   d.note(s, 6.62, 'Si terminas antes: haz en Figma la variante Hover de project-card con su Sombra paralela.');
 });
 
+// ================= EXTRA · CODIFICAR CON IA (ia.js, contenido en ia_contenido.json)
+require('./ia.js').bloqueIA(d, '11');
+
 // ================= NIVELADOR
 d.imageSlide('cinfo-04-nivelador.jpg', 'Nivelador: nivel de comprensión del estudiante');
 d.checklist('NIVELADOR', [

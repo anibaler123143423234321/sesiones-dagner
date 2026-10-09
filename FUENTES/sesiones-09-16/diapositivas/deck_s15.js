@@ -287,6 +287,9 @@ d.add('INSTRUMENTAL', (s) => {
   ], { heads: ['Criterio', 'Logrado', 'Puntos'], w: [2.9, 8.15, 0.9], h: 0.47, mono: false, size: 11 });
 });
 
+// ================= EXTRA · CODIFICAR CON IA (ia.js, contenido en ia_contenido.json)
+require('./ia.js').bloqueIA(d, '15');
+
 // ================= NIVELADOR
 d.imageSlide('cinfo-04-nivelador.jpg', 'Nivelador: nivel de comprensión del estudiante');
 d.checklist('NIVELADOR', [

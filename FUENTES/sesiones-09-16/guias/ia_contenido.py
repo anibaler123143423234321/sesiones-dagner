@@ -1,0 +1,251 @@
+# -*- coding: utf-8 -*-
+"""Extra de las sesiones 11 a 15: codificar con IA con buenos prompts, y Figma con IA.
+Es la única fuente del contenido: guia_ia.py arma las guías en PDF y, con
+`python3 ia_contenido.py > ../diapositivas/ia_contenido.json`, las diapositivas lo leen.
+En los textos, `código` va entre comillas invertidas y **negrita** entre dobles asteriscos.
+"""
+import json
+
+FORMULA = [
+    ['Rol', 'Quién debe ser la IA', 'Actúa como docente de CSS que explica a principiantes.'],
+    ['Contexto', 'Qué tienes y qué usas', 'Mi portafolio usa HTML y CSS propio, con variables en `:root`. Este es mi código: …'],
+    ['Tarea', 'Una sola cosa, concreta', 'Escribe la regla `:hover` del botón `.btn-primary`.'],
+    ['Restricciones', 'Lo que no debe hacer', 'Usa mis variables, no cambies el HTML y no uses JavaScript.'],
+    ['Formato', 'Cómo quieres la respuesta', 'Solo el CSS y una línea de explicación por propiedad.'],
+]
+
+REGLAS = [
+    '**Entiende antes de pedir.** La IA ayuda a quien sabe qué está buscando: primero lee la guía de la sesión.',
+    '**Dale los valores de Figma.** La IA no ve tu diseño: copia los colores, las medidas y los nombres de las capas.',
+    '**Pega solo lo necesario.** El bloque de código que falla, nunca contraseñas, tokens ni datos de otras personas.',
+    '**Prueba cada respuesta.** En el validador, en el navegador a 390 y 1440 px, y comparada con tu Figma.',
+    '**Pide que te explique.** Si no puedes explicar una línea, no la entregues.',
+    '**Anota en tu bitácora** qué pediste, qué te dio, qué corregiste y cómo lo comprobaste.',
+]
+
+FIGMA_AVISO = ('Las funciones de IA de Figma dependen del plan y consumen créditos de IA. Sus nombres cambian seguido '
+               'y algunas aún no están traducidas: si no encuentras una, ábrela desde el menú **Acciones (Actions)** de '
+               'la barra de herramientas y escribe su nombre en inglés.')
+
+SESIONES = {
+    '11': dict(
+        tema='Transiciones, transformaciones y animaciones',
+        archivo='Guia_IA_Sesion11_Prompts_para_Animar_con_CSS',
+        malo='Hazme una animación bonita para mi página.',
+        bueno=('Actúa como docente de CSS. En mi portafolio, el botón .btn-primary tiene este CSS: [pega el bloque]. '
+               'En Figma, su variante Hover tiene Relleno #05A3B0 y una sombra Y 4, Desenfoque 14, color #06B6C4 al 35 %. '
+               'Escribe solo la regla .btn-primary:hover y la transition de 0.2s con salida suave, usando mis variables '
+               '--color-primary-hover y --duration-fast. No cambies el HTML ni uses JavaScript. '
+               'Explica cada propiedad en una línea.'),
+        por_que=['Dice qué elemento, con qué valores de Figma y con qué variables.',
+                 'Limita lo que la IA puede cambiar.',
+                 'Pide una explicación que tú puedes comprobar.'],
+        prompts=[
+            ['La entrada del Hero',
+             'Tengo este HTML del Hero: [pega]. Quiero que el título y el párrafo aparezcan subiendo 16px y pasando de '
+             'transparentes a visibles, uno después del otro, en 0.6s. Usa @keyframes con un nombre en español y '
+             'animation-delay. Agrega un bloque @media (prefers-reduced-motion: reduce) que quite la animación. Solo CSS.',
+             'Que el nombre del `@keyframes` sea el mismo en `animation`, que exista el bloque de movimiento reducido y que solo anime `transform` y `opacity`.'],
+            ['Las tarjetas que se levantan',
+             'Mis tarjetas .project-card tienen borde y radio de 12px. Escribe un :hover que las suba 4px con transform y '
+             'aumente la sombra a 0 16px 32px rgba(11, 15, 25, 0.08), con una transición de 0.2s. Explícame por qué '
+             'transform no mueve a las tarjetas vecinas.',
+             'Que use `transform: translateY(-4px)` y no `margin-top`, y que la `transition` esté en la regla normal, no solo en `:hover`.'],
+            ['Encuentra el error',
+             'Esta transición solo se ve al entrar el cursor, no al salir: [pega el CSS]. Dime la causa en una frase y el '
+             'cambio mínimo para arreglarla. No reescribas todo el archivo.',
+             'Que el arreglo sea pasar `transition` a la regla sin `:hover` y que no cambie otras reglas.'],
+            ['Aprende la diferencia',
+             'Explícame con un ejemplo de cinco líneas la diferencia entre transition y animation, y cuándo conviene cada '
+             'una en un portafolio.',
+             'Escribe tú los dos ejemplos en un archivo de prueba y míralos en el navegador.'],
+        ],
+        verifica=['La animación respeta `prefers-reduced-motion`.',
+                  'Solo se animan `transform`, `opacity`, colores y sombras.',
+                  'Las duraciones usan tus variables, como `--duration-fast`.',
+                  'El hover se ve igual que la variante Hover de Figma.'],
+        figma=[
+            ['Prototipo con IA', 'Selecciona tus marcos y busca **Make prototype** en Acciones. La IA propone las '
+             'conexiones; revisa que el botón use **Mientras se pasa el cursor** y **Animación inteligente**, como en la guía.'],
+            ['Nombres de capas', '**Rename layers** cambia `Frame 12` por nombres con sentido. Después, corrige los que no '
+             'coincidan con el manual: la IA puede llamar `Button` a tu `btn-primary`.'],
+            ['Del diseño al código', 'Pídele a tu asistente que traduzca la variante Hover a CSS y compárala con la tabla '
+             '«En Figma · En tu CSS» de la guía de Figma de la sesión 11.'],
+        ],
+    ),
+    '12': dict(
+        tema='Diseño responsivo',
+        archivo='Guia_IA_Sesion12_Prompts_para_el_Diseno_Responsivo',
+        malo='Haz que mi página sea responsive.',
+        bueno=('Actúa como docente de CSS. Mi cabecera usa flex en fila: [pega el CSS de header.css]. En Figma, la versión '
+               'de 390px tiene Flujo vertical, Espacio 12, Espaciado 16 y el menú con Espacio 20. Escribe una sola media '
+               'query @media (max-width: 600px) con esos valores, para el final de mi hoja. '
+               'No toques las reglas de escritorio.'),
+        por_que=['Da el punto de quiebre y los valores del marco móvil.',
+                 'Pide una sola media query, en el lugar correcto.',
+                 'Protege las reglas que ya funcionan.'],
+        prompts=[
+            ['Títulos fluidos',
+             'En Figma, el título del Hero mide 64px en escritorio y 40px en el celular. Escribe un font-size con clamp() '
+             'que vaya de 40px a 64px entre 390px y 1440px de ancho, con rem en los extremos. Muéstrame el cálculo del '
+             'valor del medio.',
+             'Comprueba el resultado con `F12` a 390 y a 1440 px.'],
+            ['La barra horizontal',
+             'A 390px mi página tiene barra horizontal. Dame tres formas de encontrar qué elemento la causa con las '
+             'herramientas del navegador, sin cambiar todavía mi código.',
+             'Prueba lo que te propone, como un `outline` temporal, y borra después el CSS de prueba.'],
+            ['La rejilla que se adapta sola',
+             'Cambia esta rejilla de dos columnas [pega .projects-grid] para que use repeat(auto-fit, minmax(300px, 1fr)) '
+             'y explícame a qué ancho pasa a una sola columna.',
+             'Mira la rejilla a 820 px: el cambio de columnas debe coincidir con la explicación.'],
+            ['La tabla en el celular',
+             'Tengo esta tabla: [pega]. Propón dos soluciones para el celular: desplazamiento horizontal dentro de un '
+             'contenedor o filas apiladas. Dime las ventajas de cada una para un lector de pantalla.',
+             'Elige una y revisa que la tabla conserve `caption` y `th scope`.'],
+        ],
+        verifica=['Probaste a 390, 820 y 1440 px.',
+                  'La etiqueta `viewport` está en el `<head>`.',
+                  'Las media queries van al final y usan los puntos de quiebre del curso: 600 y 992.',
+                  'Ninguna imagen se deforma: `max-width: 100%` y `height: auto`.'],
+        figma=[
+            ['Textos para el celular', 'Selecciona un texto largo del marco móvil y usa **Rewrite** o **Shorten** en '
+             'Acciones. En el celular, menos texto se lee mejor; decide tú qué versión queda.'],
+            ['Un primer borrador', '**First Draft** genera una pantalla a partir de una frase, como «portafolio de '
+             'docente, celular, 390». Úsalo solo para comparar ideas: tu marco móvil sigue los valores de la guía.'],
+            ['Figma Make', 'En **Figma Make** describes en un chat lo que quieres y la IA arma un prototipo que funciona '
+             'en el navegador. Pídele una versión adaptable de tu Hero y compara cómo resolvió el menú con tu media query.'],
+        ],
+    ),
+    '13': dict(
+        tema='Bootstrap y su sistema de grillas',
+        archivo='Guia_IA_Sesion13_Prompts_para_la_Grilla_de_Bootstrap',
+        malo='Pásame mi página a Bootstrap.',
+        bueno=('Actúa como docente de Bootstrap 5.3. Esta es mi sección del catálogo: [pega el HTML]. Quiero 6 tarjetas: '
+               'una por fila en el celular, dos desde 768px y tres desde 992px, con un medianil de 24px. Usa solo '
+               'container, row, g-4 y col-*. No uses clases de Bootstrap 4 ni cambies los textos. '
+               'Al final, explica cada clase de la grilla.'),
+        por_que=['Dice la versión: Bootstrap 4 tiene otras clases.',
+                 'Describe el resultado en cada ancho, como en Figma.',
+                 'Pide que explique las clases que usa.'],
+        prompts=[
+            ['De Figma a columnas',
+             'En mi Figma, la presentación ocupa 7 columnas de texto y 5 de cifras, y el llamado ocupa 8 columnas '
+             'centradas, en una guía de 12. Dime qué clases col-lg-* y offset-lg-* corresponden a cada parte y por qué.',
+             'Compara la respuesta con la tabla «De la guía de columnas a Bootstrap» de la guía de Figma.'],
+            ['Enlazar Bootstrap',
+             'Necesito enlazar Bootstrap 5.3.8 desde jsDelivr, con integrity y crossorigin, antes de mis hojas. ¿En qué '
+             'orden van los <link>? No inventes el valor de integrity: dime de dónde copiarlo.',
+             'Copia el `integrity` de getbootstrap.com, nunca de la respuesta de la IA.'],
+            ['Explícame este código',
+             'Explícame línea por línea este HTML de Bootstrap [pega una .row] como si fuera la primera vez que veo una grilla.',
+             'Cambia una clase, como `col-lg-4` por `col-lg-6`, y comprueba que pasa lo que te explicó.'],
+            ['El Reboot',
+             'Después de enlazar Bootstrap, mi cabecera se desordenó. Este es mi CSS: [pega header.css]. ¿Qué estilos del '
+             'Reboot de Bootstrap pueden estar cambiándola y cómo los corrijo sin quitar Bootstrap?',
+             'Inspecciona la cabecera con `F12`: las reglas tachadas muestran qué estilo ganó.'],
+        ],
+        verifica=['Las clases existen en Bootstrap 5.3: `ms-` y `me-`, no `ml-` ni `mr-`.',
+                  'El `integrity` viene de getbootstrap.com.',
+                  'Bootstrap se enlaza antes de tus hojas.',
+                  'A 390, 820 y 1440 px cada fila tiene 1, 2 y 3 tarjetas.'],
+        figma=[
+            ['Contenido de ejemplo', 'Selecciona las seis tarjetas y prueba **Replace content**: la IA llena los textos '
+             'con cursos de ejemplo. Después pon los textos reales de la guía.'],
+            ['Componente primero', 'La IA trabaja mejor con componentes: si las tarjetas son instancias de '
+             '`course-card`, un cambio en el componente llega a las seis.'],
+            ['Compara la grilla', 'Pídele a tu asistente que traduzca tu guía de columnas (12, Margen 80, Medianil 24) a '
+             'clases de Bootstrap y compárala con la guía de Figma de la sesión 13.'],
+        ],
+    ),
+    '14': dict(
+        tema='Bootstrap: componentes, utilidades y tema',
+        archivo='Guia_IA_Sesion14_Prompts_para_Componentes_de_Bootstrap',
+        malo='Hazme un modal.',
+        bueno=('Actúa como docente de Bootstrap 5.3. En mi página cursos.html, cada tarjeta tiene un botón «Inscribirme». '
+               'Escribe una ventana modal con id="inscripcion" y un formulario con nombre, correo, curso (un select con '
+               'mis 6 cursos) y modalidad (dos botones de opción). Usa data-bs-toggle y data-bs-target, form-label y '
+               'form-control, y role="dialog" con aria-labelledby. No escribas JavaScript propio. '
+               'Explica qué atributo abre y cuál cierra la ventana.'),
+        por_que=['Da el `id`, los campos y las clases de Bootstrap 5.',
+                 'Pide la accesibilidad desde el principio.',
+                 'Evita JavaScript que no necesitas.'],
+        prompts=[
+            ['El acordeón de preguntas',
+             'Escribe un acordeón de Bootstrap 5.3 con id="faq" y estas cuatro preguntas y respuestas: [pega]. La primera '
+             'abierta y una sola abierta a la vez. Cada botón dentro de un h3.',
+             'Que cada respuesta tenga `data-bs-parent="#faq"` y que ningún `id` se repita.'],
+            ['El tema con tus colores',
+             'Estas son mis variables de Figma: color-primary #06B6C4, color-text-primary #0B0F19, color-border #E5E7EB, '
+             'radius-md 12. Escribe un tema-bootstrap.css que cambie las variables --bs-* que les corresponden, '
+             'incluida --bs-primary-rgb.',
+             'Que `--bs-primary-rgb` tenga los mismos números del color: 6, 182, 196.'],
+            ['De CSS a utilidades',
+             'Reescribe este bloque [pega .paso { … }] usando solo utilidades de Bootstrap 5.3 en el HTML. Dime qué '
+             'utilidad reemplaza a cada propiedad.',
+             'Borra el bloque de tu CSS y comprueba que la sección se ve igual.'],
+            ['Por qué no abre',
+             'Mi acordeón no se abre. Este es mi HTML [pega] y así enlazo el JavaScript [pega]. Dame la causa más '
+             'probable y cómo comprobarla en la consola del navegador.',
+             'Abre la consola con `F12`: un error rojo suele decir qué falta.'],
+        ],
+        verifica=['Los atributos son `data-bs-*` (Bootstrap 5), no `data-toggle`.',
+                  '`bootstrap.bundle.min.js` está al final del `body`.',
+                  'La ventana se abre y se cierra con el teclado: `Tab`, `Enter` y `Esc`.',
+                  'El tema va justo después de Bootstrap.'],
+        figma=[
+            ['Tus variables en el prompt', 'La colección `tokens` es la fuente de tu prompt: copia sus nombres y valores '
+             'al pedir el tema. Así la IA no inventa colores.'],
+            ['La ventana en Figma Make', 'En **Figma Make**, describe la ventana de inscripción («modal con un formulario '
+             'de 4 campos y los botones Cancelar y Enviar, con mis colores») y pruébala antes de escribirla en Bootstrap.'],
+            ['Cuida las variantes', 'Si la IA renombra capas, revisa que las variantes sigan llamándose '
+             '`Nivel=Básico` y `Nivel=Intermedio`.'],
+        ],
+    ),
+    '15': dict(
+        tema='Proyecto integrador: pruebas y despliegue',
+        archivo='Guia_IA_Sesion15_Prompts_para_Probar_y_Publicar',
+        malo='Revisa mi página.',
+        bueno=('Actúa como auditor de accesibilidad web. Revisa este HTML de mi portafolio: [pega index.html]. Lista hasta '
+               '8 problemas ordenados de más a menos importante, con la línea, por qué afecta a una persona y el cambio '
+               'mínimo. No reescribas la página completa.'),
+        por_que=['Le da un rol con un criterio claro: la accesibilidad.',
+                 'Limita la respuesta y pide prioridades.',
+                 'Te deja hacer y entender los cambios.'],
+        prompts=[
+            ['El <head> completo',
+             'Escribe el <head> de sobre-mi.html con el <title> «Sobre mí · Dagner Chuman», una description de unos 150 '
+             'caracteres, el favicon, el apple-touch-icon y las etiquetas og:. La dirección es '
+             'https://mi-portafolio-dagner.netlify.app/sobre-mi.html. No inventes otras direcciones.',
+             'Que `og:image` y `og:url` lleven tu dirección real, con `https://`.'],
+            ['Errores del validador',
+             'El validador del W3C me da este error: [pega el mensaje] en este fragmento: [pega 10 líneas]. Explícame qué '
+             'significa y cómo lo corrijo.',
+             'Vuelve a validar después del cambio: el error debe desaparecer sin que aparezcan otros.'],
+            ['El contraste',
+             'Lighthouse marca que el texto de este botón no tiene contraste suficiente: [pega el HTML y el CSS]. Propón '
+             'dos colores que pasen 4.5 a 1 y calcula el contraste de cada uno.',
+             'Comprueba el contraste en las DevTools: al inspeccionar un color, muestra la proporción.'],
+            ['Netlify Forms',
+             'Mi formulario de contacto debe guardar los mensajes en Netlify y llevar a /gracias.html. Revisa este '
+             '<form> [pega] y dime qué atributos faltan.',
+             'Publica y envía un mensaje de prueba: debe aparecer en **Forms**.'],
+        ],
+        verifica=['No pegaste contraseñas, tokens ni datos de tus compañeros.',
+                  'Las direcciones que escribió la IA son las de tu sitio.',
+                  'El HTML corregido pasa el validador.',
+                  'Probaste el sitio publicado, no solo en tu computadora.'],
+        figma=[
+            ['Revisión final con IA', 'Antes de compartir, usa **Rename layers** en los marcos que todavía digan `Frame` '
+             'o `Rectangle`, y revisa que respeten los nombres del manual.'],
+            ['Imagen para compartir', '**Make image** genera una ilustración a partir de una frase. Si la usas en '
+             '`og-portafolio`, cuida que no tape el título y que siga tus colores.'],
+            ['Un agente de IA en Figma', 'Un asistente de IA conectado a Figma (por ejemplo, con el servidor MCP de Figma) '
+             'puede leer y construir diseños. El archivo de muestra «Mi portafolio (Copia) · Completo» se armó así, con '
+             'los valores de las guías. Tu trabajo es revisar que el resultado cumpla el manual.'],
+        ],
+    ),
+}
+
+if __name__ == '__main__':
+    print(json.dumps({'formula': FORMULA, 'reglas': REGLAS, 'figma_aviso': FIGMA_AVISO, 'sesiones': SESIONES},
+                     ensure_ascii=False, indent=1))

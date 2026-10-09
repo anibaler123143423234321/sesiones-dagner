@@ -321,6 +321,9 @@ d.add('INSTRUMENTAL', (s) => {
   d.image(s, IMG('s14-movil.png'), 12.65 - w, 2.86, w, H, { alt: 'La página Cursos en un celular' });
 });
 
+// ================= EXTRA · CODIFICAR CON IA (ia.js, contenido en ia_contenido.json)
+require('./ia.js').bloqueIA(d, '14');
+
 // ================= NIVELADOR
 d.imageSlide('cinfo-04-nivelador.jpg', 'Nivelador: nivel de comprensión del estudiante');
 d.checklist('NIVELADOR', [

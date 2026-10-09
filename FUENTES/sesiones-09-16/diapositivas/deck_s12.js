@@ -290,6 +290,9 @@ d.add('INSTRUMENTAL', (s) => {
   d.text(s, ['Un ancho fijo en px sin `max-width: 100%`.', 'Una línea de código o una URL larga.', 'Una tabla sin su caja con `overflow-x: auto`.', 'En DevTools, busca el elemento que pasa del borde derecho.'], { x: x + 0.22, y: 3.42, w: 12.65 - x - 0.44, h: 2.9, size: 10.5, color: C.body, valign: 'top', bullet: true, paraAfter: 6, codeColor: C.ink });
 });
 
+// ================= EXTRA · CODIFICAR CON IA (ia.js, contenido en ia_contenido.json)
+require('./ia.js').bloqueIA(d, '12');
+
 // ================= NIVELADOR
 d.imageSlide('cinfo-04-nivelador.jpg', 'Nivelador: nivel de comprensión del estudiante');
 d.checklist('NIVELADOR', [
