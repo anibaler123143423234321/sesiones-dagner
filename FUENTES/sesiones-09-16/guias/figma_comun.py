@@ -159,3 +159,28 @@ def esquema(d, hoy):
                    sec('hoy', 'footer-wrapper · Paso 13', 'Altura fija 182 · Espaciado 80 y 48 · Trazo superior', pie)]
     d.raw('<div class="esq nobreak"><div class="rot">mi-portafolio · 1440 × 2816 (no está a escala)</div>' + ''.join(partes) + '</div>')
     d.raw(f'<p class="leyenda">{fmt("Las capas resaltadas son las de hoy. Los números en color son valores de **Espacio**.")}</p>')
+
+
+# Capturas del archivo de muestra «Mi portafolio (Copia) · Completo» (SESION 15/figma-portafolio-completo)
+def asi_queda(d, capturas, texto):
+    """capturas: [(archivo, pie, ancho, alto_max)]. Lee las imágenes de <repo>/SESION 15/figma-portafolio-completo,
+    con <repo> como primer argumento del script (por defecto, /home/user/sesiones-dagner)."""
+    import base64
+    import os
+    import sys
+    repo = sys.argv[1] if len(sys.argv) > 1 else '/home/user/sesiones-dagner'
+    carpeta = os.path.join(repo, 'SESION 15', 'figma-portafolio-completo')
+    d.h2('Así queda en el archivo de muestra', salto=True)
+    d.p(texto)
+    figuras = []
+    for archivo, pie, ancho, alto_max in capturas:
+        datos = base64.b64encode(open(os.path.join(carpeta, archivo), 'rb').read()).decode()
+        estilo = f'width:100%;border:1px solid #CFD5D9;border-radius:6px;display:block'
+        if alto_max:
+            estilo += f';max-height:{alto_max};object-fit:cover;object-position:top'
+        figuras.append(f'<figure style="margin:0;flex:0 0 {ancho}"><img src="data:image/png;base64,{datos}" alt="" '
+                       f'style="{estilo}"><figcaption style="font-size:8.5pt;color:#6B7378;margin-top:3px">{fmt(pie)}'
+                       '</figcaption></figure>')
+    d.raw('<div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;margin:8px 0 12px">' + ''.join(figuras) + '</div>')
+    d.callout('Es el diseño terminado:', 'el docente puede mostrarte el archivo completo en clase. Compáralo con el '
+              'tuyo capa por capa: si un valor no coincide, manda el manual.')

@@ -2,7 +2,7 @@
 """Guía de Figma · Sesión 10: Pasos 12 al 14 (Contacto, pie de página e imágenes)."""
 import os
 from guia import Doc
-from figma_comun import (donde_estas, como_leer, seccion_base, marco_envoltorio, texto_bloque, esquema)
+from figma_comun import (asi_queda, donde_estas, como_leer, seccion_base, marco_envoltorio, texto_bloque, esquema)
 
 d = Doc('Guía de Figma · Sesión 10: Contacto, pie de página e imágenes',
         'Guía de Figma · Sesión 10',
@@ -151,6 +151,9 @@ d.pasos(['En Capas, haz clic en `mi-portafolio`.',
          'En Disposición automática, abre el menú del campo H y elige **Ajustar al contenido**. El marco toma la altura real de tu diseño.',
          'Si esa altura queda cerca de 2816, vuelve a **Altura fija** y escribe `2816`.',
          'Si es muy distinta, revisa el Espaciado de cada sección (80 y 100) y las alturas fijas: tarjetas de 475, `hero-right` de 404 y pie de 182.'])
+
+asi_queda(d, [('01-escritorio.png', '`mi-portafolio` · 1440: los Pasos 1 al 14 completos, con las imágenes de los proyectos', '62%', None)],
+          'Así se ve `mi-portafolio` al terminar el Paso 14, con todos los valores de las guías de Figma de las sesiones 05 a 10.')
 
 d.h2('Así deben quedar tus capas', salto=True)
 d.code('''mi-portafolio

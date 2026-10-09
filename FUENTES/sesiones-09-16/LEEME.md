@@ -34,7 +34,8 @@ Las guías leen de ellos el CSS y el HTML que muestran, así que nunca difieren.
 ## Guías
 
 ```bash
-python3 guias/guia_s11.py <repo>      # también guia_s09 … s15 y figma_s09 … s15
+python3 guias/guia_s11.py <repo>      # también guia_s09 … s15 y figma_s09 … s15 (las de Figma 10 a 15 leen las
+                                      # capturas de SESION 15/figma-portafolio-completo)
 node guias/pdf.js guias/out/Guia_Sesion11_Transiciones_Transformaciones_y_Animaciones.html \
                   guias/out/Guia_Sesion11_Transiciones_Transformaciones_y_Animaciones.pdf
 ```

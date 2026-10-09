@@ -2,7 +2,7 @@
 """Guía de Figma · Sesión 15: revisión final, el icono, la vista previa al compartir y la entrega."""
 import os
 from guia import Doc
-from figma_comun import donde_estas, como_leer
+from figma_comun import asi_queda, donde_estas, como_leer
 
 d = Doc('Guía de Figma · Sesión 15: revisión final, icono y entrega',
         'Guía de Figma · Sesión 15',
@@ -126,6 +126,9 @@ d.pasos(['Selecciona el marco `mi-portafolio`.',
          'Pulsa el botón **Presentar (Present)**, el triángulo ▷ de la esquina superior derecha. El prototipo se abre en una pestaña nueva.',
          'Pasa el cursor sobre «Ver Proyectos»: cambia al color Hover. Con las flechas `→` y `←` pasas de un marco a otro.',
          'Presiona `Esc` para salir.'])
+
+asi_queda(d, [('06-favicon.png', 'El marco `favicon`: 512 × 512, Radio 112', '28%', None), ('07-og-portafolio.png', 'El marco `og-portafolio`: 1200 × 630', '66%', None)],
+          'Así se ven los dos marcos que exportas hoy. `apple-touch-icon` es igual a `favicon`, sin Radio de esquina.')
 
 d.h2('Así deben quedar tus capas')
 d.code('''(variables locales)

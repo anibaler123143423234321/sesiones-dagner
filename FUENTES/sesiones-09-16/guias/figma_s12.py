@@ -2,7 +2,7 @@
 """Guía de Figma · Sesión 12: la versión móvil de la página (marco de 390)."""
 import os
 from guia import Doc
-from figma_comun import donde_estas, como_leer
+from figma_comun import asi_queda, donde_estas, como_leer
 
 V = 'Vertical: el segundo icono, con la flecha ↓'
 LLENAR = 'Abre el menú y elige **Llenar el contenedor**'
@@ -172,6 +172,9 @@ d.tabla(['En Figma móvil', 'En tu CSS de hoy'], [
     ['`projects-grid`: Flujo vertical', '`repeat(auto-fit, minmax(min(100%, 360px), 1fr))`: una columna sin media query'],
     ['Secciones: Espaciado 16 y 48', '`main { padding: 3rem 1rem; }`'],
 ], anchos=['46%', '54%'])
+
+asi_queda(d, [('02-celular.png', '`mi-portafolio-movil` · 390: el Hero y el inicio de Sobre mí', '34%', '200mm'), ('01-escritorio.png', '`mi-portafolio` · 1440, el mismo contenido en escritorio', '58%', '200mm')],
+          'Así se ve el marco móvil junto al de escritorio: las mismas secciones, una debajo de la otra, con 16 a los lados.')
 
 d.h2('Así deben quedar tus capas')
 d.code('''mi-portafolio                    ← escritorio, 1440: no cambia

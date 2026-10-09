@@ -2,7 +2,7 @@
 """Guía de Figma · Sesión 13: la guía de 12 columnas y la página Cursos."""
 import os
 from guia import Doc
-from figma_comun import donde_estas, como_leer, seccion_base, titulo_seccion, marco_envoltorio, texto_bloque
+from figma_comun import asi_queda, donde_estas, como_leer, seccion_base, titulo_seccion, marco_envoltorio, texto_bloque
 
 V = 'Vertical: el segundo icono, con la flecha ↓'
 HZ = 'Horizontal: el tercer icono, con la flecha →'
@@ -177,6 +177,9 @@ d.tabla(['En Figma', 'En cursos.html'], [
     ['`llamado` de 8 columnas, centrado', '`.col-lg-8.offset-lg-2`'],
     ['Guía de 4 columnas en el marco móvil', 'Sin clase de punto de quiebre: todo es `col-12` en el celular'],
 ], negrita_primera=False, anchos=['46%', '54%'])
+
+asi_queda(d, [('03-cursos.png', '`mi-portafolio-cursos` · 1440: presentación de 7 y 5 columnas, catálogo, pasos y llamado de 8 columnas', '62%', None)],
+          'Así se ve la página Cursos terminada. Las tarjetas son instancias de `course-card` y miden 4 columnas cada una.')
 
 d.h2('Así deben quedar tus capas')
 d.code('''mi-portafolio-cursos                 ← guía de 12 columnas · H Ajustar al contenido

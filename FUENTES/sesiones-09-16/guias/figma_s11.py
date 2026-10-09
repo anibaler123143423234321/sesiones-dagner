@@ -2,7 +2,7 @@
 """Guía de Figma · Sesión 11: el botón como componente, su variante Hover y el prototipo."""
 import os
 from guia import Doc
-from figma_comun import donde_estas, como_leer
+from figma_comun import asi_queda, donde_estas, como_leer
 
 d = Doc('Guía de Figma · Sesión 11: el botón como componente, su variante Hover y el prototipo',
         'Guía de Figma · Sesión 11',
@@ -135,6 +135,9 @@ d.tabla(['Componente', 'Variante Hover (sugerido)', 'En tu CSS'], [
     ['`project-card`', 'Sombra paralela: X `0`, Y `16`, Desenfoque `32`, `0B0F19` al `8`', '`.project-card:hover`'],
     ['`contact-card`', 'Trazo `06B6C4` al `100`', '`.contact-card:hover`'],
 ], negrita_primera=False, anchos=['24%', '46%', '30%'])
+
+asi_queda(d, [('04-btn-primary.png', 'El conjunto `btn-primary`: `Estado=Predeterminado` y `Estado=Hover`, con su sombra', '60%', None)],
+          'Así se ve el componente `btn-primary` con sus dos variantes. En Presentar, la instancia del Hero cambia a Hover al pasar el cursor.')
 
 d.h2('Así deben quedar tus capas')
 d.code('''mi-portafolio

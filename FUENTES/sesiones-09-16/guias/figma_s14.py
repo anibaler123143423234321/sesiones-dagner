@@ -2,7 +2,7 @@
 """Guía de Figma · Sesión 14: variables locales y el componente de curso con variantes."""
 import os
 from guia import Doc
-from figma_comun import donde_estas, como_leer
+from figma_comun import asi_queda, donde_estas, como_leer
 
 d = Doc('Guía de Figma · Sesión 14: variables y el componente de curso',
         'Guía de Figma · Sesión 14',
@@ -119,6 +119,9 @@ d.p('Si terminas antes, diseña la ventana modal sobre una copia de `mi-portafol
 d.lista(['**Fondo oscuro:** un rectángulo de 1440 × 900 con Relleno `000000` al `50`, encima de toda la página. Aquí el porcentaje no es 100: deja ver la página detrás.',
          '**La ventana:** un marco de 500 de ancho, centrado, con Flujo vertical, Radio `radius-md`, Relleno `color-surface` y una Sombra paralela (Y `8`, Desenfoque `24`, `000000` al `15`).',
          '**Dentro:** el título `Inscríbete` (Outfit Bold de `20`), tres campos como los del formulario de contacto y dos botones a la derecha: `Cancelar` (Trazo `374151`) y una instancia de `btn-primary` con `Enviar inscripción`.'])
+
+asi_queda(d, [('05-course-card.png', 'El conjunto `course-card`: `Nivel=Básico` y `Nivel=Intermedio`, con las variables de `tokens`', '80%', None)],
+          'Así se ve el componente de curso con sus dos variantes. Sus colores y radios vienen de las variables de la colección `tokens`.')
 
 d.h2('Así deben quedar tus capas')
 d.code('''(variables locales)
