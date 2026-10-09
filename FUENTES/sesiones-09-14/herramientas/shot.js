@@ -19,6 +19,24 @@ async function routeFonts(ctx) {
     const ct = (h.match(/content-type:\s*([^\r\n]+)/i) || [])[1] || 'application/octet-stream';
     await route.fulfill({ status: 200, body: fs.readFileSync(f), contentType: ct, headers: { 'access-control-allow-origin': '*' } });
   });
+  // cdn.jsdelivr.net/npm/<paquete>@<versión>/<ruta>: el mismo archivo, sacado del registro de npm
+  // (jsDelivr sirve los paquetes de npm tal cual; el registro sí es accesible desde aquí)
+  await ctx.route(/https:\/\/cdn\.jsdelivr\.net\/npm\/.*/, async (route) => {
+    const m = route.request().url().match(/\/npm\/((?:@[^/]+\/)?[^@/]+)@([^/]+)\/([^?#]+)/);
+    if (!m) return route.abort();
+    const [, pkg, ver, rel] = m;
+    const dir = path.join(CACHE, 'npm', `${pkg.replace('/', '__')}@${ver}`);
+    if (!fs.existsSync(path.join(dir, 'package'))) {
+      fs.mkdirSync(dir, { recursive: true });
+      const tgz = execFileSync('npm', ['pack', `${pkg}@${ver}`, '--silent'], { cwd: dir }).toString().trim().split('\n').pop();
+      execFileSync('tar', ['xzf', tgz], { cwd: dir });
+    }
+    const f = path.join(dir, 'package', rel);
+    if (!fs.existsSync(f)) return route.fulfill({ status: 404, body: '' });
+    const ext = path.extname(f);
+    const ct = { '.css': 'text/css', '.js': 'application/javascript', '.woff2': 'font/woff2', '.woff': 'font/woff', '.map': 'application/json' }[ext] || 'application/octet-stream';
+    await route.fulfill({ status: 200, body: fs.readFileSync(f), contentType: ct, headers: { 'access-control-allow-origin': '*' } });
+  });
   // YouTube y demás recursos externos: respuesta vacía para no esperar a la red
   await ctx.route(/https:\/\/(www\.)?youtube\.com\/.*/, (r) => r.fulfill({ status: 200, contentType: 'text/html', body: '<body style="margin:0;background:#111;color:#bbb;font:16px sans-serif;display:grid;place-items:center;height:100vh">YouTube</body>' }));
 }

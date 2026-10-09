@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio - Dagner Chuman</title>
+    <meta name="description" content="Portafolio personal de Dagner Chuman, 
+    docente e ingeniero en desarrollo web y formación tecnológica." />
+
+    <!-- 1. Tokens y Reset Global -->
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <!-- 2. Componentes comunes (Header / Footer) -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <!-- 3. Base de las páginas interiores -->
+    <link rel="stylesheet" href="assets/css/contenido.css" />
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html">Dagner Chuman</a></h1>
+      <nav aria-label="Navegacion principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="mis-proyectos.html">Proyectos</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="contactame.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="contactame.html">Contacto</a>
+    </header>
+
+    <main>
+      <!-- SECCIÓN: Contacto · Figma: contact-section -->
+      <section class="contact-section">
+        <!-- Dos lados · Figma: contact-content -->
+        <div class="contact-content">
+          <!-- Lado izquierdo · Figma: contact-text -->
+          <div class="contact-text">
+            <h2>Contacto</h2>
+            <p>Puedes contactarme a través de los siguientes canales:</p>
+          </div>
+
+          <!-- Lado derecho · Figma: contact-list y tres contact-card -->
+          <ul class="contact-list">
+            <li class="contact-card">
+              <span class="contact-icon" aria-hidden="true">@</span>
+              <span>
+                <strong>Correo</strong>
+                <a href="mailto:dchuman@uss.edu.pe">dchuman@uss.edu.pe</a>
+              </span>
+            </li>
+            <li class="contact-card">
+              <span class="contact-icon" aria-hidden="true">in</span>
+              <span>
+                <strong>LinkedIn</strong>
+                <a href="https://www.linkedin.com" target="_blank"
+                  >linkedin.com/in/dagnerchuman</a
+                >
+              </span>
+            </li>
+            <li class="contact-card">
+              <span class="contact-icon" aria-hidden="true">GH</span>
+              <span>
+                <strong>GitHub</strong>
+                <a href="https://github.com" target="_blank"
+                  >github.com/dagnerchuman</a
+                >
+              </span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: Formulario de contacto (repaso de la Sesión 06) -->
+      <section>
+        <h2>Escríbeme</h2>
+        <!-- Rejilla de dos columnas: un fieldset en cada una -->
+        <form class="form-grid" action="contactame.html" method="get">
+          <fieldset>
+            <legend>Tus datos</legend>
+            <p>
+              <label for="nombre">Nombre completo</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                autocomplete="name"
+                minlength="3"
+                required
+              />
+            </p>
+            <p>
+              <label for="correo">Correo electrónico</label>
+              <input
+                type="email"
+                id="correo"
+                name="correo"
+                autocomplete="email"
+                placeholder="nombre@correo.com"
+                required
+              />
+            </p>
+            <p>
+              <label for="telefono">Teléfono (opcional)</label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                autocomplete="tel"
+                pattern="[0-9]{9}"
+                title="Nueve dígitos, sin espacios"
+              />
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Tu mensaje</legend>
+            <p>
+              <label for="motivo">Motivo</label>
+              <select id="motivo" name="motivo" required>
+                <option value="">Elige una opción</option>
+                <option value="proyecto">Proponer un proyecto</option>
+                <option value="clases">Consulta sobre clases</option>
+                <option value="otro">Otro</option>
+              </select>
+            </p>
+            <p>
+              <label for="mensaje">Mensaje</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                minlength="10"
+                maxlength="500"
+                required
+              ></textarea>
+            </p>
+            <p>
+              <input type="checkbox" id="acepto" name="acepto" required />
+              <label for="acepto">Acepto que me contacten por correo</label>
+            </p>
+          </fieldset>
+
+          <!-- Ocupa las dos columnas de la rejilla -->
+          <p class="form-actions">
+            <button type="submit">Enviar mensaje</button>
+            <button type="reset">Limpiar</button>
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+
+      <nav aria-label="Enlaces rapidos">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="mis-proyectos.html">Proyectos</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="contactame.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <p>&copy; 2026 Dagner Chuman · Centro de Informática USS · Protech XP</p>
+    </footer>
+    
+  </body>
+</html>

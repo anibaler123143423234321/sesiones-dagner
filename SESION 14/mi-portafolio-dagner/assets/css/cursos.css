@@ -1,0 +1,60 @@
+/* ==========================================================
+   cursos.css · Estilos propios de la página Cursos
+   Se enlaza ÚLTIMO: después de Bootstrap, el tema, global.css y header.css.
+   Sesión 13: la grilla. Sesión 14: las tarjetas, los pasos y el llamado
+   pasan a componentes y utilidades de Bootstrap: este archivo se achica.
+   Figma: mi-portafolio-cursos
+   ========================================================== */
+
+/* 1. La caja central hace de container de Bootstrap: los mismos márgenes
+      que las demás páginas (Figma: Espaciado 80 y 100) */
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 6.25rem 5rem;
+}
+
+main section {
+  margin-bottom: 4rem;      /* 64px entre secciones */
+}
+
+/* 2. Títulos: la letra y el tamaño de las demás páginas */
+main h2 {
+  font-size: clamp(1.75rem, 1.25rem + 2vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+/* 3. Las cifras: el número con la letra de los títulos */
+.cifra {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+/* 4. Las tarjetas de Bootstrap con el movimiento de la sesión 11 */
+.card {
+  transition: transform var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+
+.row .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(11, 15, 25, 0.08) !important;  /* le gana a shadow-sm, que también usa !important */
+}
+
+/* 5. Diseño responsivo: solo los márgenes. Las columnas las decide el HTML */
+@media (max-width: 992px) {
+  main {
+    padding: 3.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 3rem 1rem;
+  }
+}

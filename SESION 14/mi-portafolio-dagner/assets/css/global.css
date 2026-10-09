@@ -1,0 +1,95 @@
+/* ==========================================================
+   global.css · Tokens de diseño, reset y estilos base
+   Se enlaza PRIMERO en todas las páginas.
+   Figma: colores, tipografías y radios del manual
+   ========================================================== */
+
+/* 1. Tipografías de Google Fonts (siempre en la primera línea) */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap');
+
+/* 2. Tokens de Figma como variables CSS */
+:root {
+  --color-primary: #06B6C4;        /* Azul / Cyan de Figma para botones y acentos */
+  --color-bg: #F9FAFB;             /* Fondo neutro de la página web */
+  --color-surface: #FFFFFF;        /* Fondo de cabecera y tarjetas */
+  --color-text-primary: #0B0F19;   /* Títulos y textos principales */
+  --color-text-secondary: #374151; /* Párrafos descriptivos */
+  --color-text-muted: #9CA3AF;     /* Enlaces de menú en reposo */
+  --color-border: #E5E7EB;         /* Bordes sutiles */
+  --color-primary-hover: #05A3B0;  /* Sesión 11: variante Hover del botón en Figma */
+
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Geist', sans-serif;
+  --font-code: 'Geist Mono', monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+
+  /* Movimiento (sesión 11): la Animación inteligente de Figma, en Salida suave y 200 ms */
+  --duration-fast: 0.2s;                       /* cambios de color y botones */
+  --duration-base: 0.4s;                       /* tarjetas e imágenes */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);  /* arranca rápido y frena suave */
+
+  /* Puntos de quiebre (sesión 12): 992px tablet y 600px celular.
+     Una variable no funciona dentro de @media: por eso se escriben
+     como número en cada archivo y se anotan aquí para no olvidarlos */
+}
+
+/* 3. Reset universal del modelo de caja */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 4. Configuración general del cuerpo del documento */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* 5. Títulos con la fuente geométrica de Figma */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+/* 6. Enlaces limpios sin subrayado automático */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 7. Listas sin viñetas por defecto */
+ul {
+  list-style: none;
+}
+
+/* 8. Contorno visible al navegar con el teclado (Tab).
+      outline se dibuja por fuera de la caja: no la agranda como border */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* 9. Código: el navegador le pone a pre y code su propia fuente monoespaciada
+      (no la heredan); les pedimos la de Figma */
+pre,
+code {
+  font-family: var(--font-code);
+}
+
+/* 10. Movimiento reducido: si la persona pidió menos animaciones en su sistema,
+       la página se muestra quieta. Es la excepción en la que usamos !important:
+       esta regla tiene que ganar a todas las transiciones y animaciones del sitio */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

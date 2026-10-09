@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursos - Dagner Chuman</title>
+    <meta name="description" content="Cursos y talleres de desarrollo web que dicta Dagner Chuman
+    en el Centro de Informática USS." />
+
+    <!-- 0. Bootstrap 5.3.8 y sus iconos desde el CDN. Van PRIMERO: así tus hojas pueden ajustarlos -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+      integrity="sha384-CK2SzKma4jA5H/MXDUU7i1TqZlCFaD4T01vtyDFvPlD97JQyS+IsSh1nI2EFbpyk"
+      crossorigin="anonymous"
+    />
+    <!-- 1. Tema: Bootstrap con los colores, letras y radios de Figma (sesión 14) -->
+    <link rel="stylesheet" href="assets/css/tema-bootstrap.css" />
+    <!-- 2. Tokens y Reset Global -->
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <!-- 3. Componentes comunes (Header / Footer) -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <!-- 4. Estilos propios de esta página -->
+    <link rel="stylesheet" href="assets/css/cursos.css" />
+  </head>
+  <body>
+    <!-- CABECERA: Identidad del sitio y menú de navegación -->
+    <header>
+      <h1><a href="index.html">Dagner Chuman</a></h1>
+      <nav aria-label="Navegacion principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="mis-proyectos.html">Proyectos</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="contactame.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="contactame.html">Contacto</a>
+    </header>
+
+    <!-- CONTENIDO DE EJEMPLO: cambia los cursos, las cifras y los textos por los tuyos -->
+    <main>
+      <!-- Componente alert: un aviso destacado -->
+      <div class="alert alert-primary d-flex align-items-center gap-2 mb-5">
+        <i class="bi bi-calendar-check" aria-hidden="true"></i>
+        <span><strong>Inscripciones abiertas</strong> para el próximo ciclo.</span>
+      </div>
+
+      <!-- SECCIÓN 1 · Figma: cursos-intro. Grilla de la sesión 13 + utilidades -->
+      <section class="cursos-intro" aria-labelledby="titulo-cursos">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <h2 id="titulo-cursos">Cursos y talleres</h2>
+            <p class="fs-5 mb-0">
+              Formación práctica en desarrollo web y herramientas digitales en el
+              Centro de Informática USS. Cada curso termina con un proyecto publicado.
+            </p>
+          </div>
+
+          <div class="col-lg-5">
+            <aside class="card border-0 border-top border-4 border-primary shadow-sm" aria-label="Los cursos en cifras">
+              <div class="card-body">
+                <div class="row row-cols-3 g-3 text-center">
+                  <div class="col"><strong class="cifra">6</strong><span class="small">cursos</span></div>
+                  <div class="col"><strong class="cifra">4 h</strong><span class="small">por sesión</span></div>
+                  <div class="col"><strong class="cifra">1</strong><span class="small">proyecto por curso</span></div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2 · Figma: cursos-grid. Cada tarjeta es el componente card de Bootstrap:
+           h-100 iguala las alturas; el botón abre el modal #inscripcion -->
+      <section aria-labelledby="titulo-catalogo">
+        <h2 id="titulo-catalogo">Catálogo</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <i class="bi bi-code-slash fs-2 text-primary" aria-hidden="true"></i>
+                  <span class="badge rounded-pill bg-primary-subtle text-primary-emphasis border border-primary-subtle">Básico</span>
+                </div>
+                <h3 class="card-title fs-5">Diseño Web</h3>
+                <p class="card-text">HTML5, CSS3, Flexbox, Grid y Bootstrap: de un diseño en Figma a un sitio publicado.</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <small class="text-body-secondary">16 sesiones</small>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inscripcion" data-curso="Diseño Web">
+                  Inscribirme<span class="visually-hidden"> en Diseño Web</span>
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <i class="bi bi-filetype-js fs-2 text-primary" aria-hidden="true"></i>
+                  <span class="badge rounded-pill bg-primary-subtle text-primary-emphasis border border-primary-subtle">Básico</span>
+                </div>
+                <h3 class="card-title fs-5">JavaScript desde cero</h3>
+                <p class="card-text">Variables, funciones, eventos y el DOM para que tus páginas respondan al usuario.</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <small class="text-body-secondary">12 sesiones</small>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inscripcion" data-curso="JavaScript desde cero">
+                  Inscribirme<span class="visually-hidden"> en JavaScript desde cero</span>
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <i class="bi bi-palette fs-2 text-primary" aria-hidden="true"></i>
+                  <span class="badge rounded-pill bg-primary-subtle text-primary-emphasis border border-primary-subtle">Básico</span>
+                </div>
+                <h3 class="card-title fs-5">Figma para desarrolladores</h3>
+                <p class="card-text">Marcos, Disposición automática, componentes y prototipos listos para pasar a código.</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <small class="text-body-secondary">8 sesiones</small>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inscripcion" data-curso="Figma para desarrolladores">
+                  Inscribirme<span class="visually-hidden"> en Figma para desarrolladores</span>
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <i class="bi bi-git fs-2 text-primary" aria-hidden="true"></i>
+                  <span class="badge rounded-pill text-bg-dark">Intermedio</span>
+                </div>
+                <h3 class="card-title fs-5">Git y GitHub</h3>
+                <p class="card-text">Control de versiones, ramas y trabajo en equipo para publicar tus proyectos.</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <small class="text-body-secondary">6 sesiones</small>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inscripcion" data-curso="Git y GitHub">
+                  Inscribirme<span class="visually-hidden"> en Git y GitHub</span>
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <i class="bi bi-cup-hot fs-2 text-primary" aria-hidden="true"></i>
+                  <span class="badge rounded-pill text-bg-dark">Intermedio</span>
+                </div>
+                <h3 class="card-title fs-5">Java orientado a objetos</h3>
+                <p class="card-text">Clases, herencia, interfaces y colecciones con proyectos de consola.</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <small class="text-body-secondary">12 sesiones</small>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inscripcion" data-curso="Java orientado a objetos">
+                  Inscribirme<span class="visually-hidden"> en Java orientado a objetos</span>
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <i class="bi bi-database fs-2 text-primary" aria-hidden="true"></i>
+                  <span class="badge rounded-pill text-bg-dark">Intermedio</span>
+                </div>
+                <h3 class="card-title fs-5">Bases de datos con SQL</h3>
+                <p class="card-text">Modelado, consultas y relaciones entre tablas con MySQL.</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <small class="text-body-secondary">10 sesiones</small>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inscripcion" data-curso="Bases de datos con SQL">
+                  Inscribirme<span class="visually-hidden"> en Bases de datos con SQL</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 3 · Figma: cursos-pasos. Solo utilidades: sin una línea de CSS propio -->
+      <section aria-labelledby="titulo-pasos">
+        <h2 id="titulo-pasos">Cómo trabajamos</h2>
+        <ol class="row g-4 list-unstyled">
+          <li class="col-12 col-sm-6 col-lg-3">
+            <div class="h-100 bg-white border rounded-3 p-4">
+              <i class="bi bi-pencil-square fs-3 text-primary" aria-hidden="true"></i>
+              <h3 class="fs-6 fw-bold mt-3 mb-2">1. Diseñas</h3>
+              <p class="small mb-0">Cada proyecto empieza en Figma, con medidas que luego pasan al código.</p>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-lg-3">
+            <div class="h-100 bg-white border rounded-3 p-4">
+              <i class="bi bi-code-slash fs-3 text-primary" aria-hidden="true"></i>
+              <h3 class="fs-6 fw-bold mt-3 mb-2">2. Construyes</h3>
+              <p class="small mb-0">Escribes el código en clase, paso a paso, con una guía para repasar en casa.</p>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-lg-3">
+            <div class="h-100 bg-white border rounded-3 p-4">
+              <i class="bi bi-check2-circle fs-3 text-primary" aria-hidden="true"></i>
+              <h3 class="fs-6 fw-bold mt-3 mb-2">3. Validas</h3>
+              <p class="small mb-0">Revisas tu trabajo con los validadores del W3C y en varios tamaños de pantalla.</p>
+            </div>
+          </li>
+          <li class="col-12 col-sm-6 col-lg-3">
+            <div class="h-100 bg-white border rounded-3 p-4">
+              <i class="bi bi-cloud-upload fs-3 text-primary" aria-hidden="true"></i>
+              <h3 class="fs-6 fw-bold mt-3 mb-2">4. Publicas</h3>
+              <p class="small mb-0">Tu proyecto queda en línea en Netlify y forma parte de tu portafolio.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- SECCIÓN 4 · Componente accordion: una pregunta abierta a la vez (data-bs-parent) -->
+      <section aria-labelledby="titulo-faq">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2 id="titulo-faq">Preguntas frecuentes</h2>
+            <div class="accordion" id="faq">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq-1" aria-expanded="true" aria-controls="faq-1">
+                ¿Necesito saber programar?
+              </button>
+            </h3>
+            <div id="faq-1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+              <div class="accordion-body">No para los cursos de nivel básico: empiezan desde cero. Los de nivel intermedio piden haber llevado el básico o tener una experiencia parecida.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">
+                ¿Qué computadora necesito?
+              </button>
+            </h3>
+            <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faq">
+              <div class="accordion-body">Cualquiera con un navegador actualizado. Usamos herramientas gratuitas: Visual Studio Code, Figma y Netlify.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">
+                ¿Recibo un certificado?
+              </button>
+            </h3>
+            <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faq">
+              <div class="accordion-body">Sí, al aprobar el proyecto final del curso.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">
+                ¿Puedo llevar dos cursos a la vez?
+              </button>
+            </h3>
+            <div id="faq-4" class="accordion-collapse collapse" data-bs-parent="#faq">
+              <div class="accordion-body">Sí, si los horarios no se cruzan. Te recomendamos empezar por uno básico y sumar el siguiente cuando termines tu primer proyecto.</div>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 5 · Figma: cursos-llamado. offset-lg-2 + utilidades de color y espaciado -->
+      <section aria-labelledby="titulo-llamado">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="text-bg-dark rounded-3 p-4 p-md-5 text-center">
+              <h2 id="titulo-llamado" class="text-white">¿No sabes por cuál empezar?</h2>
+              <p class="mb-4">Escríbeme y te recomiendo un curso según lo que ya sabes.</p>
+              <a href="contactame.html" class="btn btn-primary btn-lg">Escríbeme</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Componente modal: la ventana de inscripción. Está oculta hasta que un botón la abre.
+         role="dialog" y aria-labelledby le dicen al lector de pantalla que es una ventana y cómo se llama -->
+    <div class="modal fade" id="inscripcion" tabindex="-1" role="dialog" aria-labelledby="inscripcion-titulo" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <form action="cursos.html" method="get">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5" id="inscripcion-titulo">Inscríbete</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="ins-nombre" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="ins-nombre" name="nombre" autocomplete="name" required />
+              </div>
+              <div class="mb-3">
+                <label for="ins-correo" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="ins-correo" name="correo" autocomplete="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="ins-curso" class="form-label">Curso</label>
+                <select class="form-select" id="ins-curso" name="curso" required>
+                  <option value="">Elige un curso</option>
+                    <option>Diseño Web</option>
+                    <option>JavaScript desde cero</option>
+                    <option>Figma para desarrolladores</option>
+                    <option>Git y GitHub</option>
+                    <option>Java orientado a objetos</option>
+                    <option>Bases de datos con SQL</option>
+                </select>
+              </div>
+              <fieldset>
+                <legend class="form-label fs-6">Modalidad</legend>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="modalidad" id="ins-presencial" value="presencial" checked />
+                  <label class="form-check-label" for="ins-presencial">Presencial</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="modalidad" id="ins-virtual" value="virtual" />
+                  <label class="form-check-label" for="ins-virtual">Virtual</label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Enviar inscripción</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+
+      <nav aria-label="Enlaces rapidos">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="mis-proyectos.html">Proyectos</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="contactame.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <p>&copy; 2026 Dagner Chuman · Centro de Informática USS · Protech XP</p>
+    </footer>
+
+    <!-- El JavaScript de Bootstrap (con Popper): hace funcionar el modal y el acordeón.
+         Va al final del body, como el reproductor de la sesión 07 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/inscripcion.js"></script>
+  </body>
+</html>

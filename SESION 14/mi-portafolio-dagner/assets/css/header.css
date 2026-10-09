@@ -1,0 +1,140 @@
+/* ==========================================================
+   header.css · Componentes comunes: cabecera y pie de página
+   Se enlaza SEGUNDO en todas las páginas.
+   Figma: Header (Pasos 2 al 5) y footer-wrapper (Paso 13)
+   ========================================================== */
+
+/* 1. Barra superior de cabecera */
+header {
+  height: 80px;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;                    /* Figma: Disposición automática */
+  align-items: center;              /* Alineación: centro vertical */
+  justify-content: space-between;   /* Espacio: Auto */
+  padding: 0 80px;                  /* Espaciado 0 · 80 · 0 · 80 */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* 2. Logotipo / Nombre del autor */
+header h1 {
+  font-size: 18px; /* el h1 mide 2em por defecto: lo igualamos al logotipo */
+}
+
+header h1 a {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* 3. Menú de navegación horizontal · Figma: nav-links, Espacio 32 */
+nav[aria-label="Navegacion principal"] ul {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+nav[aria-label="Navegacion principal"] a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  padding-bottom: 4px;
+  /* Subrayado animado: un degradado de un solo color como imagen de fondo (sesión 09).
+     Empieza con 0 % de ancho y crece hasta el 100 % al pasar el cursor */
+  background-image: linear-gradient(var(--color-primary), var(--color-primary));
+  background-size: 0% 2px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  transition: color var(--duration-fast) ease,
+              background-size var(--duration-base) var(--ease-out);
+}
+
+nav[aria-label="Navegacion principal"] a:hover {
+  color: var(--color-text-primary);
+  background-size: 100% 2px;
+}
+
+/* 4. Botón de contacto en la cabecera */
+header > a[href="contactame.html"] {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 24px;
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  transition: background-color var(--duration-fast) ease,
+              color var(--duration-fast) ease;
+}
+
+header > a[href="contactame.html"]:hover {
+  background-color: var(--color-text-primary);
+  color: #FFFFFF;
+}
+
+/* 5. Pie de página común · Figma: footer-wrapper, Flujo vertical, Espacio 24 */
+footer {
+  display: flex;
+  flex-direction: column;           /* Flujo ↓: el menú arriba, el texto abajo */
+  align-items: center;              /* Alineación: centro */
+  gap: 24px;                        /* Espacio 24: reemplaza al margin-bottom del menú */
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: 48px 80px;               /* Espaciado 48 y 80 */
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+footer nav ul {
+  display: flex;
+  flex-wrap: wrap;                  /* en un celular, los enlaces bajan de línea */
+  justify-content: center;
+  gap: 24px;
+}
+
+footer a {
+  transition: color var(--duration-fast) ease;
+}
+
+footer a:hover {
+  color: var(--color-primary);
+}
+
+/* 6. Convivencia con Bootstrap (sesión 13). Su Reboot le da margen al h1 y a los
+      párrafos, y sangría a las listas. Estos selectores (0-0-2) le ganan a los
+      suyos (0-0-1): la cabecera y el pie quedan como en Figma en todas las páginas */
+header h1,
+header ul,
+footer ul,
+footer p {
+  margin: 0;
+  padding: 0;
+}
+
+/* 7. Diseño responsivo (sesión 12): cabecera y pie en pantallas estrechas */
+@media (max-width: 992px) {
+  header { padding: 0 24px; }
+  footer { padding: 48px 24px; }
+}
+
+@media (max-width: 600px) {
+  header {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;                  /* Figma móvil: Espaciado 16 */
+  }
+  nav[aria-label="Navegacion principal"] ul {
+    flex-wrap: wrap;                /* sesión 13: con cinco enlaces, en 360 px bajan de línea */
+    justify-content: center;
+    gap: 8px 20px;                  /* 8 entre filas, 20 entre enlaces */
+  }
+  header > a[href="contactame.html"] { display: none; }   /* el menú ya lleva a Contacto */
+  footer { padding: 48px 16px; }
+}
