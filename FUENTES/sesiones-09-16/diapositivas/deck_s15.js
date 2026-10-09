@@ -264,27 +264,29 @@ d.add('INSTRUMENTAL', (s) => {
 
 // ================= PROYECTO INTEGRADOR
 d.add('INSTRUMENTAL', (s) => {
-  d.header(s, 'Proyecto integrador', 'Qué entregas', 'Tu portafolio reúne todo el curso. Se entrega publicado, con su diseño en Figma.');
+  d.header(s, 'Proyecto integrador', 'Qué entregas', 'Tu portafolio reúne todo el curso. Lo presentas en la sesión 16: es la Parte B del examen final.');
   d.numCards(s, [
     { t: 'La dirección', d: '`https://tu-nombre.netlify.app`, con las cinco páginas, la 404 y la de gracias.' },
     { t: 'El Figma', d: 'El enlace con permiso **puede ver**.' },
     { t: 'La carpeta', d: 'En `.zip`, con el nombre `apellido-nombre-portafolio.zip`.' },
     { t: 'Lighthouse', d: 'Una captura de `index.html` publicado, en modo Mobile, con las cuatro notas.' },
-  ], { cols: 2, h: 1.55 });
-  d.note(s, 6.55, 'La fecha y el lugar de entrega los indica tu docente en el Aula Virtual.');
+    { t: 'La bitácora', d: 'Tres prompts o más: qué pediste, qué te dio la IA, qué corregiste y cómo lo comprobaste.' },
+    { t: 'Sube todo', d: 'A la tarea **Proyecto integrador** del Aula Virtual, antes de la sesión 16.' },
+  ]);
+  d.note(s, 6.62, 'La fecha de entrega la indica tu docente en el Aula Virtual.');
 });
 
 d.add('INSTRUMENTAL', (s) => {
-  d.header(s, 'Proyecto integrador', 'Cómo se califica', 'Seis criterios, 20 puntos.');
+  d.header(s, 'Proyecto integrador', 'Lo que se revisa', 'Se califica al presentarlo en la sesión 16, con la pauta de presentación (10 puntos).');
   tres(s, [
-    ['Estructura', 'HTML semántico, un solo h1 y las siete páginas sin errores en el validador', '4'],
-    ['Fidelidad al diseño', 'Colores, letra, medidas y espacios iguales a Figma', '4'],
-    ['Diseño adaptable', '390, 820 y 1440 px sin barra horizontal ni imágenes deformadas', '3'],
-    ['Interacción', 'Hover, transiciones, acordeón y ventana; con mouse y con teclado', '3'],
-    ['Accesibilidad y pruebas', 'alt, foco visible, saltar al contenido, aria-current; Lighthouse 90+ en Accesibilidad y SEO', '3'],
-    ['Publicación', 'Netlify, enlaces, 404 propia, formulario que guarda, icono y vista previa', '3'],
-    ['Total', '', '20', 'E6F8FA'],
-  ], { heads: ['Criterio', 'Logrado', 'Puntos'], w: [2.9, 8.15, 0.9], h: 0.47, mono: false, size: 11 });
+    ['Estructura', 'HTML semántico, un solo h1 y las siete páginas sin errores en el validador', '02 a 07'],
+    ['Fidelidad al diseño', 'Colores, letra, medidas y espacios iguales a Figma', '09 y 10'],
+    ['Diseño adaptable', '390, 820 y 1440 px sin barra horizontal ni imágenes deformadas', '12'],
+    ['Interacción', 'Hover, transiciones, acordeón y ventana; con mouse y con teclado', '11 y 14'],
+    ['Accesibilidad y pruebas', 'alt, foco visible, saltar al contenido, aria-current; Lighthouse 90+', '15'],
+    ['Publicación', 'Netlify, enlaces, 404 propia, formulario que guarda, icono y vista previa', '15'],
+    ['Uso de la IA', 'Bitácora con 3 prompts o más; sabes explicar todo tu código', 'Extra IA', 'E6F8FA'],
+  ], { heads: ['Criterio', 'Logrado', 'Sesiones'], w: [2.9, 7.65, 1.4], h: 0.47, mono: false, size: 11 });
 });
 
 // ================= EXTRA · CODIFICAR CON IA (ia.js, contenido en ia_contenido.json)
@@ -313,7 +315,7 @@ d.tarea([
   'Crea 404.html y gracias.html; conecta los dos formularios con Netlify.',
   'En Figma: revisa los nombres y exporta el icono y la vista previa.',
   'Publica, prueba el formulario y mide con Lighthouse.',
-], ['Entregar el proyecto integrador: dirección, Figma, .zip y captura.', 'Subirlo al Aula Virtual en la fecha que indica tu docente.', 'El envío es obligatorio dentro del plazo establecido.', 'Se registra en ClassDojo como participación en clase.']);
+], ['Entregar el proyecto integrador: dirección, Figma, .zip, captura y bitácora.', 'Subirlo al Aula Virtual antes de la sesión 16.', 'El envío es obligatorio dentro del plazo establecido.', 'Se registra en ClassDojo como participación en clase.']);
 
 // ================= ORIENTADOR
 d.imageSlide('cinfo-06-orientador.jpg', 'Orientador: conclusión del tema');
@@ -331,8 +333,8 @@ d.hacia('El curso termina. Lo que viene.', [
   ['SESIÓN 13', 'Bootstrap', 'Introducción y su sistema de grillas.'],
   ['SESIÓN 14', 'Bootstrap', 'Componentes, utilidades y tema.'],
   ['SESIÓN 15', 'Proyecto', 'Pruebas y despliegue.', true],
-  ['SESIÓN 16', 'Examen', 'Examen final en el Aula Virtual (30 %).'],
-], 'Para la sesión 16: el examen final evalúa las sesiones 1 a 16 en el Aula Virtual. Repasa las guías y resuelve el simulacro.');
+  ['SESIÓN 16', 'Examen', 'Cuestionario y presentación del proyecto (30 %).'],
+], 'Para la sesión 16: el cuestionario de las sesiones 1 a 16 y la presentación de tu proyecto. Resuelve el simulacro y ensaya tu guion de 5 minutos.');
 
 require('fs').mkdirSync(path.dirname(out), { recursive: true });
 d.save(out).then((n) => console.log('ok', n, 'diapositivas →', out));

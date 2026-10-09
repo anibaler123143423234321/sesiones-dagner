@@ -57,7 +57,6 @@ node diapositivas/render_img.js <repo>           # imágenes de las sesiones 09 
 node diapositivas/render_img_1112.js <repo>      # imágenes de las sesiones 11 y 12
 node diapositivas/render_img_1314.js <repo>      # demostraciones de Bootstrap y capturas de la 13 y la 14
 node diapositivas/render_img_15.js <repo> <informe-lighthouse.html>   # capturas de la 15
-node examen-final/shot_ef.js "<repo>/SESION 16/docente/solucion-parte-b" <carpeta> diapositivas/img
 node diapositivas/deck_s09.js                    # → diapositivas/out/Sesion09-….pptx
 node diapositivas/deck_s10.js                    # y así hasta deck_s16.js
 soffice --headless --convert-to pdf --outdir diapositivas/out diapositivas/out/*.pptx
@@ -113,30 +112,47 @@ node imagenes-sitio/render.js "<repo>/SESION 15/mi-portafolio-dagner/assets/img"
 ## Examen final
 
 La sesión 16 es el examen final (30 %). El formato es una propuesta: una Parte A con 20
-preguntas sorteadas de un banco de 40 y una Parte B con un caso práctico.
+preguntas sorteadas de un banco de 40, en el Aula Virtual, y una Parte B con la presentación
+del proyecto integrador (5 minutos y 2 de preguntas por estudiante).
 
 | Script | Genera |
 |---|---|
 | `banco_ef.py` | Las 40 preguntas, en tres bloques. Ninguna se repite en el simulacro |
 | `build_banco.py <repo>` | `SESION 16/docente/banco-ef-moodle.gift.txt` y la clave en `guias/out/` |
 | `build_ef.py <repo>` | `SESION 16/Examen Final [EF].docx`, sobre la plantilla del TA1, como el TA2 |
-| `shot_ef.js` | Las capturas de la solución de la Parte B (`SESION 16/docente/solucion-parte-b/`) |
-| `ficha_parte_b.py <capturas>` | La ficha técnica de la Parte B en `guias/out/` |
+| `pauta_parte_b.py` | La pauta de presentación de la Parte B en `guias/out/` |
 | `guia_estudio_ef.py` | La guía de estudio en `guias/out/` |
+| `planilla_ef.py <repo>` | `SESION 16/docente/Calificacion_EF.xlsx`, con los estudiantes de `ASISTENCIAS/` |
 
 ```bash
 python3 examen-final/build_ef.py <repo>
 python3 examen-final/build_banco.py <repo>
-node examen-final/shot_ef.js "<repo>/SESION 16/docente/solucion-parte-b" <capturas>
-python3 examen-final/ficha_parte_b.py <capturas>
+python3 examen-final/pauta_parte_b.py
 python3 examen-final/guia_estudio_ef.py
-node guias/pdf.js guias/out/EF_Parte_B_Ficha_Tecnica.html guias/out/EF_Parte_B_Ficha_Tecnica.pdf
+python3 examen-final/planilla_ef.py <repo>      # necesita openpyxl
+node guias/pdf.js guias/out/EF_Parte_B_Pauta_de_Presentacion.html guias/out/EF_Parte_B_Pauta_de_Presentacion.pdf
 cd "<repo>/SESION 16" && soffice --headless --convert-to pdf "Examen Final [EF].docx"
 ```
 
-`SESION 16/docente/` es solo para el docente: la clave, el archivo GIFT y la solución.
-Si el Aula Virtual usa Moodle, el GIFT se importa en Banco de preguntas › Importar y crea
-las tres categorías; el cuestionario sortea 8, 7 y 5 preguntas de cada una.
+`SESION 16/docente/` es solo para el docente: la clave, el archivo GIFT y la planilla de
+calificación. Si el Aula Virtual usa Moodle, el GIFT se importa en Banco de preguntas ›
+Importar y crea las tres categorías; el cuestionario sortea 8, 7 y 5 preguntas de cada una.
+
+## Extra de IA (sesiones 11 a 15)
+
+`guias/ia_contenido.py` tiene todo el contenido: las reglas, la fórmula del buen prompt y, por
+sesión, el mal y el buen prompt, cuatro prompts con su revisión y las funciones de IA de Figma.
+
+```bash
+python3 guias/guia_ia.py                                   # las cinco guías Extra de IA
+python3 guias/ia_contenido.py > diapositivas/ia_contenido.json
+node diapositivas/deck_s11.js                              # cada deck llama a ia.js antes del Nivelador
+```
+
+## El portafolio completo en Figma
+
+`SESION 15/figma-portafolio-completo/` tiene las capturas y el enlace del archivo «Mi portafolio
+(Copia) · Completo», armado con el servidor MCP de Figma a partir de los valores de las guías.
 
 ## Lo que no se guarda
 

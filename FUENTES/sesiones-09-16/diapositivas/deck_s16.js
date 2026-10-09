@@ -26,7 +26,7 @@ d.waiting('16', 'Ten a mano tu usuario y tu contraseña del Aula Virtual. Hoy es
 d.title({
   titulo: 'Examen final: evaluación integradora',
   sesion: '16',
-  sub: 'Sesiones 1 a 16 · Parte A: cuestionario · Parte B: caso práctico · 30 % del promedio',
+  sub: 'Sesiones 1 a 16 · Parte A: cuestionario · Parte B: presentación del proyecto · 30 % del promedio',
   code: '<section class="examen">\n  <h1>Examen final</h1>\n  <p>Sesiones 1 a 16</p>\n</section>',
 });
 d.imageSlide('como-te-sientes.jpg', '¿Cómo te sientes hoy?');
@@ -45,17 +45,17 @@ d.add('CONCEPTUAL', (s) => {
 
 d.agenda([
   ['01', 'Indicaciones', 'Cómo es el examen y sus normas.', 15],
-  ['02', 'Repaso relámpago', 'HTML5, CSS3, Bootstrap y publicación.', 20],
+  ['02', 'Repaso relámpago', 'HTML5, CSS3, Bootstrap y publicación.', 15],
   ['03', 'Parte A · Cuestionario', '20 preguntas en el Aula Virtual.', 40],
   ['—', 'Pausa', '', 10],
-  ['04', 'Parte B · Caso práctico', 'La página Semana de la Informática 2026.', 80],
+  ['04', 'Parte B · Presentaciones', 'Cada proyecto: 5 minutos y 2 de preguntas.', 115],
   ['05', 'Cierre del curso', 'Tu promedio y lo que viene.', 15],
 ], 'Cómo se reparte la sesión');
 
 d.add('CONCEPTUAL', (s) => {
-  d.header(s, '01 · Indicaciones', 'Cómo es el examen', 'Individual, en el Aula Virtual USS, jueves 05/11/2026. Vale el 30 % de tu promedio final.');
+  d.header(s, '01 · Indicaciones', 'Cómo es el examen', 'Individual, jueves 05/11/2026: el cuestionario en el Aula Virtual y la presentación en clase. Vale el 30 %.');
   d.twoCards(s, { t: 'Parte A · Cuestionario · 10 puntos', color: C.teal, items: ['20 preguntas de opción múltiple de las sesiones 1 a 16.', '0.5 puntos cada una.', '40 minutos y un solo intento.', 'Las preguntas y las opciones salen en orden aleatorio.'] },
-    { t: 'Parte B · Caso práctico · 10 puntos', color: C.teal, items: ['Una página según su ficha técnica.', 'HTML semántico, CSS externo y diseño adaptable.', '80 minutos.', 'Se entrega `apellido-nombre-ef.zip` en el Aula Virtual.'] }, { h: 2.3 });
+    { t: 'Parte B · Presentación · 10 puntos', color: C.teal, items: ['Tu proyecto integrador, publicado en Netlify.', '5 minutos de presentación y 2 de preguntas.', 'Muestras tu Figma, tu sitio y tu bitácora de prompts.', 'Se califica con la pauta de presentación.'] }, { h: 2.3 });
   d.callout(s, 5.4, 0.95, 'Para aprobar el curso:', 'promedio final de 11 o más y una asistencia mínima del 80 %.');
 });
 
@@ -63,11 +63,11 @@ d.add('CONCEPTUAL', (s) => {
   d.header(s, '01 · Indicaciones', 'Las normas', 'Léelas antes de empezar. Valen para las dos partes.');
   d.numCards(s, [
     { t: 'Individual', d: 'No se permite comunicarse con otras personas durante el examen.' },
-    { t: 'A tiempo', d: 'Cada parte se cierra a la hora indicada, aunque no hayas terminado.' },
-    { t: 'Puedes consultar', d: 'Tu portafolio, las guías del curso, MDN y getbootstrap.com.' },
+    { t: 'A tiempo', d: 'El cuestionario se cierra a la hora indicada. Cada presentación dura 7 minutos.' },
+    { t: 'Parte A sin consulta', d: 'El cuestionario es individual: cierra tus apuntes y tu portafolio.' },
     { t: 'Si se corta', d: 'Vuelve a entrar de inmediato: el cuestionario guarda tus respuestas. Avisa al docente.' },
-    { t: 'Originalidad', d: 'Los trabajos iguales entre sí o hechos por terceros se califican con cero.' },
-    { t: 'Entrega', d: 'Revisa que el `.zip` tenga `index.html` en su raíz antes de subirlo.' },
+    { t: 'IA con bitácora', d: 'Puedes usar IA si la registras en tu bitácora y sabes explicar tu código.' },
+    { t: 'Entrega previa', d: 'Tu proyecto y tu bitácora ya están en el Aula Virtual antes de empezar.' },
   ]);
 });
 
@@ -75,7 +75,7 @@ d.add('CONCEPTUAL', (s) => {
 d.divider('CONCEPTUAL', 'Repaso relámpago', '02', ['HTML5', 'CSS3 y diseño responsivo', 'Bootstrap y publicación']);
 
 d.add('CONCEPTUAL', (s) => {
-  d.header(s, '02 · Repaso', 'HTML5 en una diapositiva', 'La estructura que escribes al empezar la Parte B.');
+  d.header(s, '02 · Repaso', 'HTML5 en una diapositiva', 'La estructura de cualquier página del curso.');
   d.code(s, 0.7, 2.86, 6.9, 3.86, '<!doctype html>\n<html lang="es">\n<head>\n  <meta charset="UTF-8" />\n  <meta name="viewport" content="width=device-width,\n        initial-scale=1.0" />\n  <title>Semana de la Informática 2026</title>\n  <link rel="stylesheet" href="assets/css/estilos.css" />\n</head>\n<body>\n  <header> … <nav> … </nav> </header>\n  <main> <section> … </section> </main>\n  <footer> … </footer>\n</body>\n</html>', { size: 9.5 });
   d.steps(s, [['h1', 'Uno solo por página.'], ['alt', 'En cada imagen.'], ['label', 'for igual al id.'], ['name', 'Sin name no se envía.'], ['required', 'Campo obligatorio.'], ['Validar', 'validator.w3.org']], { tw: 1.1 });
 });
@@ -121,40 +121,44 @@ d.add('INSTRUMENTAL', (s) => {
   d.note(s, 6.62, 'Los nombres de los botones pueden cambiar un poco según la versión del Aula Virtual.');
 });
 
-d.breakSlide('Al volver empieza la Parte B: ten lista una carpeta vacía para tu trabajo.', 'PAUSA · 10 MINUTOS');
+d.breakSlide('Al volver empiezan las presentaciones: abre en pestañas tu sitio, tu Figma y tu bitácora.', 'PAUSA · 10 MINUTOS');
 
 // ================= PARTE B
-d.divider('INSTRUMENTAL', 'Parte B · Caso práctico', '04', ['La página y su ficha técnica', 'Lo que se califica', 'La entrega']);
+d.divider('INSTRUMENTAL', 'Parte B · Presentaciones', '04', ['Tu guion de 5 minutos', 'Lo que se califica', 'El orden y los tiempos']);
 
 d.add('INSTRUMENTAL', (s) => {
-  d.header(s, '04 · Parte B', 'Semana de la Informática 2026', 'Una página de una sola vista. Los textos, los colores y las medidas están en la ficha técnica.');
-  place(d, s, IMG('s16-parte-b-1440.png'), 0.7, 2.86, 8.6, 3.9, { align: 'left', valign: 'top' });
-  const H = 3.9; const w = (H - 0.16) * (390 / 844) + 0.16;
-  d.image(s, IMG('s16-parte-b-390.png'), 12.65 - w, 2.86, w, H, { alt: 'La página del caso práctico en un celular' });
+  d.header(s, '04 · Parte B', 'Tu guion: cinco minutos', 'Después vienen 2 minutos de preguntas. Ensáyalo con un cronómetro.');
+  tres(s, [
+    ['30 s', 'La página de inicio publicada', 'Quién eres y para qué sirve tu sitio'],
+    ['1 min', 'Tu Figma: escritorio, celular y un componente', 'Cómo pasaste sus valores al código'],
+    ['2 min', 'El sitio: páginas, un hover, el celular con F12 y el formulario', 'Qué técnica usaste en cada parte'],
+    ['1 min', 'Tu bitácora: tu mejor prompt', 'Qué pediste, qué corregiste y cómo lo comprobaste'],
+    ['30 s', 'Tu captura de Lighthouse', 'Qué mejorarías con una semana más'],
+  ], { heads: ['Tiempo', 'Qué muestras', 'Qué dices'], w: [1.5, 5.6, 4.85], h: 0.58, mono: false });
 });
 
 d.add('INSTRUMENTAL', (s) => {
   d.header(s, '04 · Parte B', 'Lo que se califica', 'Cinco criterios de 2 puntos: logrado (2), en proceso (1) o no logrado (0).');
   tres(s, [
-    ['Estructura semántica', 'header, nav, main, section, article y footer; un solo h1; sin errores en el validador', '2'],
-    ['Estilos y variables', 'CSS externo, los valores de la ficha como variables en :root, las dos fuentes', '2'],
-    ['Maquetación', 'Cabecera con Flexbox; charlas con grid o con la grilla de Bootstrap', '2'],
-    ['Diseño adaptable', 'viewport y una media query: charlas en una columna, sin barra horizontal a 390px', '2'],
-    ['Interacción y formulario', 'Hover con transition; campos con label, name y required; type="email"', '2'],
+    ['Sitio publicado y funcional', 'En Netlify: enlaces, celular a 390 px, formulario que guarda mensajes y página 404', '2'],
+    ['Diseño y fidelidad', 'Figma con escritorio, celular y componentes; el sitio respeta sus colores y medidas', '2'],
+    ['Código y pruebas', 'HTML válido; explica la parte del código que se le pide; Lighthouse 90+ en Accesibilidad', '2'],
+    ['Uso responsable de la IA', 'Bitácora con 3 prompts o más: qué pidió, qué corrigió y cómo lo comprobó', '2'],
+    ['Presentación', 'Sigue el guion en 5 minutos, con orden y claridad; responde las preguntas', '2'],
     ['Total de la Parte B', '', '10', 'E6F8FA'],
   ], { heads: ['Criterio', 'Logrado', 'Puntos'], w: [3.0, 8.0, 0.95], h: 0.5, boldLast: true });
 });
 
 d.add('INSTRUMENTAL', (s) => {
-  d.header(s, '04 · Parte B', 'Cómo repartir los 80 minutos', 'Deja los últimos 5 minutos solo para comprimir y subir.');
-  tres(s, [
-    ['0 a 10', 'La carpeta e index.html con toda la estructura y los textos', 'Estructura'],
-    ['10 a 40', 'Variables, reset, cabecera, presentación, botón y charlas', 'Estilos y maquetación'],
-    ['40 a 55', 'El formulario y el pie', 'Formulario'],
-    ['55 a 65', 'La media query del celular; prueba a 390px con F12', 'Adaptable'],
-    ['65 a 75', 'Valida el HTML y el CSS en el W3C y corrige', 'Sin errores'],
-    ['75 a 80', 'Comprime apellido-nombre-ef y súbela al Aula Virtual', 'Entrega', 'E6F8FA'],
-  ], { heads: ['Minutos', 'Qué haces', 'Criterio'], w: [1.6, 7.3, 3.05], h: 0.5 });
+  d.header(s, '04 · Parte B', 'El orden y los tiempos', 'Siete minutos por proyecto. Mientras uno presenta, el siguiente se prepara.');
+  d.numCards(s, [
+    { t: 'Sorteo', d: 'El orden se sortea al empezar la Parte B.' },
+    { t: '5 + 2 minutos', d: 'Cinco para presentar y dos para las preguntas. El tiempo se cuenta en pantalla.' },
+    { t: 'Prepárate', d: 'Cuando presenta el compañero anterior, abre tus pestañas: sitio, Figma, bitácora y Lighthouse.' },
+    { t: 'Preguntas', d: 'Te pueden pedir que abras tu CSS o tu HTML y expliques una regla o una etiqueta.' },
+    { t: 'Plan B', d: 'Si se cae internet, presentas desde tu carpeta `.zip` en tu computadora.' },
+    { t: 'IA bien usada', d: 'Se valora: muestra qué corregiste. Un código que no puedes explicar resta.' },
+  ]);
 });
 
 // ================= CIERRE

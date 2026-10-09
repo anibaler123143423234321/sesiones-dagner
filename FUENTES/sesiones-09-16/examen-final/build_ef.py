@@ -63,40 +63,41 @@ def cambiar(i, viejo, nuevo):
 cambiar(0, '>TALLER<', '>EXAMEN<')
 cambiar(0, '>ONLINE<', '>FINAL<')
 cambiar(0, '[TA1-1]', '[EF]')
-cambiar(4, '>(Zoom)<', '>(Aula Virtual USS)<')
+cambiar(4, '>Virtual<', '>Clase sincrónica<')
+cambiar(4, '>(Zoom)<', '>y Aula Virtual USS<')
 cambiar(4, '>15%<', '>30%<')
 cambiar(5, '01/10/2026', '05/11/2026')
 cambiar(6, 'DISEÑAR EN FIGMA Y HTML', 'EVALUACIÓN INTEGRADORA')
-cambiar(7, '4 horas', '2 horas')
+cambiar(7, '4 horas', '4 horas (toda la sesión)')
 
-poner(12, 'El **examen final** evalúa las **sesiones 1 a 16**. Es **individual** y se rinde en el **Aula Virtual USS** '
-          'el **jueves 05/11/2026**, en el horario de clase.')
+poner(12, 'El **examen final** evalúa las **sesiones 1 a 16**. Es **individual** y se rinde el **jueves 05/11/2026**, '
+          'en el horario de clase: el cuestionario en el **Aula Virtual USS** y la presentación en la clase.')
 poner(13, 'Tiene **dos partes**, que se rinden una después de la otra en la misma sesión:')
 poner(14, '**Parte A · Cuestionario (10 puntos, 40 minutos):** 20 preguntas de opción múltiple de las sesiones 1 a 16, '
           'a 0.5 puntos cada una. Un solo intento, en orden aleatorio.')
-poner(15, '**Parte B · Caso práctico (10 puntos, 80 minutos):** construir la página _Semana de la Informática 2026_ '
-          'según la **ficha técnica** publicada en el Aula Virtual, con HTML semántico, CSS externo y diseño adaptable.')
-poner(16, '**Requisitos de la Parte B:** etiquetas semánticas, variables en `:root`, `grid` o la grilla de Bootstrap, '
-          'una media query para el celular, un `:hover` con `transition` y un formulario con `label` y `required`.')
-poner(17, '**Entrega de la Parte B:** la carpeta comprimida `apellido-nombre-ef.zip`, con `index.html` y '
-          '`assets/css/estilos.css`, en la tarea del Aula Virtual.')
-poner(18, '**Materiales permitidos:** su portafolio, las guías del curso, MDN y getbootstrap.com. Para repasar: el '
-          '**simulacro** de la sesión 16.')
+poner(15, '**Parte B · Presentación del proyecto integrador (10 puntos, 7 minutos por estudiante):** 5 minutos para '
+          'presentar el portafolio publicado, su diseño en Figma y el uso de la IA, y 2 minutos de preguntas.')
+poner(16, '**Guion de la Parte B:** presentación del sitio, diseño en Figma, recorrido por el sitio publicado (incluido '
+          'el celular), el mejor prompt de la bitácora y la captura de Lighthouse. Ver la **pauta de presentación**.')
+poner(17, '**Entrega previa:** antes de la sesión, subir a la tarea **Proyecto integrador** la dirección de Netlify, el '
+          'enlace de Figma, la carpeta `apellido-nombre-portafolio.zip`, la captura de Lighthouse y la bitácora de prompts.')
+poner(18, '**Materiales permitidos en la Parte A:** ninguno; el cuestionario es individual y sin consulta. Para repasar: '
+          'la guía de estudio y el **simulacro** de la sesión 16.')
 
-poner(20, '**Conexión:** Ingrese al Aula Virtual 10 minutos antes. Cada parte se cierra a la hora indicada, aunque no '
+poner(20, '**Conexión:** Ingrese al Aula Virtual 10 minutos antes. El cuestionario se cierra a la hora indicada, aunque no '
           'haya terminado.')
 poner(21, '**Problemas técnicos:** Si se corta la conexión, vuelva a ingresar: el cuestionario conserva las respuestas '
-          'guardadas. Avise al docente de inmediato.')
-poner(22, '**Originalidad:** El examen es individual. Los trabajos iguales entre sí o elaborados por terceros se '
-          'califican con cero.')
+          'guardadas. Si su sitio no abre al presentar, presente desde la carpeta `.zip`.')
+poner(22, '**Originalidad:** Puede usar IA en su proyecto si la registra en la bitácora y explica su código. Los trabajos '
+          'iguales entre sí o elaborados por terceros se califican con cero.')
 
 filas = [
     (32, 33, 34, 'Parte A · Cuestionario', '20 preguntas de opción múltiple de las sesiones 1 a 16, en el Aula Virtual. 0.5 puntos por respuesta correcta.', '50%'),
-    (35, 36, 37, 'Estructura semántica', '`header`, `nav`, `main`, `section`, `article` y `footer`; un solo `h1`; HTML sin errores en el validador del W3C.', '10%'),
-    (38, 39, 40, 'Estilos y variables', 'CSS externo en `assets/css/`, con los valores de la ficha técnica como variables en `:root` y las fuentes enlazadas.', '10%'),
-    (41, 42, 43, 'Maquetación', 'Cabecera con Flexbox y charlas en `grid` o en la grilla de Bootstrap, con las medidas de la ficha técnica.', '10%'),
-    (44, 45, 46, 'Diseño adaptable', 'Etiqueta `viewport` y una media query que pasa las charlas a una columna, sin barra horizontal a 390 px.', '10%'),
-    (47, 48, 49, 'Interacción y formulario', 'Hover con `transition` en el botón y en el menú; campos con `label`, `name` y `required`; `type="email"` en el correo.', '10%'),
+    (35, 36, 37, 'Sitio publicado y funcional', 'En Netlify, con los enlaces, el celular a 390 px, el formulario y la página 404 funcionando.', '10%'),
+    (38, 39, 40, 'Diseño y fidelidad', 'Figma con escritorio, celular y componentes; el sitio respeta sus colores, letras y medidas.', '10%'),
+    (41, 42, 43, 'Código y pruebas', 'HTML semántico y válido; explica la parte del código que se le pide; Lighthouse de 90 o más en Accesibilidad.', '10%'),
+    (44, 45, 46, 'Uso responsable de la IA', 'Bitácora con al menos 3 prompts: qué pidió, qué corrigió y cómo lo comprobó.', '10%'),
+    (47, 48, 49, 'Presentación', 'Sigue el guion en 5 minutos, con orden y claridad, y responde las preguntas.', '10%'),
 ]
 for a, b, c, crit, desc, pts in filas:
     poner(a, f'**{crit}**', tabla=True)

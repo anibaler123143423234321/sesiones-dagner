@@ -227,25 +227,29 @@ d.callout('Si cambias un color, cámbialo en los dos lados:', 'en la variable de
 
 d.h2('El proyecto integrador', salto=True)
 d.p('Tu portafolio es el proyecto integrador del curso: reúne todo lo que hiciste desde la sesión 01. Lo entregas '
-    'publicado, con su diseño en Figma.')
+    'publicado, con su diseño en Figma y tu bitácora de prompts, y lo presentas en la sesión 16: es la Parte B del '
+    'examen final.')
 d.h3('Qué entregas')
 d.tabla(['Entregable', 'Cómo'], [
     ['La dirección del sitio publicado', '`https://tu-nombre.netlify.app`, con las cinco páginas, la 404 y la página de gracias'],
     ['El enlace de tu Figma', 'Con permiso **puede ver** (ver la guía de Figma)'],
     ['La carpeta del sitio', 'Comprimida en `.zip`, con el nombre `apellido-nombre-portafolio.zip`'],
     ['Una captura de Lighthouse', 'De `index.html` publicado, en modo Mobile, con las cuatro notas a la vista'],
+    ['Tu bitácora de prompts', 'Al menos tres prompts, con lo que te dio la IA, lo que corregiste y cómo lo comprobaste (guías Extra de IA)'],
 ], anchos=['32%', '68%'])
-d.p('La fecha y el lugar de entrega los indica tu docente en el Aula Virtual.')
-d.h3('Cómo se califica')
-d.tabla(['Criterio', 'Logrado', 'Puntos'], [
-    ['Estructura', 'HTML semántico (`header`, `nav`, `main`, `section`, `footer`), un solo `h1`, títulos en orden y las siete páginas sin errores en el validador', '4'],
-    ['Fidelidad al diseño', 'Colores, letra, medidas y espacios iguales a los de Figma; nombres de clase que siguen los de las capas', '4'],
-    ['Diseño adaptable', 'Se ve bien a 390, 820 y 1440 px, sin barra horizontal; las imágenes no se deforman', '3'],
-    ['Interacción', 'Hover y transiciones, el menú, el acordeón y la ventana de inscripción funcionan con mouse y con teclado', '3'],
-    ['Accesibilidad y pruebas', '`alt` en las imágenes, foco visible, «Saltar al contenido», `aria-current`; Lighthouse de 90 o más en Accesibilidad y SEO', '3'],
-    ['Publicación', 'Sitio en Netlify, todos los enlaces funcionan, 404 propia, formulario que guarda mensajes, icono y vista previa al compartir', '3'],
-    ['**Total**', '', '**20**'],
-], anchos=['22%', '66%', '12%'])
+d.p('Súbelo a la tarea **Proyecto integrador** del Aula Virtual antes de la sesión 16, en la fecha que indica tu docente.')
+d.h3('Lo que se revisa')
+d.p('Se califica al presentarlo en la sesión 16, con la pauta de presentación (Parte B del examen final, 10 puntos). '
+    'Esto es lo que se revisa:')
+d.tabla(['Criterio', 'Logrado', 'Sesiones'], [
+    ['Estructura', 'HTML semántico (`header`, `nav`, `main`, `section`, `footer`), un solo `h1`, títulos en orden y las siete páginas sin errores en el validador', '02 a 07'],
+    ['Fidelidad al diseño', 'Colores, letra, medidas y espacios iguales a los de Figma; nombres de clase que siguen los de las capas', '09 y 10'],
+    ['Diseño adaptable', 'Se ve bien a 390, 820 y 1440 px, sin barra horizontal; las imágenes no se deforman', '12'],
+    ['Interacción', 'Hover y transiciones, el menú, el acordeón y la ventana de inscripción funcionan con mouse y con teclado', '11 y 14'],
+    ['Accesibilidad y pruebas', '`alt` en las imágenes, foco visible, «Saltar al contenido», `aria-current`; Lighthouse de 90 o más en Accesibilidad y SEO', '15'],
+    ['Publicación', 'Sitio en Netlify, todos los enlaces funcionan, 404 propia, formulario que guarda mensajes, icono y vista previa al compartir', '15'],
+    ['Uso de la IA', 'Bitácora con al menos tres prompts: qué pediste, qué corregiste y cómo lo comprobaste; sabes explicar todo tu código', 'Extra de IA'],
+], anchos=['22%', '62%', '16%'])
 
 d.h2('Lista de comprobación')
 d.check(['Las siete páginas y las seis hojas pasan los validadores del W3C sin errores.',

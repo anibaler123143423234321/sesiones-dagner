@@ -18,7 +18,7 @@ d = Doc('Guía de estudio del examen final',
 d.h3('Cómo es el examen')
 d.tabla(['Parte', 'Qué', 'Tiempo', 'Puntos'], [
     ['A · Cuestionario', '20 preguntas de opción múltiple de las sesiones 1 a 16, en el Aula Virtual. Un solo intento', '40 minutos', '10'],
-    ['B · Caso práctico', 'La página «Semana de la Informática 2026» según su ficha técnica. Se entrega en `.zip`', '80 minutos', '10'],
+    ['B · Presentación', 'Tu proyecto integrador: el sitio publicado, tu Figma y tu bitácora de prompts. Ver la pauta de presentación', '5 + 2 minutos', '10'],
 ], anchos=['20%', '56%', '12%', '12%'])
 d.tabla(['Tu promedio final', 'Peso'], [
     ['Participación en aula [PA]', '40 %'],
@@ -30,7 +30,7 @@ d.callout('Para aprobar:', 'promedio final de 11 o más y una asistencia mínima
 d.h3('Cómo estudiar')
 d.pasos(['Resuelve el **simulacro** (`cuestionario-sesion16.html`): parte 1, HTML5; parte 2, CSS3 y Bootstrap. Lee la explicación de cada respuesta.',
          'Repasa las tres tablas de esta guía. Si un concepto no te suena, abre la guía de esa sesión.',
-         'Practica la Parte B: con la ficha técnica, construye la página en 80 minutos, sin mirar tu portafolio.',
+         'Ensaya la Parte B con un cronómetro: tu guion de 5 minutos, siguiendo la pauta de presentación.',
          'Antes de entrar, revisa la lista de comprobación de la última página.'])
 
 # ---------------- Bloque 1
@@ -114,14 +114,13 @@ d.tabla(['Error', 'Cómo evitarlo'], [
     ['Confundir `max-width` con `min-width`', '`max-width: 600px` es «hasta 600»: el celular. `min-width: 768px` es «desde 768»'],
     ['Olvidar el `#` en `data-bs-target`', 'Apunta a un `id`, como un selector: `#inscripcion`'],
     ['`label` sin `for`', 'El `for` es igual al `id` del campo, no a su `name`'],
-    ['Entregar el `.zip` sin `index.html` en la raíz', 'Comprime la carpeta que tiene `index.html` directamente dentro'],
+    ['Presentar un código que no sabes explicar', 'Repasa tu CSS regla por regla: en las preguntas te pueden pedir cualquiera'],
 ], anchos=['40%', '60%'])
 
 d.h2('Antes del examen')
 d.check(['Resolví las dos partes del simulacro y leí las explicaciones.',
          'Sé usar `F12` para probar a 390px y para abrir Lighthouse.',
-         'Sé crear una carpeta con `index.html` y `assets/css/`, y comprimirla en `.zip`.',
-         'Entré al Aula Virtual con mi usuario antes del día del examen.'])
+         'Subí mi proyecto y mi bitácora al Aula Virtual, y ensayé mi presentación de 5 minutos.'])
 
 d.guardar(os.path.join(AQUI, '..', 'guias', 'out', 'Guia_de_Estudio_Examen_Final.html'))
 print('ok')
