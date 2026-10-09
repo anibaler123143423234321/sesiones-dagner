@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio - Dagner Chuman</title>
+    <meta
+      name="description"
+      content="Portafolio personal de Dagner Chuman, 
+    docente e ingeniero en desarrollo web y formación tecnológica."
+    />
+
+    <!-- 1. Tokens y Reset Global -->
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <!-- 2. Componentes comunes (Header / Footer) -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <!-- 3. Base de las páginas interiores -->
+    <link rel="stylesheet" href="assets/css/contenido.css" />
+
+    <!-- Controles personalizados del video (Sesión 07) -->
+    <script src="assets/js/reproductor.js" defer></script>
+  </head>
+  <body>
+    <!-- href="#identificar"-->
+    <!-- CABECERA: Identidad del sitio y menú de navegación -->
+    <header>
+      <h1><a href="index.html">Dagner Chuman</a></h1>
+      <nav aria-label="Navegacion principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="mis-proyectos.html">Proyectos</a></li>
+          <li><a href="contactame.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="contactame.html">Contacto</a>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <!-- SECCIÓN: Sobre mí · Figma: about-section -->
+      <section class="about-section">
+        <h2>Sobre mí</h2>
+
+        <!-- Dos columnas · Figma: about-content -->
+        <div class="about-content">
+          <!-- Columna izquierda · Figma: about-text -->
+          <div class="about-text">
+            <figure>
+              <img
+                class="foto-perfil"
+                src="assets/img/images-perfil.png"
+                alt="Foto de Dagner Chuman"
+                width="100"
+                height="100"
+                loading="lazy"
+              />
+              <figcaption>Presentación al Banco BBVA</figcaption>
+            </figure>
+
+            <p>
+              Hola, soy Dagner Chuman. Docente e Ingeniero enfocado en el
+              desarrollo web y la formación tecnológica. Este es mi portafolio
+              personal construido con HTML5 y estructura semántica limpia.
+            </p>
+          </div>
+
+          <!-- Columna derecha · Figma: about-graphic -->
+          <aside aria-label="Datos rápidos">
+            <h2>En resumen</h2>
+            <dl>
+              <dt>Institución:</dt>
+              <dd>Centro de Informática USS</dd>
+              <dt>Profesión:</dt>
+              <dd>Docente e Ingeniero</dd>
+              <dt>Especialidad:</dt>
+              <dd>Desarrollo web y formación tecnológica</dd>
+              <dt>Habilidades:</dt>
+              <dd>HTML5, CSS3, Java</dd>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section>
+        <h2>Mi historia</h2>
+        <p>
+          Desde mis primeros pasos en la informática, he estado fascinado por la
+          capacidad de la tecnología para transformar ideas en realidad. Mi
+          pasión por el desarrollo web me ha llevado a explorar diversas
+          tecnologías y metodologías, siempre buscando mejorar y aprender más.
+        </p>
+        <p>
+          A lo largo de mi carrera, he tenido la oportunidad de trabajar en
+          proyectos desafiantes que me han permitido crecer profesionalmente y
+          contribuir al avance de la educación tecnológica.
+        </p>
+      </section>
+
+      <!--
+      RUTAS (repaso de la sesión 04)
+      RUTA RELATIVA (la que usamos): parte desde la carpeta de este archivo.
+        assets/media/video/presentacion.mp4
+      RUTA DESDE LA RAÍZ DEL SITIO: empieza con "/". Solo funciona con un
+      servidor (Live Server o Netlify), no al abrir el archivo con doble clic.
+        /assets/media/video/presentacion.mp4
+      RUTA ABSOLUTA: incluye el dominio completo.
+        https://mi-portafolio-dagner.netlify.app/assets/media/video/presentacion.mp4
+      RUTA DEL DISCO (nunca va en el código): solo existe en tu computadora.
+        C:\Users\SIPAN\Documents\mi-portafolio-dagner\assets\media\video\presentacion.mp4
+      -->
+
+      <!-- SECCIÓN: Presentación multimedia (Sesión 07) -->
+      <section>
+        <h2>Mi presentación</h2>
+
+        <!-- Rejilla de dos columnas: el video vertical a la izquierda, el resto a la derecha -->
+        <div class="media-grid">
+          <!-- VIDEO PROPIO: dos formatos, póster, subtítulos y controles propios -->
+          <figure>
+            <video
+              id="video-presentacion"
+              width="315"
+              height="560"
+              poster="assets/img/poster-presentacion.jpg"
+              preload="metadata"
+              controls
+              playsinline
+            >
+              <source
+                src="assets/media/video/presentacion.webm"
+                type="video/webm"
+              />
+              <source
+                src="assets/media/video/presentacion.mp4"
+                type="video/mp4"
+              />
+              <track
+                kind="subtitles"
+                src="assets/media/video/presentacion.es.vtt"
+                srclang="es"
+                label="Español"
+                default
+              />
+              <p>
+                Tu navegador no puede reproducir este video.
+                <a href="assets/media/video/presentacion.mp4" download
+                  >Descárgalo en MP4</a
+                >.
+              </p>
+            </video>
+
+            <!-- CONTROLES PERSONALIZADOS: ocultos hasta que reproductor.js los activa -->
+            <div
+              id="controles-video"
+              role="group"
+              aria-label="Controles del video"
+              hidden
+            >
+              <button type="button" id="btn-reproducir">Reproducir</button>
+              <button type="button" id="btn-silenciar" aria-pressed="false">
+                Silenciar
+              </button>
+              <label for="barra-progreso">Avance</label>
+              <input
+                type="range"
+                id="barra-progreso"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+              />
+              <span id="tiempo">0:00 / 0:00</span>
+            </div>
+
+            <figcaption>Video de presentación de Dagner Chuman.</figcaption>
+          </figure>
+
+          <div>
+            <!-- VIDEO EXTERNO: alojado en YouTube e incrustado con iframe -->
+            <figure>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/TNhX1uR2vO8"
+                title="Reproductor de video de YouTube"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+              <figcaption>Video alojado en YouTube.</figcaption>
+            </figure>
+
+            <!-- AUDIO: dos formatos y transcripción para quien no puede oírlo -->
+            <figure>
+              <audio controls preload="none">
+                <source
+                  src="assets/media/audio/presentacion.ogg"
+                  type="audio/ogg"
+                />
+                <source
+                  src="assets/media/audio/presentacion.mp3"
+                  type="audio/mpeg"
+                />
+                <p>
+                  Tu navegador no puede reproducir este audio.
+                  <a href="assets/media/audio/presentacion.mp3" download
+                    >Descárgalo en MP3</a
+                  >.
+                </p>
+              </audio>
+              <figcaption>Presentación en audio.</figcaption>
+            </figure>
+
+            <details>
+              <summary>Transcripción del audio</summary>
+              <p>
+                Hola, soy Dagner Chuman. Docente e ingeniero enfocado en el
+                desarrollo web y la formación tecnológica. Bienvenido a mi
+                portafolio.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <nav aria-label="Enlaces rapidos">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="mis-proyectos.html">Proyectos</a></li>
+          <li><a href="contactame.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <p>&copy; 2026 Dagner Chuman · Centro de Informática USS · Protech XP</p>
+    </footer>
+  </body>
+</html>

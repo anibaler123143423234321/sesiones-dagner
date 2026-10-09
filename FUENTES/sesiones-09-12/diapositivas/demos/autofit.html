@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+body{width:1000px;display:flex;flex-direction:column;gap:14px}
+.row{display:flex;gap:18px;align-items:flex-start}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:10px;background:#F3F4F6;border:1px dashed #9CA3AF;border-radius:8px;padding:10px}
+.g.fill{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+.card{background:#fff;border:1px solid #E5E7EB;border-radius:8px;overflow:hidden;font-size:12px;font-weight:600;color:#0B0F19}
+.card i{display:block;height:34px;background:#06B6C4}
+.card span{display:block;padding:6px 8px}
+.ghost{border:2px dashed #F59E0B;border-radius:8px;color:#B45309;font-size:12px;display:flex;align-items:center;justify-content:center}
+h3{font:600 13px 'Geist Mono',monospace;color:#177E89;margin-bottom:6px}
+</style></head><body>
+<div class="row">
+<div><h3>540px · 3 columnas</h3><div class="g" style="width:540px"><div class="card"><i></i><span>Proyecto 1</span></div><div class="card"><i></i><span>Proyecto 2</span></div><div class="card"><i></i><span>Proyecto 3</span></div></div></div>
+<div><h3>400px · 2 columnas</h3><div class="g" style="width:400px"><div class="card"><i></i><span>Proyecto 1</span></div><div class="card"><i></i><span>Proyecto 2</span></div><div class="card"><i></i><span>Proyecto 3</span></div></div></div>
+</div>
+<div class="row">
+<div><h3>200px · 1 columna</h3><div class="g" style="width:200px"><div class="card"><i></i><span>Proyecto 1</span></div><div class="card"><i></i><span>Proyecto 2</span></div><div class="card"><i></i><span>Proyecto 3</span></div></div></div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div><h3>auto-fit · dos tarjetas en 640px</h3><div class="g" style="width:640px"><div class="card"><i></i><span>Proyecto 1</span></div><div class="card"><i></i><span>Proyecto 2</span></div></div></div>
+<div><h3>auto-fill · dos tarjetas en 640px</h3><div class="g fill" style="width:640px"><div class="card"><i></i><span>Proyecto 1</span></div><div class="card"><i></i><span>Proyecto 2</span></div><div class="ghost">columna vacía</div></div></div>
+</div></div>
+</body></html>

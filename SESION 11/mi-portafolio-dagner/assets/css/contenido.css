@@ -1,0 +1,445 @@
+/* ==========================================================
+   contenido.css · Base de las páginas interiores
+   (Sobre mí, Proyectos y Contacto)
+   Se enlaza TERCERO en esas tres páginas.
+   Figma: about-section, projects-section y contact-section
+   ========================================================== */
+
+/* 1. Caja central: desde la sesión 10 mide lo mismo que el marco de Figma */
+main {
+  max-width: 1440px;        /* el ancho de mi-portafolio en Figma */
+  margin: 0 auto;           /* auto: reparte el espacio sobrante y centra la caja */
+  padding: 6.25rem 5rem;    /* 100px y 80px. En Figma: Espaciado 100 y 80 de las secciones */
+}
+
+/* Las líneas de lectura largas cansan: ningún párrafo suelto pasa de 70 caracteres */
+main section > p {
+  max-width: 70ch;          /* ch: el ancho del carácter «0» de la fuente */
+}
+
+/* 2. Separación entre secciones (selector descendiente) */
+main section {
+  margin-bottom: 3rem;      /* 48px. En Figma: Espacio 48 */
+}
+
+/* 3. Títulos y párrafos */
+main h2 {
+  font-size: 2.25rem;       /* 36px ÷ 16. En Figma: Outfit ExtraBold 36 */
+  font-weight: 800;
+  letter-spacing: -0.01em;  /* em: 1 % del tamaño de su propia letra */
+  margin-bottom: 1.5rem;
+}
+
+main h3 {
+  font-size: 1.5rem;        /* 24px ÷ 16. En Figma: Outfit Bold 24 */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+main p {
+  margin-bottom: 1rem;      /* 16px */
+}
+
+/* 4. Enlaces del contenido: recuperan el subrayado que quitó global.css */
+main a {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 3px;
+  transition: color var(--duration-fast) ease;
+}
+
+main a:hover {
+  color: var(--color-primary);
+}
+
+/* 5. Tarjetas: un mismo bloque para tres etiquetas (selector agrupado) */
+aside,
+article,
+fieldset {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;          /* 24px. En Figma: Espaciado 24 */
+  margin-bottom: 1.5rem;
+}
+
+/* Misma especificidad que «main h2» (dos etiquetas): gana por estar más abajo */
+aside h2 {
+  font-size: 1.375rem;      /* 22px ÷ 16. En Figma: título secundario 22 */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* 6. Listas de datos y de contacto */
+main dt {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+main dd,
+main li {
+  margin-bottom: 0.5rem;
+}
+
+/* 7. Multimedia: nunca más ancha que su contenedor */
+figure {
+  margin-bottom: 1.5rem;
+}
+
+figcaption {
+  font-size: 0.875rem;      /* 14px ÷ 16 */
+  font-style: italic;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;          /* %: relativo al ancho del contenedor */
+  border: 0;
+  border-radius: var(--radius-md);
+}
+
+img,
+video {
+  height: auto;             /* conserva la proporción al encogerse */
+}
+
+/* La foto de perfil: un círculo con borde de color.
+   border-radius: 50% redondea una caja cuadrada hasta volverla círculo */
+.foto-perfil {
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+}
+
+/* 8. Botones: no heredan la letra de la página, hay que pedírselo */
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.875rem 1.5rem; /* 14px y 24px, como los botones de Figma */
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) ease,
+              color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
+}
+
+button:hover {
+  background-color: var(--color-text-primary);
+  color: #FFFFFF;
+}
+
+/* Selector de atributo: solo el botón que envía el formulario */
+button[type="submit"] {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  box-shadow: 0 4px 14px rgba(6, 182, 196, 0.35); /* el azul de Figma al 35 % */
+}
+
+/* 9. Formulario de contacto */
+legend {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  padding: 0 0.5rem;
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+input,
+select,
+textarea {
+  font: inherit;            /* los campos tampoco heredan la letra */
+  width: 100%;
+  padding: 0.75rem 1rem;    /* 12px y 16px */
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  transition: border-color var(--duration-fast) ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+}
+
+/* Selector de atributo: estos dos campos no ocupan todo el ancho */
+input[type="checkbox"],
+input[type="range"] {
+  width: auto;
+  padding: 0;
+  accent-color: var(--color-primary); /* pinta la casilla y la barra con el azul de Figma */
+}
+
+/* 10. Controles del video (selector de id + combinador de hijo) */
+#controles-video {
+  margin: 0.75rem 0;
+}
+
+#controles-video > * {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* 11. Transcripción desplegable del audio */
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* 12. Tabla de datos (Sesión 05): bordes, fondos y tipografía */
+table {
+  width: 100%;
+  border-collapse: collapse;  /* une los bordes de celdas vecinas en una sola línea */
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: 0.9375rem;       /* 15px ÷ 16 */
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  padding-bottom: 0.75rem;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;      /* 12px y 16px */
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+thead th {
+  background-color: #F3F4F6;  /* el gris de la barra de la tarjeta de código */
+  color: var(--color-text-primary);
+  font-size: 0.75rem;         /* 12px */
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+tbody th {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* Pseudo-clase: una fila sí y otra no, con el fondo de la página */
+tbody tr:nth-child(even) {
+  background-color: var(--color-bg);
+}
+
+tbody tr {
+  transition: background-color var(--duration-fast) ease;
+}
+
+tbody tr:hover {
+  background-color: rgba(6, 182, 196, 0.08); /* el azul de Figma al 8 % */
+}
+
+tfoot td {
+  font-size: 0.875rem;
+  font-style: italic;
+  text-align: center;
+  border-bottom: 0;
+}
+
+code {
+  font-size: 0.875em;         /* em: un poco más pequeña que el texto que la rodea */
+  color: var(--color-text-primary);
+  overflow-wrap: anywhere;    /* una ruta larga puede partirse para no desbordar en el celular */
+}
+
+/* ==========================================================
+   13. Maquetación (sesión 10): Flexbox y Grid
+   Cada bloque sale de un marco con Disposición automática en Figma
+   ========================================================== */
+
+/* 13.1 Sobre mí · Figma: about-content, Flujo →, Espacio 64, centro vertical */
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.about-text {
+  flex: 1;                  /* Llenar el contenedor: toma el espacio que sobra */
+}
+
+.about-content aside {
+  flex: 0 0 480px;          /* no crece, no se encoge, mide 480. Figma: Ancho fijo 480 */
+  margin-bottom: 0;
+}
+
+/* 13.2 Multimedia: una columna fija para el video vertical y otra flexible */
+.media-grid {
+  display: grid;
+  grid-template-columns: 315px 1fr;   /* 315px fijos + todo lo que sobra */
+  gap: 64px;
+  align-items: start;
+}
+
+/* 13.3 Proyectos · Figma: projects-grid, Espacio 24, dos tarjetas iguales */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* dos columnas de una fracción cada una */
+  gap: 24px;
+}
+
+/* Figma: project-card, Espacio 0, Espaciado 0, Recortar contenido */
+.project-card {
+  padding: 0;               /* anula el 1.5rem de las tarjetas: la imagen va de borde a borde */
+  margin-bottom: 0;         /* en la rejilla, la separación la pone gap */
+  overflow: hidden;         /* Recortar contenido: la imagen respeta las esquinas */
+  transition: transform var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+
+/* Sesión 11: al pasar el cursor, la tarjeta sube y proyecta sombra */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(11, 15, 25, 0.08);
+}
+
+.project-image {
+  display: block;           /* una imagen es inline: deja un hueco debajo si no se cambia */
+  width: 100%;
+  height: 220px;            /* Figma: rectángulo de 220 de alto */
+  object-fit: cover;        /* llena la caja sin deformarse, como el modo Llenar de Figma */
+  border-radius: 0;         /* la clase gana a la regla de img: las esquinas las recorta la tarjeta */
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+/* La imagen se acerca un 5 %; overflow: hidden de la tarjeta recorta lo que sobra */
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-text {
+  padding: 24px;            /* Figma: project-text, Espaciado 24 */
+}
+
+/* 13.4 Contacto · Figma: contact-content, Flujo →, Espacio 64 */
+.contact-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 64px;
+}
+
+.contact-text {
+  flex: 1;
+}
+
+/* Figma: contact-list, Flujo ↓, Ancho fijo 520, Espacio 16 */
+.contact-list {
+  flex: 0 0 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Figma: contact-card, Flujo →, Espaciado 20, Espacio 16, Alineación centro */
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  margin-bottom: 0;         /* la clase gana a «main li» */
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--duration-fast) ease,
+              transform var(--duration-fast) var(--ease-out);
+}
+
+.contact-card:hover {
+  border-color: var(--color-primary);
+  transform: translateX(4px);       /* se desplaza 4 px a la derecha */
+}
+
+/* El círculo de 44 × 44: flex también sirve para centrar en los dos ejes */
+.contact-icon {
+  flex-shrink: 0;           /* nunca se aplasta aunque el texto sea largo */
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.contact-card:hover .contact-icon {
+  transform: rotate(-10deg) scale(1.08);   /* gira desde su centro: transform-origin por defecto */
+}
+
+.contact-card strong,
+.contact-card a {
+  display: block;           /* de inline a block: cada una en su propia línea */
+}
+
+.contact-card strong {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+}
+
+/* 13.5 Formulario: una rejilla de dos columnas, un fieldset en cada una */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.form-grid fieldset {
+  margin-bottom: 0;
+}
+
+.form-actions {
+  grid-column: 1 / -1;      /* de la primera línea a la última: ocupa las dos columnas */
+  display: flex;
+  gap: 16px;
+}
+
+/* 14. Anticipo de la sesión 12: en pantallas estrechas todo pasa a una columna */
+@media (max-width: 992px) {
+  main {
+    padding: 3.75rem 1.5rem;          /* 60px y 24px */
+  }
+  .about-content,
+  .contact-content {
+    flex-direction: column;           /* Flujo → pasa a Flujo ↓ */
+    align-items: stretch;
+  }
+  .about-content aside,
+  .contact-list {
+    flex-basis: auto;                 /* deja de medir 480 o 520 */
+  }
+  .media-grid,
+  .projects-grid,
+  .form-grid {
+    grid-template-columns: 1fr;       /* una sola columna */
+  }
+}
