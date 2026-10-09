@@ -1,0 +1,228 @@
+/* Examen final · Parte B · Solución de referencia (solo docente) */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Geist:wght@400;500&display=swap');
+
+/* 1. Variables de la ficha técnica */
+:root {
+  --color-primary: #06B6C4;
+  --color-primary-hover: #05A3B0;
+  --color-text: #0B0F19;
+  --color-text-secondary: #374151;
+  --color-bg: #F9FAFB;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E7EB;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Geist', sans-serif;
+  --radius: 12px;
+}
+
+/* 2. Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+.marca {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 3. Cabecera: Flujo horizontal, Espacio Auto */
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.marca {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.marca span {
+  color: var(--color-primary);
+}
+
+.cabecera ul {
+  display: flex;
+  gap: 32px;
+}
+
+.cabecera a {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.cabecera a:hover {
+  color: var(--color-primary);
+}
+
+/* 4. Presentación */
+.hero {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 96px 80px;
+  text-align: center;
+}
+
+.hero-fecha {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.hero h1 {
+  font-size: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 16px 0;
+}
+
+.hero-texto {
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+/* 5. Botón: Relleno cian, Radio 8, transición en el hover */
+.boton {
+  display: inline-block;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  font: 500 16px var(--font-body);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* 6. Secciones y charlas: rejilla de tres columnas, Espacio 24 */
+.seccion {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px 80px;
+}
+
+.seccion h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.charlas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.charla {
+  padding: 24px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  transition: box-shadow 0.2s ease;
+}
+
+.charla:hover {
+  box-shadow: 0 12px 24px rgba(11, 15, 25, 0.08);
+}
+
+.charla-dia {
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.charla h3 {
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+/* 7. Formulario: Flujo vertical, Ancho máximo 480 */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 480px;
+  padding: 24px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.formulario input,
+.formulario select {
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-surface);
+  font: inherit;
+}
+
+.formulario .boton {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+/* 8. Pie */
+.pie {
+  padding: 32px 80px;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  text-align: center;
+  font-size: 14px;
+}
+
+/* 9. Celular: una columna y menos relleno */
+@media (max-width: 600px) {
+  .cabecera,
+  .hero,
+  .seccion,
+  .pie {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .cabecera {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .charlas {
+    grid-template-columns: 1fr;
+  }
+}

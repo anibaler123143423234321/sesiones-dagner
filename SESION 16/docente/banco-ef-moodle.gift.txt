@@ -1,0 +1,88 @@
+// Examen final · Diseño Web · Centro de Informática USS · Parte A
+// 40 preguntas en tres categorías. Sortear 8 del bloque 1, 7 del bloque 2 y 5 del bloque 3.
+
+$CATEGORY: $course$/top/Examen final EF/Bloque 1
+
+::EF-01 · S01 · Estándares::[html]¿Qué hace el validador del W3C (validator.w3.org)? { =Revisa que el HTML cumpla el estándar y lista sus errores ~Publica la página en internet ~Diseña la página automáticamente ~Mide la velocidad de la conexión #### Antes de entregar, las páginas deben pasar el validador sin errores. }
+
+::EF-02 · S01 · Lenguajes::[html]¿Qué papel cumple cada lenguaje en una página web? { ~CSS da la estructura, HTML el estilo y JavaScript el contenido =HTML da la estructura y el contenido, CSS la presentación y JavaScript el comportamiento ~Los tres hacen lo mismo ~JavaScript da la estructura y HTML los colores #### Separar estructura, presentación y comportamiento es la base del curso. }
+
+::EF-03 · S02 · Documento::[html]¿Para qué sirve <code>&lt;meta charset\="UTF-8"&gt;</code> dentro del <code>&lt;head&gt;</code>? { ~Para enlazar la hoja de estilos ~Para que la página cargue más rápido =Para que las tildes, la ñ y los signos se muestren bien ~Para poner el título de la pestaña #### Va al inicio del <code>&lt;head&gt;</code>. }
+
+::EF-04 · S02 · Documento::[html]¿Qué indica <code>lang\="es"</code> en la etiqueta <code>&lt;html&gt;</code>? { ~Que la página usa CSS en español ~Que la página solo se ve en Perú ~Que el código está traducido =El idioma del contenido\: el lector de pantalla lo pronuncia en español y los buscadores lo saben #### Lighthouse lo revisa en la categoría SEO. }
+
+::EF-05 · S02 · Listas::[html]¿Qué diferencia hay entre <code>&lt;ul&gt;</code> y <code>&lt;ol&gt;</code>? { =<code>&lt;ul&gt;</code> es una lista con viñetas y <code>&lt;ol&gt;</code>, una lista numerada ~<code>&lt;ol&gt;</code> es una lista con viñetas y <code>&lt;ul&gt;</code>, una numerada ~No hay diferencia ~<code>&lt;ul&gt;</code> solo sirve para menús #### Los menús de navegación se escriben con <code>&lt;ul&gt;</code> dentro de <code>&lt;nav&gt;</code>. }
+
+::EF-06 · S03 · Semántica::[html]¿Qué etiqueta lleva los datos de contacto y los derechos al final de la página? { ~<code>&lt;aside&gt;</code> =<code>&lt;footer&gt;</code> ~<code>&lt;bottom&gt;</code> ~<code>&lt;section&gt;</code> #### <code>&lt;bottom&gt;</code> no existe en HTML. }
+
+::EF-07 · S03 · Semántica::[html]¿En qué se diferencia <code>&lt;section&gt;</code> de <code>&lt;div&gt;</code>? { ~<code>&lt;div&gt;</code> es más moderno ~No hay diferencia =<code>&lt;section&gt;</code> agrupa un contenido temático con su título; <code>&lt;div&gt;</code> no tiene significado y solo sirve para dar estilos ~<code>&lt;section&gt;</code> solo puede ir en el pie #### El lector de pantalla y los buscadores entienden <code>&lt;section&gt;</code>; un <code>&lt;div&gt;</code> no les dice nada. }
+
+::EF-08 · S04 · Rutas::[html]Desde <code>index.html</code>, ¿cuál es la ruta relativa a <code>foto.jpg</code>, guardada en <code>assets/img/</code>? { ~<code>/foto.jpg</code> ~<code>C\:/assets/img/foto.jpg</code> ~<code>../foto.jpg</code> =<code>assets/img/foto.jpg</code> #### Una ruta relativa parte de la carpeta del archivo HTML. }
+
+::EF-09 · S04 · Enlaces::[html]¿Qué hace <code>&lt;a href\="mailto\:docente@uss.edu.pe"&gt;</code>? { =Abre el programa de correo con un mensaje nuevo para esa dirección ~Envía el formulario a esa dirección ~Valida el correo ~Abre la página de la universidad #### Con <code>tel\:</code> se abre la llamada en el celular. }
+
+::EF-10 · S04 · Imágenes::[html]¿Por qué se escriben <code>width</code> y <code>height</code> en una <code>&lt;img&gt;</code>? { ~Para que la imagen pese menos =Para que el navegador reserve su espacio y la página no salte al cargar ~Para que se vea en blanco y negro ~Porque reemplazan al atributo <code>alt</code> #### Con <code>max-width\: 100%</code> y <code>height\: auto</code> en el CSS, la imagen sigue siendo adaptable. }
+
+::EF-11 · S05 · Tablas::[html]¿Qué hace <code>colspan\="2"</code> en una celda? { ~Duplica el texto ~Separa la celda en dos =Hace que la celda ocupe dos columnas ~Hace que la celda ocupe dos filas #### Para ocupar dos filas se usa <code>rowspan</code>. }
+
+::EF-12 · S05 · Tablas::[html]¿Para qué sirve <code>&lt;th scope\="col"&gt;</code>? { ~Para centrar la columna ~Para pintar la columna ~Para ocultar la columna =Para indicar que esa celda es el encabezado de su columna, y el lector de pantalla lo anuncie #### Con <code>scope\="row"</code> encabeza su fila. }
+
+::EF-13 · S06 · Formularios::[html]¿Qué pasa si un <code>&lt;input&gt;</code> no tiene el atributo <code>name</code>? { =Su dato no se envía con el formulario ~El campo no se ve ~El formulario no se puede abrir ~Nada\: <code>name</code> es opcional para enviar #### Netlify Forms también guarda solo los campos que tienen <code>name</code>. }
+
+::EF-14 · S06 · Formularios::[html]¿Qué etiquetas agrupan campos relacionados y les dan un título? { ~<code>&lt;div&gt;</code> y <code>&lt;h2&gt;</code> =<code>&lt;fieldset&gt;</code> y <code>&lt;legend&gt;</code> ~<code>&lt;group&gt;</code> y <code>&lt;title&gt;</code> ~<code>&lt;form&gt;</code> y <code>&lt;label&gt;</code> #### El formulario de contacto del portafolio usa un <code>fieldset</code> en cada columna. }
+
+::EF-15 · S06 · Formularios::[html]¿Con qué etiquetas se escribe una lista desplegable de opciones? { ~<code>&lt;input type\="list"&gt;</code> ~<code>&lt;ul&gt;</code> y <code>&lt;li&gt;</code> =<code>&lt;select&gt;</code> con sus <code>&lt;option&gt;</code> ~<code>&lt;datalist&gt;</code> sin campo #### La primera opción puede tener <code>value\=""</code> para obligar a elegir con <code>required</code>. }
+
+::EF-16 · S07 · Multimedia::[html]¿Por qué un <code>&lt;video&gt;</code> lleva varias etiquetas <code>&lt;source&gt;</code>? { ~Para reproducir los videos uno tras otro ~Para mostrar varios videos a la vez ~Para agregar subtítulos =Para ofrecer varios formatos\: el navegador usa el primero que puede reproducir #### Por ejemplo, WebM y MP4. }
+
+::EF-17 · S07 · Multimedia::[html]¿Qué etiqueta agrega subtítulos a un video? { =<code>&lt;track kind\="subtitles" src\="subtitulos.vtt"&gt;</code> ~<code>&lt;caption&gt;</code> ~<code>&lt;source type\="text"&gt;</code> ~<code>&lt;subtitle&gt;</code> #### El archivo de subtítulos usa el formato WebVTT. }
+
+::EF-18 · S07 · Figma::[html]En Figma, ¿qué hace <code>Shift + A</code> con una capa seleccionada? { ~La duplica =Activa la Disposición automática\: la envuelve en un marco que ordena su contenido ~La exporta ~La convierte en componente #### La Disposición automática de Figma equivale a Flexbox en CSS. }
+
+$CATEGORY: $course$/top/Examen final EF/Bloque 2
+
+::EF-19 · S09 · Selectores::[html]¿A qué elementos se aplica el selector <code>.tarjeta p</code>? { ~Solo al primer párrafo de la página ~A los elementos que tienen las clases tarjeta y p =A todos los párrafos que están dentro de un elemento con la clase tarjeta ~A las tarjetas que están dentro de un párrafo #### El espacio es el selector descendiente. }
+
+::EF-20 · S09 · Unidades::[html]¿A qué es relativa la unidad <code>rem</code>? { ~Al ancho de la ventana ~Al tamaño de letra del elemento padre ~Al alto de la pantalla =Al tamaño de letra del elemento <code>html</code>, 16px por defecto #### Por eso <code>1.5rem</code> son 24px si nadie cambió el tamaño de letra del navegador. }
+
+::EF-21 · S09 · Fuentes::[html]¿Dónde se escribe el <code>@import</code> de Google Fonts en una hoja de estilos? { =En la primera línea de la hoja ~Al final de la hoja ~Dentro de <code>\:root</code> ~En cualquier regla #### Un <code>@import</code> después de otras reglas se ignora. }
+
+::EF-22 · S10 · Caja::[html]¿Qué diferencia hay entre <code>padding</code> y <code>margin</code>? { ~Son lo mismo =<code>padding</code> es el espacio dentro del borde; <code>margin</code>, el espacio fuera del borde ~<code>margin</code> es el espacio dentro del borde; <code>padding</code>, fuera ~<code>padding</code> solo funciona en flex #### En Figma, el <code>padding</code> es el Espaciado del marco. }
+
+::EF-23 · S10 · Flexbox::[html]Un marco de Figma tiene Flujo vertical. ¿Qué se escribe en CSS? { ~<code>flex-wrap\: wrap</code> ~<code>display\: block</code> =<code>display\: flex; flex-direction\: column</code> ~<code>align-items\: center</code> #### El Flujo horizontal es <code>flex-direction\: row</code>, el valor por defecto. }
+
+::EF-24 · S10 · Flexbox::[html]En una fila flex, ¿qué hace <code>align-items\: center</code>? { ~Centra los hijos en horizontal ~Reparte el espacio entre los hijos ~Pone los hijos en columna =Centra los hijos en el eje vertical, el eje cruzado #### En una fila, <code>justify-content</code> trabaja en horizontal y <code>align-items</code> en vertical. }
+
+::EF-25 · S10 · Flexbox::[html]¿Qué propiedad corresponde al Espacio de la Disposición automática de Figma? { =<code>gap</code> ~<code>padding</code> ~<code>margin</code> ~<code>border-spacing</code> #### <code>gap</code> separa a los hijos sin tocar los bordes del contenedor. }
+
+::EF-26 · S11 · Transformaciones::[html]¿Qué hace <code>transform\: translateY(-4px)</code> en el <code>\:hover</code> de una tarjeta? { ~La hace 4px más pequeña =La sube 4px sin empujar a los elementos vecinos ~La gira 4 grados ~La mueve 4px a la izquierda #### Con <code>transition</code>, la subida es suave. }
+
+::EF-27 · S11 · Animaciones::[html]¿Qué se necesita para que un elemento se anime solo, sin pasar el cursor? { ~Solo <code>transition</code> ~Un <code>\:hover</code> =Pasos definidos en <code>@keyframes</code> y la propiedad <code>animation</code> que los usa ~JavaScript obligatoriamente #### <code>transition</code> necesita un cambio de estado; <code>animation</code> se reproduce sola. }
+
+::EF-28 · S11 · Accesibilidad::[html]¿Para qué sirve <code>@media (prefers-reduced-motion\: reduce)</code>? { ~Para que el sitio cargue más rápido ~Para animar solo en el celular ~Para pausar los videos =Para quitar o reducir las animaciones a quien lo pidió en su sistema #### Algunas personas sienten mareo con el movimiento en pantalla. }
+
+::EF-29 · S12 · Responsive::[html]¿Qué significa diseñar «celular primero»? { =Escribir los estilos base para el celular y agregar <code>min-width</code> para las pantallas grandes ~Diseñar solo para el celular ~Usar solo <code>max-width</code> ~Crear una página aparte para el celular #### Las media queries con <code>min-width</code> van de menor a mayor. }
+
+::EF-30 · S12 · Imágenes::[html]¿Qué hace <code>img \{ max-width\: 100%; height\: auto; \}</code>? { ~Agranda todas las imágenes =La imagen nunca sale de su contenedor y conserva su proporción ~Recorta las imágenes ~Oculta las imágenes en el celular #### Es una de las primeras reglas de un sitio adaptable. }
+
+::EF-31 · S12 · Pruebas::[html]¿Cómo pruebas tu página a 390 px de ancho sin un celular? { ~Achicando la letra ~Cambiando el CSS a 390px =Con las herramientas del navegador (<code>F12</code>) y la barra de dispositivos ~No se puede #### 390 px es el ancho del marco móvil de Figma. }
+
+$CATEGORY: $course$/top/Examen final EF/Bloque 3
+
+::EF-32 · S13 · Grilla::[html]¿Qué hace la clase <code>.container</code> de Bootstrap? { ~Pone un fondo gris ~Crea una fila de columnas ~Oculta el contenido =Crea una caja centrada con un ancho máximo para cada punto de quiebre #### <code>.container-fluid</code> ocupa siempre todo el ancho. }
+
+::EF-33 · S13 · Grilla::[html]¿Dónde deben estar las columnas <code>col-*</code>? { =Dentro de un <code>.row</code> ~Dentro de un <code>&lt;table&gt;</code> ~Directamente en el <code>&lt;body&gt;</code> ~Dentro de un <code>&lt;ul&gt;</code> #### La fila prepara el espacio y los medianiles de sus columnas. }
+
+::EF-34 · S13 · Grilla::[html]¿Qué hace la clase <code>g-4</code> en un <code>.row</code>? { ~Pone cuatro columnas =Da un medianil (espacio entre columnas) de 1.5rem, 24px ~Pone un borde de 4px ~Agranda la letra #### Coincide con el Medianil 24 de la guía de columnas de Figma. }
+
+::EF-35 · S14 · Componentes::[html]¿Qué hacen las clases <code>btn btn-primary</code>? { ~Crean un enlace subrayado ~Ocultan el botón =Dan al elemento el estilo de botón con el color primario del tema ~Envían el formulario #### En tu tema, <code>--bs-primary</code> es el cian de Figma. }
+
+::EF-36 · S14 · Acordeón::[html]En un acordeón de Bootstrap, ¿qué indica <code>collapse show</code>? { ~Que la respuesta no se puede cerrar ~Que la respuesta está oculta ~Que se abre al pasar el cursor =Que esa respuesta aparece abierta al cargar la página #### Sin <code>show</code>, la respuesta empieza cerrada. }
+
+::EF-37 · S14 · Navbar::[html]¿Qué hace <code>navbar-expand-lg</code> en una barra de navegación? { =Muestra el menú completo desde 992 px; por debajo, solo el botón de tres rayas ~Agranda la barra ~Fija la barra arriba ~Oculta el menú siempre #### <code>lg</code> es el punto de quiebre de 992 px. }
+
+::EF-38 · S15 · Lighthouse::[html]¿Qué mide Lighthouse? { ~Solo la velocidad de internet =El rendimiento, la accesibilidad, las buenas prácticas y el SEO de una página ~Cuántas personas visitan el sitio ~Si el diseño es igual a Figma #### Se abre con <code>F12</code>, en la pestaña Lighthouse. }
+
+::EF-39 · S15 · Metadatos::[html]¿Para qué sirve <code>&lt;meta name\="description"&gt;</code>? { ~Para describir la página al validador ~Para cambiar el idioma =Es el resumen que suelen mostrar los buscadores debajo del título ~Para mostrar un texto encima de la página #### Cada página lleva la suya, de unos 150 caracteres. }
+
+::EF-40 · S15 · Netlify::[html]Al publicar, Netlify muestra «Page not found» en la página de inicio. ¿Cuál es la causa más probable? { ~Falta el favicon ~Hay un error de CSS ~El sitio es demasiado grande =<code>index.html</code> no está en la raíz de la carpeta que subiste #### Se arrastra la carpeta que tiene <code>index.html</code> directamente dentro. }
