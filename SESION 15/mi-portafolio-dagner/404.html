@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página no encontrada · Dagner Chuman</title>
+    <meta name="description" content="La página que buscas no existe en el portafolio de Dagner Chuman." />
+    <!-- Una página de aviso no debe aparecer en los buscadores -->
+    <meta name="robots" content="noindex" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+    <!-- 1. Tokens y Reset Global -->
+    <link rel="stylesheet" href="/assets/css/global.css" />
+    <!-- 2. Componentes comunes (Header / Footer) -->
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <!-- 3. Base de las páginas interiores -->
+    <link rel="stylesheet" href="/assets/css/contenido.css" />
+  </head>
+  <body class="pagina-aviso">
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <!-- CABECERA: Identidad del sitio y menú de navegación -->
+    <header>
+      <h1><a href="/index.html">Dagner Chuman</a></h1>
+      <nav aria-label="Navegacion principal">
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/sobre-mi.html">Sobre mí</a></li>
+          <li><a href="/mis-proyectos.html">Proyectos</a></li>
+          <li><a href="/cursos.html">Cursos</a></li>
+          <li><a href="/contactame.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="/contactame.html">Contacto</a>
+    </header>
+
+    <main id="contenido">
+      <!-- Sesión 15 · Netlify muestra esta página cuando una dirección no existe.
+           Puede aparecer en cualquier carpeta, como /proyectos/viejo.html: por eso sus rutas
+           empiezan con / (desde la raíz del sitio) y no con assets/ -->
+      <section class="aviso" aria-labelledby="titulo-aviso">
+        <p class="aviso-codigo" aria-hidden="true">404</p>
+        <h2 id="titulo-aviso">Esta página no existe</h2>
+        <p>Puede que el enlace esté mal escrito o que la página haya cambiado de nombre.</p>
+        <p class="aviso-acciones">
+          <a href="/index.html">Volver al inicio</a>
+          <a href="/mis-proyectos.html">Ver mis proyectos</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+
+      <nav aria-label="Enlaces rapidos">
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/sobre-mi.html">Sobre mí</a></li>
+          <li><a href="/mis-proyectos.html">Proyectos</a></li>
+          <li><a href="/cursos.html">Cursos</a></li>
+          <li><a href="/contactame.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <p>&copy; 2026 Dagner Chuman · Centro de Informática USS · Protech XP</p>
+    </footer>
+  </body>
+</html>
